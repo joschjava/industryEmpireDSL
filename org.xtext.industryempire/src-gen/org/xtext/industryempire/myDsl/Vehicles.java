@@ -24,17 +24,17 @@ import org.eclipse.emf.common.util.EList;
 public interface Vehicles extends Element
 {
   /**
-   * Returns the value of the '<em><b>Vehicles</b></em>' reference list.
+   * Returns the value of the '<em><b>Vehicles</b></em>' containment reference list.
    * The list contents are of type {@link org.xtext.industryempire.myDsl.SingleVehicle}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Vehicles</em>' reference list isn't clear,
+   * If the meaning of the '<em>Vehicles</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Vehicles</em>' reference list.
+   * @return the value of the '<em>Vehicles</em>' containment reference list.
    * @see org.xtext.industryempire.myDsl.MyDslPackage#getVehicles_Vehicles()
-   * @model
+   * @model containment="true"
    * @generated
    */
   EList<SingleVehicle> getVehicles();

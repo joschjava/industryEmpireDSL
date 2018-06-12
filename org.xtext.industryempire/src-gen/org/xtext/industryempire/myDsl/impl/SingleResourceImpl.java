@@ -22,6 +22,7 @@ import org.xtext.industryempire.myDsl.SingleResource;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.industryempire.myDsl.impl.SingleResourceImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.industryempire.myDsl.impl.SingleResourceImpl#getCost <em>Cost</em>}</li>
  * </ul>
  *
  * @generated
@@ -47,6 +48,26 @@ public class SingleResourceImpl extends MinimalEObjectImpl.Container implements 
    * @ordered
    */
   protected String name = NAME_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getCost() <em>Cost</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getCost()
+   * @generated
+   * @ordered
+   */
+  protected static final int COST_EDEFAULT = 0;
+
+  /**
+   * The cached value of the '{@link #getCost() <em>Cost</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getCost()
+   * @generated
+   * @ordered
+   */
+  protected int cost = COST_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -97,6 +118,29 @@ public class SingleResourceImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
+  public int getCost()
+  {
+    return cost;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setCost(int newCost)
+  {
+    int oldCost = cost;
+    cost = newCost;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.SINGLE_RESOURCE__COST, oldCost, cost));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -104,6 +148,8 @@ public class SingleResourceImpl extends MinimalEObjectImpl.Container implements 
     {
       case MyDslPackage.SINGLE_RESOURCE__NAME:
         return getName();
+      case MyDslPackage.SINGLE_RESOURCE__COST:
+        return getCost();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -120,6 +166,9 @@ public class SingleResourceImpl extends MinimalEObjectImpl.Container implements 
     {
       case MyDslPackage.SINGLE_RESOURCE__NAME:
         setName((String)newValue);
+        return;
+      case MyDslPackage.SINGLE_RESOURCE__COST:
+        setCost((Integer)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -138,6 +187,9 @@ public class SingleResourceImpl extends MinimalEObjectImpl.Container implements 
       case MyDslPackage.SINGLE_RESOURCE__NAME:
         setName(NAME_EDEFAULT);
         return;
+      case MyDslPackage.SINGLE_RESOURCE__COST:
+        setCost(COST_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -154,6 +206,8 @@ public class SingleResourceImpl extends MinimalEObjectImpl.Container implements 
     {
       case MyDslPackage.SINGLE_RESOURCE__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case MyDslPackage.SINGLE_RESOURCE__COST:
+        return cost != COST_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -171,6 +225,8 @@ public class SingleResourceImpl extends MinimalEObjectImpl.Container implements 
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (name: ");
     result.append(name);
+    result.append(", cost: ");
+    result.append(cost);
     result.append(')');
     return result.toString();
   }

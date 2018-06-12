@@ -74,7 +74,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     Cities returns Cities
 	 *
 	 * Constraint:
-	 *     (name=ID x=INT y=INT factory+=[SingleFactory|ID]* factory+=[SingleFactory|ID]*)
+	 *     (name+=ID x=INT y=INT factory+=[SingleFactory|ID]* factory+=[SingleFactory|ID]*)
 	 */
 	protected void sequence_Cities(ISerializationContext context, Cities semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -136,15 +136,18 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     SingleResource returns SingleResource
 	 *
 	 * Constraint:
-	 *     name=ID
+	 *     (name=ID cost=INT)
 	 */
 	protected void sequence_SingleResource(ISerializationContext context, SingleResource semanticObject) {
 		if (errorAcceptor != null) {
 			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.SINGLE_RESOURCE__NAME) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.SINGLE_RESOURCE__NAME));
+			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.SINGLE_RESOURCE__COST) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.SINGLE_RESOURCE__COST));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getSingleResourceAccess().getNameIDTerminalRuleCall_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getSingleResourceAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getSingleResourceAccess().getCostINTTerminalRuleCall_4_0(), semanticObject.getCost());
 		feeder.finish();
 	}
 	
@@ -154,15 +157,27 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     SingleVehicle returns SingleVehicle
 	 *
 	 * Constraint:
-	 *     name=ID
+	 *     (name=ID speed=INT load=INT tankSize=INT fuelConsumption=DOUBLE)
 	 */
 	protected void sequence_SingleVehicle(ISerializationContext context, SingleVehicle semanticObject) {
 		if (errorAcceptor != null) {
 			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.SINGLE_VEHICLE__NAME) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.SINGLE_VEHICLE__NAME));
+			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.SINGLE_VEHICLE__SPEED) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.SINGLE_VEHICLE__SPEED));
+			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.SINGLE_VEHICLE__LOAD) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.SINGLE_VEHICLE__LOAD));
+			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.SINGLE_VEHICLE__TANK_SIZE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.SINGLE_VEHICLE__TANK_SIZE));
+			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.SINGLE_VEHICLE__FUEL_CONSUMPTION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.SINGLE_VEHICLE__FUEL_CONSUMPTION));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getSingleVehicleAccess().getNameIDTerminalRuleCall_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getSingleVehicleAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getSingleVehicleAccess().getSpeedINTTerminalRuleCall_4_0(), semanticObject.getSpeed());
+		feeder.accept(grammarAccess.getSingleVehicleAccess().getLoadINTTerminalRuleCall_8_0(), semanticObject.getLoad());
+		feeder.accept(grammarAccess.getSingleVehicleAccess().getTankSizeINTTerminalRuleCall_12_0(), semanticObject.getTankSize());
+		feeder.accept(grammarAccess.getSingleVehicleAccess().getFuelConsumptionDOUBLEParserRuleCall_16_0(), semanticObject.getFuelConsumption());
 		feeder.finish();
 	}
 	
@@ -173,7 +188,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     Vehicles returns Vehicles
 	 *
 	 * Constraint:
-	 *     vehicles+=[SingleVehicle|ID]*
+	 *     vehicles+=SingleVehicle*
 	 */
 	protected void sequence_Vehicles(ISerializationContext context, Vehicles semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

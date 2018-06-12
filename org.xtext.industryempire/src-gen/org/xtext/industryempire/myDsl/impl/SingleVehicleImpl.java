@@ -22,6 +22,10 @@ import org.xtext.industryempire.myDsl.SingleVehicle;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.industryempire.myDsl.impl.SingleVehicleImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.industryempire.myDsl.impl.SingleVehicleImpl#getSpeed <em>Speed</em>}</li>
+ *   <li>{@link org.xtext.industryempire.myDsl.impl.SingleVehicleImpl#getLoad <em>Load</em>}</li>
+ *   <li>{@link org.xtext.industryempire.myDsl.impl.SingleVehicleImpl#getTankSize <em>Tank Size</em>}</li>
+ *   <li>{@link org.xtext.industryempire.myDsl.impl.SingleVehicleImpl#getFuelConsumption <em>Fuel Consumption</em>}</li>
  * </ul>
  *
  * @generated
@@ -47,6 +51,86 @@ public class SingleVehicleImpl extends MinimalEObjectImpl.Container implements S
    * @ordered
    */
   protected String name = NAME_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getSpeed() <em>Speed</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getSpeed()
+   * @generated
+   * @ordered
+   */
+  protected static final int SPEED_EDEFAULT = 0;
+
+  /**
+   * The cached value of the '{@link #getSpeed() <em>Speed</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getSpeed()
+   * @generated
+   * @ordered
+   */
+  protected int speed = SPEED_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getLoad() <em>Load</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getLoad()
+   * @generated
+   * @ordered
+   */
+  protected static final int LOAD_EDEFAULT = 0;
+
+  /**
+   * The cached value of the '{@link #getLoad() <em>Load</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getLoad()
+   * @generated
+   * @ordered
+   */
+  protected int load = LOAD_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getTankSize() <em>Tank Size</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getTankSize()
+   * @generated
+   * @ordered
+   */
+  protected static final int TANK_SIZE_EDEFAULT = 0;
+
+  /**
+   * The cached value of the '{@link #getTankSize() <em>Tank Size</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getTankSize()
+   * @generated
+   * @ordered
+   */
+  protected int tankSize = TANK_SIZE_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getFuelConsumption() <em>Fuel Consumption</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getFuelConsumption()
+   * @generated
+   * @ordered
+   */
+  protected static final String FUEL_CONSUMPTION_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getFuelConsumption() <em>Fuel Consumption</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getFuelConsumption()
+   * @generated
+   * @ordered
+   */
+  protected String fuelConsumption = FUEL_CONSUMPTION_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -97,6 +181,98 @@ public class SingleVehicleImpl extends MinimalEObjectImpl.Container implements S
    * <!-- end-user-doc -->
    * @generated
    */
+  public int getSpeed()
+  {
+    return speed;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setSpeed(int newSpeed)
+  {
+    int oldSpeed = speed;
+    speed = newSpeed;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.SINGLE_VEHICLE__SPEED, oldSpeed, speed));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public int getLoad()
+  {
+    return load;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setLoad(int newLoad)
+  {
+    int oldLoad = load;
+    load = newLoad;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.SINGLE_VEHICLE__LOAD, oldLoad, load));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public int getTankSize()
+  {
+    return tankSize;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setTankSize(int newTankSize)
+  {
+    int oldTankSize = tankSize;
+    tankSize = newTankSize;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.SINGLE_VEHICLE__TANK_SIZE, oldTankSize, tankSize));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getFuelConsumption()
+  {
+    return fuelConsumption;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setFuelConsumption(String newFuelConsumption)
+  {
+    String oldFuelConsumption = fuelConsumption;
+    fuelConsumption = newFuelConsumption;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.SINGLE_VEHICLE__FUEL_CONSUMPTION, oldFuelConsumption, fuelConsumption));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -104,6 +280,14 @@ public class SingleVehicleImpl extends MinimalEObjectImpl.Container implements S
     {
       case MyDslPackage.SINGLE_VEHICLE__NAME:
         return getName();
+      case MyDslPackage.SINGLE_VEHICLE__SPEED:
+        return getSpeed();
+      case MyDslPackage.SINGLE_VEHICLE__LOAD:
+        return getLoad();
+      case MyDslPackage.SINGLE_VEHICLE__TANK_SIZE:
+        return getTankSize();
+      case MyDslPackage.SINGLE_VEHICLE__FUEL_CONSUMPTION:
+        return getFuelConsumption();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -120,6 +304,18 @@ public class SingleVehicleImpl extends MinimalEObjectImpl.Container implements S
     {
       case MyDslPackage.SINGLE_VEHICLE__NAME:
         setName((String)newValue);
+        return;
+      case MyDslPackage.SINGLE_VEHICLE__SPEED:
+        setSpeed((Integer)newValue);
+        return;
+      case MyDslPackage.SINGLE_VEHICLE__LOAD:
+        setLoad((Integer)newValue);
+        return;
+      case MyDslPackage.SINGLE_VEHICLE__TANK_SIZE:
+        setTankSize((Integer)newValue);
+        return;
+      case MyDslPackage.SINGLE_VEHICLE__FUEL_CONSUMPTION:
+        setFuelConsumption((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -138,6 +334,18 @@ public class SingleVehicleImpl extends MinimalEObjectImpl.Container implements S
       case MyDslPackage.SINGLE_VEHICLE__NAME:
         setName(NAME_EDEFAULT);
         return;
+      case MyDslPackage.SINGLE_VEHICLE__SPEED:
+        setSpeed(SPEED_EDEFAULT);
+        return;
+      case MyDslPackage.SINGLE_VEHICLE__LOAD:
+        setLoad(LOAD_EDEFAULT);
+        return;
+      case MyDslPackage.SINGLE_VEHICLE__TANK_SIZE:
+        setTankSize(TANK_SIZE_EDEFAULT);
+        return;
+      case MyDslPackage.SINGLE_VEHICLE__FUEL_CONSUMPTION:
+        setFuelConsumption(FUEL_CONSUMPTION_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -154,6 +362,14 @@ public class SingleVehicleImpl extends MinimalEObjectImpl.Container implements S
     {
       case MyDslPackage.SINGLE_VEHICLE__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case MyDslPackage.SINGLE_VEHICLE__SPEED:
+        return speed != SPEED_EDEFAULT;
+      case MyDslPackage.SINGLE_VEHICLE__LOAD:
+        return load != LOAD_EDEFAULT;
+      case MyDslPackage.SINGLE_VEHICLE__TANK_SIZE:
+        return tankSize != TANK_SIZE_EDEFAULT;
+      case MyDslPackage.SINGLE_VEHICLE__FUEL_CONSUMPTION:
+        return FUEL_CONSUMPTION_EDEFAULT == null ? fuelConsumption != null : !FUEL_CONSUMPTION_EDEFAULT.equals(fuelConsumption);
     }
     return super.eIsSet(featureID);
   }
@@ -171,6 +387,14 @@ public class SingleVehicleImpl extends MinimalEObjectImpl.Container implements S
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (name: ");
     result.append(name);
+    result.append(", speed: ");
+    result.append(speed);
+    result.append(", load: ");
+    result.append(load);
+    result.append(", tankSize: ");
+    result.append(tankSize);
+    result.append(", fuelConsumption: ");
+    result.append(fuelConsumption);
     result.append(')');
     return result.toString();
   }

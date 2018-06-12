@@ -180,7 +180,7 @@ ruleCities returns [EObject current=null]
 					if ($current==null) {
 						$current = createModelElement(grammarAccess.getCitiesRule());
 					}
-					setWithLastConsumed(
+					addWithLastConsumed(
 						$current,
 						"name",
 						lv_name_1_0,
@@ -192,15 +192,19 @@ ruleCities returns [EObject current=null]
 		{
 			newLeafNode(otherlv_2, grammarAccess.getCitiesAccess().getLeftSquareBracketKeyword_2());
 		}
-		otherlv_3='x->'
+		otherlv_3='x'
 		{
 			newLeafNode(otherlv_3, grammarAccess.getCitiesAccess().getXKeyword_3());
 		}
+		otherlv_4='->'
+		{
+			newLeafNode(otherlv_4, grammarAccess.getCitiesAccess().getHyphenMinusGreaterThanSignKeyword_4());
+		}
 		(
 			(
-				lv_x_4_0=RULE_INT
+				lv_x_5_0=RULE_INT
 				{
-					newLeafNode(lv_x_4_0, grammarAccess.getCitiesAccess().getXINTTerminalRuleCall_4_0());
+					newLeafNode(lv_x_5_0, grammarAccess.getCitiesAccess().getXINTTerminalRuleCall_5_0());
 				}
 				{
 					if ($current==null) {
@@ -209,24 +213,24 @@ ruleCities returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"x",
-						lv_x_4_0,
+						lv_x_5_0,
 						"org.eclipse.xtext.common.Terminals.INT");
 				}
 			)
 		)
-		otherlv_5=':'
+		otherlv_6=':'
 		{
-			newLeafNode(otherlv_5, grammarAccess.getCitiesAccess().getColonKeyword_5());
+			newLeafNode(otherlv_6, grammarAccess.getCitiesAccess().getColonKeyword_6());
 		}
-		otherlv_6='y->'
+		otherlv_7='y->'
 		{
-			newLeafNode(otherlv_6, grammarAccess.getCitiesAccess().getYKeyword_6());
+			newLeafNode(otherlv_7, grammarAccess.getCitiesAccess().getYKeyword_7());
 		}
 		(
 			(
-				lv_y_7_0=RULE_INT
+				lv_y_8_0=RULE_INT
 				{
-					newLeafNode(lv_y_7_0, grammarAccess.getCitiesAccess().getYINTTerminalRuleCall_7_0());
+					newLeafNode(lv_y_8_0, grammarAccess.getCitiesAccess().getYINTTerminalRuleCall_8_0());
 				}
 				{
 					if ($current==null) {
@@ -235,14 +239,14 @@ ruleCities returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"y",
-						lv_y_7_0,
+						lv_y_8_0,
 						"org.eclipse.xtext.common.Terminals.INT");
 				}
 			)
 		)
-		otherlv_8=':'
+		otherlv_9=':'
 		{
-			newLeafNode(otherlv_8, grammarAccess.getCitiesAccess().getColonKeyword_8());
+			newLeafNode(otherlv_9, grammarAccess.getCitiesAccess().getColonKeyword_9());
 		}
 		(
 			(
@@ -251,16 +255,16 @@ ruleCities returns [EObject current=null]
 						$current = createModelElement(grammarAccess.getCitiesRule());
 					}
 				}
-				otherlv_9=RULE_ID
+				otherlv_10=RULE_ID
 				{
-					newLeafNode(otherlv_9, grammarAccess.getCitiesAccess().getFactorySingleFactoryCrossReference_9_0());
+					newLeafNode(otherlv_10, grammarAccess.getCitiesAccess().getFactorySingleFactoryCrossReference_10_0());
 				}
 			)
 		)*
 		(
-			otherlv_10=','
+			otherlv_11=','
 			{
-				newLeafNode(otherlv_10, grammarAccess.getCitiesAccess().getCommaKeyword_10_0());
+				newLeafNode(otherlv_11, grammarAccess.getCitiesAccess().getCommaKeyword_11_0());
 			}
 			(
 				(
@@ -269,16 +273,16 @@ ruleCities returns [EObject current=null]
 							$current = createModelElement(grammarAccess.getCitiesRule());
 						}
 					}
-					otherlv_11=RULE_ID
+					otherlv_12=RULE_ID
 					{
-						newLeafNode(otherlv_11, grammarAccess.getCitiesAccess().getFactorySingleFactoryCrossReference_10_1_0());
+						newLeafNode(otherlv_12, grammarAccess.getCitiesAccess().getFactorySingleFactoryCrossReference_11_1_0());
 					}
 				)
 			)
 		)*
-		otherlv_12=']'
+		otherlv_13=']'
 		{
-			newLeafNode(otherlv_12, grammarAccess.getCitiesAccess().getRightSquareBracketKeyword_11());
+			newLeafNode(otherlv_13, grammarAccess.getCitiesAccess().getRightSquareBracketKeyword_12());
 		}
 	)
 ;
@@ -313,16 +317,184 @@ ruleVehicles returns [EObject current=null]
 		(
 			(
 				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getVehiclesRule());
-					}
+					newCompositeNode(grammarAccess.getVehiclesAccess().getVehiclesSingleVehicleParserRuleCall_2_0());
 				}
-				otherlv_2=RULE_ID
+				lv_vehicles_2_0=ruleSingleVehicle
 				{
-					newLeafNode(otherlv_2, grammarAccess.getVehiclesAccess().getVehiclesSingleVehicleCrossReference_2_0());
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getVehiclesRule());
+					}
+					add(
+						$current,
+						"vehicles",
+						lv_vehicles_2_0,
+						"org.xtext.industryempire.MyDsl.SingleVehicle");
+					afterParserOrEnumRuleCall();
 				}
 			)
 		)*
+	)
+;
+
+// Entry rule entryRuleSingleVehicle
+entryRuleSingleVehicle returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getSingleVehicleRule()); }
+	iv_ruleSingleVehicle=ruleSingleVehicle
+	{ $current=$iv_ruleSingleVehicle.current; }
+	EOF;
+
+// Rule SingleVehicle
+ruleSingleVehicle returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				lv_name_0_0=RULE_ID
+				{
+					newLeafNode(lv_name_0_0, grammarAccess.getSingleVehicleAccess().getNameIDTerminalRuleCall_0_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getSingleVehicleRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_0_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+		otherlv_1='['
+		{
+			newLeafNode(otherlv_1, grammarAccess.getSingleVehicleAccess().getLeftSquareBracketKeyword_1());
+		}
+		otherlv_2='speed'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getSingleVehicleAccess().getSpeedKeyword_2());
+		}
+		otherlv_3='->'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getSingleVehicleAccess().getHyphenMinusGreaterThanSignKeyword_3());
+		}
+		(
+			(
+				lv_speed_4_0=RULE_INT
+				{
+					newLeafNode(lv_speed_4_0, grammarAccess.getSingleVehicleAccess().getSpeedINTTerminalRuleCall_4_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getSingleVehicleRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"speed",
+						lv_speed_4_0,
+						"org.eclipse.xtext.common.Terminals.INT");
+				}
+			)
+		)
+		otherlv_5=':'
+		{
+			newLeafNode(otherlv_5, grammarAccess.getSingleVehicleAccess().getColonKeyword_5());
+		}
+		otherlv_6='load'
+		{
+			newLeafNode(otherlv_6, grammarAccess.getSingleVehicleAccess().getLoadKeyword_6());
+		}
+		otherlv_7='->'
+		{
+			newLeafNode(otherlv_7, grammarAccess.getSingleVehicleAccess().getHyphenMinusGreaterThanSignKeyword_7());
+		}
+		(
+			(
+				lv_load_8_0=RULE_INT
+				{
+					newLeafNode(lv_load_8_0, grammarAccess.getSingleVehicleAccess().getLoadINTTerminalRuleCall_8_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getSingleVehicleRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"load",
+						lv_load_8_0,
+						"org.eclipse.xtext.common.Terminals.INT");
+				}
+			)
+		)
+		otherlv_9=':'
+		{
+			newLeafNode(otherlv_9, grammarAccess.getSingleVehicleAccess().getColonKeyword_9());
+		}
+		otherlv_10='tankSize'
+		{
+			newLeafNode(otherlv_10, grammarAccess.getSingleVehicleAccess().getTankSizeKeyword_10());
+		}
+		otherlv_11='->'
+		{
+			newLeafNode(otherlv_11, grammarAccess.getSingleVehicleAccess().getHyphenMinusGreaterThanSignKeyword_11());
+		}
+		(
+			(
+				lv_tankSize_12_0=RULE_INT
+				{
+					newLeafNode(lv_tankSize_12_0, grammarAccess.getSingleVehicleAccess().getTankSizeINTTerminalRuleCall_12_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getSingleVehicleRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"tankSize",
+						lv_tankSize_12_0,
+						"org.eclipse.xtext.common.Terminals.INT");
+				}
+			)
+		)
+		otherlv_13=':'
+		{
+			newLeafNode(otherlv_13, grammarAccess.getSingleVehicleAccess().getColonKeyword_13());
+		}
+		otherlv_14='fuelConsumption'
+		{
+			newLeafNode(otherlv_14, grammarAccess.getSingleVehicleAccess().getFuelConsumptionKeyword_14());
+		}
+		otherlv_15='->'
+		{
+			newLeafNode(otherlv_15, grammarAccess.getSingleVehicleAccess().getHyphenMinusGreaterThanSignKeyword_15());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getSingleVehicleAccess().getFuelConsumptionDOUBLEParserRuleCall_16_0());
+				}
+				lv_fuelConsumption_16_0=ruleDOUBLE
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getSingleVehicleRule());
+					}
+					set(
+						$current,
+						"fuelConsumption",
+						lv_fuelConsumption_16_0,
+						"org.xtext.industryempire.MyDsl.DOUBLE");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_17=']'
+		{
+			newLeafNode(otherlv_17, grammarAccess.getSingleVehicleAccess().getRightSquareBracketKeyword_17());
+		}
 	)
 ;
 
@@ -414,38 +586,58 @@ ruleSingleFactory returns [EObject current=null]
 			newLeafNode(otherlv_1, grammarAccess.getSingleFactoryAccess().getLeftSquareBracketKeyword_1());
 		}
 		(
+			otherlv_2='in'
+			{
+				newLeafNode(otherlv_2, grammarAccess.getSingleFactoryAccess().getInKeyword_2_0());
+			}
+			otherlv_3='->'
+			{
+				newLeafNode(otherlv_3, grammarAccess.getSingleFactoryAccess().getHyphenMinusGreaterThanSignKeyword_2_1());
+			}
 			(
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getSingleFactoryRule());
+				(
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getSingleFactoryRule());
+						}
 					}
-				}
-				otherlv_2=RULE_ID
-				{
-					newLeafNode(otherlv_2, grammarAccess.getSingleFactoryAccess().getInputSingleResourceCrossReference_2_0());
-				}
+					otherlv_4=RULE_ID
+					{
+						newLeafNode(otherlv_4, grammarAccess.getSingleFactoryAccess().getInputSingleResourceCrossReference_2_2_0());
+					}
+				)
 			)
 		)?
-		otherlv_3=':'
+		otherlv_5=':'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getSingleFactoryAccess().getColonKeyword_3());
+			newLeafNode(otherlv_5, grammarAccess.getSingleFactoryAccess().getColonKeyword_3());
 		}
 		(
+			otherlv_6='out'
+			{
+				newLeafNode(otherlv_6, grammarAccess.getSingleFactoryAccess().getOutKeyword_4_0());
+			}
+			otherlv_7='->'
+			{
+				newLeafNode(otherlv_7, grammarAccess.getSingleFactoryAccess().getHyphenMinusGreaterThanSignKeyword_4_1());
+			}
 			(
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getSingleFactoryRule());
+				(
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getSingleFactoryRule());
+						}
 					}
-				}
-				otherlv_4=RULE_ID
-				{
-					newLeafNode(otherlv_4, grammarAccess.getSingleFactoryAccess().getOutputSingleResourceCrossReference_4_0());
-				}
+					otherlv_8=RULE_ID
+					{
+						newLeafNode(otherlv_8, grammarAccess.getSingleFactoryAccess().getOutputSingleResourceCrossReference_4_2_0());
+					}
+				)
 			)
 		)?
-		otherlv_5=']'
+		otherlv_9=']'
 		{
-			newLeafNode(otherlv_5, grammarAccess.getSingleFactoryAccess().getRightSquareBracketKeyword_5());
+			newLeafNode(otherlv_9, grammarAccess.getSingleFactoryAccess().getRightSquareBracketKeyword_5());
 		}
 	)
 ;
@@ -516,21 +708,99 @@ ruleSingleResource returns [EObject current=null]
 }:
 	(
 		(
-			lv_name_0_0=RULE_ID
-			{
-				newLeafNode(lv_name_0_0, grammarAccess.getSingleResourceAccess().getNameIDTerminalRuleCall_0());
-			}
-			{
-				if ($current==null) {
-					$current = createModelElement(grammarAccess.getSingleResourceRule());
+			(
+				lv_name_0_0=RULE_ID
+				{
+					newLeafNode(lv_name_0_0, grammarAccess.getSingleResourceAccess().getNameIDTerminalRuleCall_0_0());
 				}
-				setWithLastConsumed(
-					$current,
-					"name",
-					lv_name_0_0,
-					"org.eclipse.xtext.common.Terminals.ID");
-			}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getSingleResourceRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_0_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
 		)
+		otherlv_1='['
+		{
+			newLeafNode(otherlv_1, grammarAccess.getSingleResourceAccess().getLeftSquareBracketKeyword_1());
+		}
+		otherlv_2='cost'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getSingleResourceAccess().getCostKeyword_2());
+		}
+		otherlv_3='->'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getSingleResourceAccess().getHyphenMinusGreaterThanSignKeyword_3());
+		}
+		(
+			(
+				lv_cost_4_0=RULE_INT
+				{
+					newLeafNode(lv_cost_4_0, grammarAccess.getSingleResourceAccess().getCostINTTerminalRuleCall_4_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getSingleResourceRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"cost",
+						lv_cost_4_0,
+						"org.eclipse.xtext.common.Terminals.INT");
+				}
+			)
+		)
+		otherlv_5=']'
+		{
+			newLeafNode(otherlv_5, grammarAccess.getSingleResourceAccess().getRightSquareBracketKeyword_5());
+		}
+	)
+;
+
+// Entry rule entryRuleDOUBLE
+entryRuleDOUBLE returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getDOUBLERule()); }
+	iv_ruleDOUBLE=ruleDOUBLE
+	{ $current=$iv_ruleDOUBLE.current.getText(); }
+	EOF;
+
+// Rule DOUBLE
+ruleDOUBLE returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			this_INT_0=RULE_INT
+			{
+				$current.merge(this_INT_0);
+			}
+			{
+				newLeafNode(this_INT_0, grammarAccess.getDOUBLEAccess().getINTTerminalRuleCall_0());
+			}
+		)+
+		kw='.'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getDOUBLEAccess().getFullStopKeyword_1());
+		}
+		(
+			this_INT_2=RULE_INT
+			{
+				$current.merge(this_INT_2);
+			}
+			{
+				newLeafNode(this_INT_2, grammarAccess.getDOUBLEAccess().getINTTerminalRuleCall_2());
+			}
+		)+
 	)
 ;
 

@@ -18,25 +18,33 @@ ClazzModel:
 ;
 
 Element:
-	Resources | Factories | Vehicles | Cities;
+	Resources | Factories | Vehicles | Cities; //Gruppe | Validator ClazzModel, Filter resourcen, length max 1
 
 Cities:
 	'Cities:'
-	name = ID '[' 'x->' x = INT ':' 'y->' y = INT ':' factory += [SingleFactory]* (',' factory+=[SingleFactory])* ']'
+	name += ID '[' 'x' '->' x = INT ':' 'y->' y = INT ':' factory += [SingleFactory]* (',' factory+=[SingleFactory])* ']'
 ;
+
+//Cities:
+//	'Cities:'
+//	{SingleCity} (cities += [SingleCity]*)
+//	;
+//
+//SingleCity:
+//	name += ID '[' 'x->' x = INT ':' 'y->' y = INT ':' factory += [SingleFactory]* (',' factory+=[SingleFactory])* ']'
+//;
 
 Vehicles:
 	'Vehicles:'
-	{Vehicles} (vehicles += [SingleVehicle]*)
+	{Vehicles} (vehicles += SingleVehicle*)
 ;
 
+
 SingleVehicle:
-	name = ID
-//	values =  '[' 'speed' '->' speed = INT ':'
-//					'load' '->' load = INT ':'
-//					'tankSize' '->' tankSize = INT ':'
-//					'fuelConsumption' '->' fuelConsumption = DOUBLE
-//	 				']'
+	name = ID  '[' 'speed' '->' speed = INT ':'
+					'load' '->' load = INT ':'
+					'tankSize' '->' tankSize = INT ':'
+				'fuelConsumption' '->' fuelConsumption = DOUBLE ']'
 ;
 
 //Vehicles:
@@ -54,21 +62,19 @@ Factories:
 ;
 
 SingleFactory:
-		name = ID '[' (input=[SingleResource])? ':' (output=[SingleResource])? ']'
+		name = ID '[' ('in' '->' input=[SingleResource])? ':' ('out' '->'output=[SingleResource])? ']'
 ;
 
 Resources:
 	'Resources:'	
-	//Why do I need to add this?
 	{Resources} (resources += SingleResource*)	
 	
 ;
 
 SingleResource:
 	//Two words not possible, how do i let it wait for [
-	name = ID //'[cost:' cost = INT ']'
+	name = ID '[' 'cost' '->' cost = INT ']'
 ;
 
-DOUBLE:  ('0'|'1'|'2'|'3'|'4'|'5'|'6'|'7'|'8'|'9')+'.'('0'|'1'|'2'|'3'|'4'|'5'|'6'|'7'|'8'|'9')+;
+DOUBLE:  INT+'.'INT+;
 
-//DOUBLE returns ecore::EInt: ('0'..'9')+;

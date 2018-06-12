@@ -21,7 +21,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalMyDslParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Cities:'", "'['", "'x->'", "':'", "'y->'", "','", "']'", "'Vehicles:'", "'Factories:'", "'Resources:'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Cities:'", "'['", "'x'", "'->'", "':'", "'y->'", "','", "']'", "'Vehicles:'", "'speed'", "'load'", "'tankSize'", "'fuelConsumption'", "'Factories:'", "'in'", "'out'", "'Resources:'", "'cost'", "'.'"
     };
     public static final int RULE_STRING=6;
     public static final int RULE_SL_COMMENT=8;
@@ -38,9 +38,18 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
     public static final int RULE_ID=4;
     public static final int RULE_WS=9;
     public static final int RULE_ANY_OTHER=10;
+    public static final int T__26=26;
+    public static final int T__27=27;
+    public static final int T__28=28;
     public static final int RULE_INT=5;
+    public static final int T__29=29;
+    public static final int T__22=22;
     public static final int RULE_ML_COMMENT=7;
+    public static final int T__23=23;
+    public static final int T__24=24;
+    public static final int T__25=25;
     public static final int T__20=20;
+    public static final int T__21=21;
 
     // delegates
     // delegators
@@ -138,7 +147,7 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
                 int alt1=2;
                 int LA1_0 = input.LA(1);
 
-                if ( (LA1_0==11||(LA1_0>=18 && LA1_0<=20)) ) {
+                if ( (LA1_0==11||LA1_0==19||LA1_0==24||LA1_0==27) ) {
                     alt1=1;
                 }
 
@@ -260,17 +269,17 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
             // InternalMyDsl.g:114:2: (this_Resources_0= ruleResources | this_Factories_1= ruleFactories | this_Vehicles_2= ruleVehicles | this_Cities_3= ruleCities )
             int alt2=4;
             switch ( input.LA(1) ) {
-            case 20:
+            case 27:
                 {
                 alt2=1;
                 }
                 break;
-            case 19:
+            case 24:
                 {
                 alt2=2;
                 }
                 break;
-            case 18:
+            case 19:
                 {
                 alt2=3;
                 }
@@ -419,7 +428,7 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCities"
-    // InternalMyDsl.g:161:1: ruleCities returns [EObject current=null] : (otherlv_0= 'Cities:' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '[' otherlv_3= 'x->' ( (lv_x_4_0= RULE_INT ) ) otherlv_5= ':' otherlv_6= 'y->' ( (lv_y_7_0= RULE_INT ) ) otherlv_8= ':' ( (otherlv_9= RULE_ID ) )* (otherlv_10= ',' ( (otherlv_11= RULE_ID ) ) )* otherlv_12= ']' ) ;
+    // InternalMyDsl.g:161:1: ruleCities returns [EObject current=null] : (otherlv_0= 'Cities:' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '[' otherlv_3= 'x' otherlv_4= '->' ( (lv_x_5_0= RULE_INT ) ) otherlv_6= ':' otherlv_7= 'y->' ( (lv_y_8_0= RULE_INT ) ) otherlv_9= ':' ( (otherlv_10= RULE_ID ) )* (otherlv_11= ',' ( (otherlv_12= RULE_ID ) ) )* otherlv_13= ']' ) ;
     public final EObject ruleCities() throws RecognitionException {
         EObject current = null;
 
@@ -427,25 +436,26 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
         Token lv_name_1_0=null;
         Token otherlv_2=null;
         Token otherlv_3=null;
-        Token lv_x_4_0=null;
-        Token otherlv_5=null;
+        Token otherlv_4=null;
+        Token lv_x_5_0=null;
         Token otherlv_6=null;
-        Token lv_y_7_0=null;
-        Token otherlv_8=null;
+        Token otherlv_7=null;
+        Token lv_y_8_0=null;
         Token otherlv_9=null;
         Token otherlv_10=null;
         Token otherlv_11=null;
         Token otherlv_12=null;
+        Token otherlv_13=null;
 
 
         	enterRule();
 
         try {
-            // InternalMyDsl.g:167:2: ( (otherlv_0= 'Cities:' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '[' otherlv_3= 'x->' ( (lv_x_4_0= RULE_INT ) ) otherlv_5= ':' otherlv_6= 'y->' ( (lv_y_7_0= RULE_INT ) ) otherlv_8= ':' ( (otherlv_9= RULE_ID ) )* (otherlv_10= ',' ( (otherlv_11= RULE_ID ) ) )* otherlv_12= ']' ) )
-            // InternalMyDsl.g:168:2: (otherlv_0= 'Cities:' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '[' otherlv_3= 'x->' ( (lv_x_4_0= RULE_INT ) ) otherlv_5= ':' otherlv_6= 'y->' ( (lv_y_7_0= RULE_INT ) ) otherlv_8= ':' ( (otherlv_9= RULE_ID ) )* (otherlv_10= ',' ( (otherlv_11= RULE_ID ) ) )* otherlv_12= ']' )
+            // InternalMyDsl.g:167:2: ( (otherlv_0= 'Cities:' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '[' otherlv_3= 'x' otherlv_4= '->' ( (lv_x_5_0= RULE_INT ) ) otherlv_6= ':' otherlv_7= 'y->' ( (lv_y_8_0= RULE_INT ) ) otherlv_9= ':' ( (otherlv_10= RULE_ID ) )* (otherlv_11= ',' ( (otherlv_12= RULE_ID ) ) )* otherlv_13= ']' ) )
+            // InternalMyDsl.g:168:2: (otherlv_0= 'Cities:' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '[' otherlv_3= 'x' otherlv_4= '->' ( (lv_x_5_0= RULE_INT ) ) otherlv_6= ':' otherlv_7= 'y->' ( (lv_y_8_0= RULE_INT ) ) otherlv_9= ':' ( (otherlv_10= RULE_ID ) )* (otherlv_11= ',' ( (otherlv_12= RULE_ID ) ) )* otherlv_13= ']' )
             {
-            // InternalMyDsl.g:168:2: (otherlv_0= 'Cities:' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '[' otherlv_3= 'x->' ( (lv_x_4_0= RULE_INT ) ) otherlv_5= ':' otherlv_6= 'y->' ( (lv_y_7_0= RULE_INT ) ) otherlv_8= ':' ( (otherlv_9= RULE_ID ) )* (otherlv_10= ',' ( (otherlv_11= RULE_ID ) ) )* otherlv_12= ']' )
-            // InternalMyDsl.g:169:3: otherlv_0= 'Cities:' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '[' otherlv_3= 'x->' ( (lv_x_4_0= RULE_INT ) ) otherlv_5= ':' otherlv_6= 'y->' ( (lv_y_7_0= RULE_INT ) ) otherlv_8= ':' ( (otherlv_9= RULE_ID ) )* (otherlv_10= ',' ( (otherlv_11= RULE_ID ) ) )* otherlv_12= ']'
+            // InternalMyDsl.g:168:2: (otherlv_0= 'Cities:' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '[' otherlv_3= 'x' otherlv_4= '->' ( (lv_x_5_0= RULE_INT ) ) otherlv_6= ':' otherlv_7= 'y->' ( (lv_y_8_0= RULE_INT ) ) otherlv_9= ':' ( (otherlv_10= RULE_ID ) )* (otherlv_11= ',' ( (otherlv_12= RULE_ID ) ) )* otherlv_13= ']' )
+            // InternalMyDsl.g:169:3: otherlv_0= 'Cities:' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '[' otherlv_3= 'x' otherlv_4= '->' ( (lv_x_5_0= RULE_INT ) ) otherlv_6= ':' otherlv_7= 'y->' ( (lv_y_8_0= RULE_INT ) ) otherlv_9= ':' ( (otherlv_10= RULE_ID ) )* (otherlv_11= ',' ( (otherlv_12= RULE_ID ) ) )* otherlv_13= ']'
             {
             otherlv_0=(Token)match(input,11,FOLLOW_4); 
 
@@ -465,7 +475,7 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
             					if (current==null) {
             						current = createModelElement(grammarAccess.getCitiesRule());
             					}
-            					setWithLastConsumed(
+            					addWithLastConsumed(
             						current,
             						"name",
             						lv_name_1_0,
@@ -485,15 +495,19 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_3, grammarAccess.getCitiesAccess().getXKeyword_3());
             		
-            // InternalMyDsl.g:199:3: ( (lv_x_4_0= RULE_INT ) )
-            // InternalMyDsl.g:200:4: (lv_x_4_0= RULE_INT )
-            {
-            // InternalMyDsl.g:200:4: (lv_x_4_0= RULE_INT )
-            // InternalMyDsl.g:201:5: lv_x_4_0= RULE_INT
-            {
-            lv_x_4_0=(Token)match(input,RULE_INT,FOLLOW_8); 
+            otherlv_4=(Token)match(input,14,FOLLOW_8); 
 
-            					newLeafNode(lv_x_4_0, grammarAccess.getCitiesAccess().getXINTTerminalRuleCall_4_0());
+            			newLeafNode(otherlv_4, grammarAccess.getCitiesAccess().getHyphenMinusGreaterThanSignKeyword_4());
+            		
+            // InternalMyDsl.g:203:3: ( (lv_x_5_0= RULE_INT ) )
+            // InternalMyDsl.g:204:4: (lv_x_5_0= RULE_INT )
+            {
+            // InternalMyDsl.g:204:4: (lv_x_5_0= RULE_INT )
+            // InternalMyDsl.g:205:5: lv_x_5_0= RULE_INT
+            {
+            lv_x_5_0=(Token)match(input,RULE_INT,FOLLOW_9); 
+
+            					newLeafNode(lv_x_5_0, grammarAccess.getCitiesAccess().getXINTTerminalRuleCall_5_0());
             				
 
             					if (current==null) {
@@ -502,7 +516,7 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
             					setWithLastConsumed(
             						current,
             						"x",
-            						lv_x_4_0,
+            						lv_x_5_0,
             						"org.eclipse.xtext.common.Terminals.INT");
             				
 
@@ -511,23 +525,23 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,14,FOLLOW_9); 
+            otherlv_6=(Token)match(input,15,FOLLOW_10); 
 
-            			newLeafNode(otherlv_5, grammarAccess.getCitiesAccess().getColonKeyword_5());
+            			newLeafNode(otherlv_6, grammarAccess.getCitiesAccess().getColonKeyword_6());
             		
-            otherlv_6=(Token)match(input,15,FOLLOW_7); 
+            otherlv_7=(Token)match(input,16,FOLLOW_8); 
 
-            			newLeafNode(otherlv_6, grammarAccess.getCitiesAccess().getYKeyword_6());
+            			newLeafNode(otherlv_7, grammarAccess.getCitiesAccess().getYKeyword_7());
             		
-            // InternalMyDsl.g:225:3: ( (lv_y_7_0= RULE_INT ) )
-            // InternalMyDsl.g:226:4: (lv_y_7_0= RULE_INT )
+            // InternalMyDsl.g:229:3: ( (lv_y_8_0= RULE_INT ) )
+            // InternalMyDsl.g:230:4: (lv_y_8_0= RULE_INT )
             {
-            // InternalMyDsl.g:226:4: (lv_y_7_0= RULE_INT )
-            // InternalMyDsl.g:227:5: lv_y_7_0= RULE_INT
+            // InternalMyDsl.g:230:4: (lv_y_8_0= RULE_INT )
+            // InternalMyDsl.g:231:5: lv_y_8_0= RULE_INT
             {
-            lv_y_7_0=(Token)match(input,RULE_INT,FOLLOW_8); 
+            lv_y_8_0=(Token)match(input,RULE_INT,FOLLOW_9); 
 
-            					newLeafNode(lv_y_7_0, grammarAccess.getCitiesAccess().getYINTTerminalRuleCall_7_0());
+            					newLeafNode(lv_y_8_0, grammarAccess.getCitiesAccess().getYINTTerminalRuleCall_8_0());
             				
 
             					if (current==null) {
@@ -536,7 +550,7 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
             					setWithLastConsumed(
             						current,
             						"y",
-            						lv_y_7_0,
+            						lv_y_8_0,
             						"org.eclipse.xtext.common.Terminals.INT");
             				
 
@@ -545,11 +559,11 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_8=(Token)match(input,14,FOLLOW_10); 
+            otherlv_9=(Token)match(input,15,FOLLOW_11); 
 
-            			newLeafNode(otherlv_8, grammarAccess.getCitiesAccess().getColonKeyword_8());
+            			newLeafNode(otherlv_9, grammarAccess.getCitiesAccess().getColonKeyword_9());
             		
-            // InternalMyDsl.g:247:3: ( (otherlv_9= RULE_ID ) )*
+            // InternalMyDsl.g:251:3: ( (otherlv_10= RULE_ID ) )*
             loop3:
             do {
                 int alt3=2;
@@ -562,19 +576,19 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
 
                 switch (alt3) {
             	case 1 :
-            	    // InternalMyDsl.g:248:4: (otherlv_9= RULE_ID )
+            	    // InternalMyDsl.g:252:4: (otherlv_10= RULE_ID )
             	    {
-            	    // InternalMyDsl.g:248:4: (otherlv_9= RULE_ID )
-            	    // InternalMyDsl.g:249:5: otherlv_9= RULE_ID
+            	    // InternalMyDsl.g:252:4: (otherlv_10= RULE_ID )
+            	    // InternalMyDsl.g:253:5: otherlv_10= RULE_ID
             	    {
 
             	    					if (current==null) {
             	    						current = createModelElement(grammarAccess.getCitiesRule());
             	    					}
             	    				
-            	    otherlv_9=(Token)match(input,RULE_ID,FOLLOW_10); 
+            	    otherlv_10=(Token)match(input,RULE_ID,FOLLOW_11); 
 
-            	    					newLeafNode(otherlv_9, grammarAccess.getCitiesAccess().getFactorySingleFactoryCrossReference_9_0());
+            	    					newLeafNode(otherlv_10, grammarAccess.getCitiesAccess().getFactorySingleFactoryCrossReference_10_0());
             	    				
 
             	    }
@@ -588,39 +602,39 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            // InternalMyDsl.g:260:3: (otherlv_10= ',' ( (otherlv_11= RULE_ID ) ) )*
+            // InternalMyDsl.g:264:3: (otherlv_11= ',' ( (otherlv_12= RULE_ID ) ) )*
             loop4:
             do {
                 int alt4=2;
                 int LA4_0 = input.LA(1);
 
-                if ( (LA4_0==16) ) {
+                if ( (LA4_0==17) ) {
                     alt4=1;
                 }
 
 
                 switch (alt4) {
             	case 1 :
-            	    // InternalMyDsl.g:261:4: otherlv_10= ',' ( (otherlv_11= RULE_ID ) )
+            	    // InternalMyDsl.g:265:4: otherlv_11= ',' ( (otherlv_12= RULE_ID ) )
             	    {
-            	    otherlv_10=(Token)match(input,16,FOLLOW_4); 
+            	    otherlv_11=(Token)match(input,17,FOLLOW_4); 
 
-            	    				newLeafNode(otherlv_10, grammarAccess.getCitiesAccess().getCommaKeyword_10_0());
+            	    				newLeafNode(otherlv_11, grammarAccess.getCitiesAccess().getCommaKeyword_11_0());
             	    			
-            	    // InternalMyDsl.g:265:4: ( (otherlv_11= RULE_ID ) )
-            	    // InternalMyDsl.g:266:5: (otherlv_11= RULE_ID )
+            	    // InternalMyDsl.g:269:4: ( (otherlv_12= RULE_ID ) )
+            	    // InternalMyDsl.g:270:5: (otherlv_12= RULE_ID )
             	    {
-            	    // InternalMyDsl.g:266:5: (otherlv_11= RULE_ID )
-            	    // InternalMyDsl.g:267:6: otherlv_11= RULE_ID
+            	    // InternalMyDsl.g:270:5: (otherlv_12= RULE_ID )
+            	    // InternalMyDsl.g:271:6: otherlv_12= RULE_ID
             	    {
 
             	    						if (current==null) {
             	    							current = createModelElement(grammarAccess.getCitiesRule());
             	    						}
             	    					
-            	    otherlv_11=(Token)match(input,RULE_ID,FOLLOW_11); 
+            	    otherlv_12=(Token)match(input,RULE_ID,FOLLOW_12); 
 
-            	    						newLeafNode(otherlv_11, grammarAccess.getCitiesAccess().getFactorySingleFactoryCrossReference_10_1_0());
+            	    						newLeafNode(otherlv_12, grammarAccess.getCitiesAccess().getFactorySingleFactoryCrossReference_11_1_0());
             	    					
 
             	    }
@@ -637,9 +651,9 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_12=(Token)match(input,17,FOLLOW_2); 
+            otherlv_13=(Token)match(input,18,FOLLOW_2); 
 
-            			newLeafNode(otherlv_12, grammarAccess.getCitiesAccess().getRightSquareBracketKeyword_11());
+            			newLeafNode(otherlv_13, grammarAccess.getCitiesAccess().getRightSquareBracketKeyword_12());
             		
 
             }
@@ -664,7 +678,7 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleVehicles"
-    // InternalMyDsl.g:287:1: entryRuleVehicles returns [EObject current=null] : iv_ruleVehicles= ruleVehicles EOF ;
+    // InternalMyDsl.g:291:1: entryRuleVehicles returns [EObject current=null] : iv_ruleVehicles= ruleVehicles EOF ;
     public final EObject entryRuleVehicles() throws RecognitionException {
         EObject current = null;
 
@@ -672,8 +686,8 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalMyDsl.g:287:49: (iv_ruleVehicles= ruleVehicles EOF )
-            // InternalMyDsl.g:288:2: iv_ruleVehicles= ruleVehicles EOF
+            // InternalMyDsl.g:291:49: (iv_ruleVehicles= ruleVehicles EOF )
+            // InternalMyDsl.g:292:2: iv_ruleVehicles= ruleVehicles EOF
             {
              newCompositeNode(grammarAccess.getVehiclesRule()); 
             pushFollow(FOLLOW_1);
@@ -700,29 +714,30 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleVehicles"
-    // InternalMyDsl.g:294:1: ruleVehicles returns [EObject current=null] : (otherlv_0= 'Vehicles:' () ( (otherlv_2= RULE_ID ) )* ) ;
+    // InternalMyDsl.g:298:1: ruleVehicles returns [EObject current=null] : (otherlv_0= 'Vehicles:' () ( (lv_vehicles_2_0= ruleSingleVehicle ) )* ) ;
     public final EObject ruleVehicles() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token otherlv_2=null;
+        EObject lv_vehicles_2_0 = null;
+
 
 
         	enterRule();
 
         try {
-            // InternalMyDsl.g:300:2: ( (otherlv_0= 'Vehicles:' () ( (otherlv_2= RULE_ID ) )* ) )
-            // InternalMyDsl.g:301:2: (otherlv_0= 'Vehicles:' () ( (otherlv_2= RULE_ID ) )* )
+            // InternalMyDsl.g:304:2: ( (otherlv_0= 'Vehicles:' () ( (lv_vehicles_2_0= ruleSingleVehicle ) )* ) )
+            // InternalMyDsl.g:305:2: (otherlv_0= 'Vehicles:' () ( (lv_vehicles_2_0= ruleSingleVehicle ) )* )
             {
-            // InternalMyDsl.g:301:2: (otherlv_0= 'Vehicles:' () ( (otherlv_2= RULE_ID ) )* )
-            // InternalMyDsl.g:302:3: otherlv_0= 'Vehicles:' () ( (otherlv_2= RULE_ID ) )*
+            // InternalMyDsl.g:305:2: (otherlv_0= 'Vehicles:' () ( (lv_vehicles_2_0= ruleSingleVehicle ) )* )
+            // InternalMyDsl.g:306:3: otherlv_0= 'Vehicles:' () ( (lv_vehicles_2_0= ruleSingleVehicle ) )*
             {
-            otherlv_0=(Token)match(input,18,FOLLOW_12); 
+            otherlv_0=(Token)match(input,19,FOLLOW_13); 
 
             			newLeafNode(otherlv_0, grammarAccess.getVehiclesAccess().getVehiclesKeyword_0());
             		
-            // InternalMyDsl.g:306:3: ()
-            // InternalMyDsl.g:307:4: 
+            // InternalMyDsl.g:310:3: ()
+            // InternalMyDsl.g:311:4: 
             {
 
             				current = forceCreateModelElement(
@@ -732,7 +747,7 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalMyDsl.g:313:3: ( (otherlv_2= RULE_ID ) )*
+            // InternalMyDsl.g:317:3: ( (lv_vehicles_2_0= ruleSingleVehicle ) )*
             loop5:
             do {
                 int alt5=2;
@@ -745,19 +760,29 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
 
                 switch (alt5) {
             	case 1 :
-            	    // InternalMyDsl.g:314:4: (otherlv_2= RULE_ID )
+            	    // InternalMyDsl.g:318:4: (lv_vehicles_2_0= ruleSingleVehicle )
             	    {
-            	    // InternalMyDsl.g:314:4: (otherlv_2= RULE_ID )
-            	    // InternalMyDsl.g:315:5: otherlv_2= RULE_ID
+            	    // InternalMyDsl.g:318:4: (lv_vehicles_2_0= ruleSingleVehicle )
+            	    // InternalMyDsl.g:319:5: lv_vehicles_2_0= ruleSingleVehicle
             	    {
+
+            	    					newCompositeNode(grammarAccess.getVehiclesAccess().getVehiclesSingleVehicleParserRuleCall_2_0());
+            	    				
+            	    pushFollow(FOLLOW_13);
+            	    lv_vehicles_2_0=ruleSingleVehicle();
+
+            	    state._fsp--;
+
 
             	    					if (current==null) {
-            	    						current = createModelElement(grammarAccess.getVehiclesRule());
+            	    						current = createModelElementForParent(grammarAccess.getVehiclesRule());
             	    					}
-            	    				
-            	    otherlv_2=(Token)match(input,RULE_ID,FOLLOW_12); 
-
-            	    					newLeafNode(otherlv_2, grammarAccess.getVehiclesAccess().getVehiclesSingleVehicleCrossReference_2_0());
+            	    					add(
+            	    						current,
+            	    						"vehicles",
+            	    						lv_vehicles_2_0,
+            	    						"org.xtext.industryempire.MyDsl.SingleVehicle");
+            	    					afterParserOrEnumRuleCall();
             	    				
 
             	    }
@@ -793,8 +818,288 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleVehicles"
 
 
+    // $ANTLR start "entryRuleSingleVehicle"
+    // InternalMyDsl.g:340:1: entryRuleSingleVehicle returns [EObject current=null] : iv_ruleSingleVehicle= ruleSingleVehicle EOF ;
+    public final EObject entryRuleSingleVehicle() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleSingleVehicle = null;
+
+
+        try {
+            // InternalMyDsl.g:340:54: (iv_ruleSingleVehicle= ruleSingleVehicle EOF )
+            // InternalMyDsl.g:341:2: iv_ruleSingleVehicle= ruleSingleVehicle EOF
+            {
+             newCompositeNode(grammarAccess.getSingleVehicleRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleSingleVehicle=ruleSingleVehicle();
+
+            state._fsp--;
+
+             current =iv_ruleSingleVehicle; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleSingleVehicle"
+
+
+    // $ANTLR start "ruleSingleVehicle"
+    // InternalMyDsl.g:347:1: ruleSingleVehicle returns [EObject current=null] : ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '[' otherlv_2= 'speed' otherlv_3= '->' ( (lv_speed_4_0= RULE_INT ) ) otherlv_5= ':' otherlv_6= 'load' otherlv_7= '->' ( (lv_load_8_0= RULE_INT ) ) otherlv_9= ':' otherlv_10= 'tankSize' otherlv_11= '->' ( (lv_tankSize_12_0= RULE_INT ) ) otherlv_13= ':' otherlv_14= 'fuelConsumption' otherlv_15= '->' ( (lv_fuelConsumption_16_0= ruleDOUBLE ) ) otherlv_17= ']' ) ;
+    public final EObject ruleSingleVehicle() throws RecognitionException {
+        EObject current = null;
+
+        Token lv_name_0_0=null;
+        Token otherlv_1=null;
+        Token otherlv_2=null;
+        Token otherlv_3=null;
+        Token lv_speed_4_0=null;
+        Token otherlv_5=null;
+        Token otherlv_6=null;
+        Token otherlv_7=null;
+        Token lv_load_8_0=null;
+        Token otherlv_9=null;
+        Token otherlv_10=null;
+        Token otherlv_11=null;
+        Token lv_tankSize_12_0=null;
+        Token otherlv_13=null;
+        Token otherlv_14=null;
+        Token otherlv_15=null;
+        Token otherlv_17=null;
+        AntlrDatatypeRuleToken lv_fuelConsumption_16_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalMyDsl.g:353:2: ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '[' otherlv_2= 'speed' otherlv_3= '->' ( (lv_speed_4_0= RULE_INT ) ) otherlv_5= ':' otherlv_6= 'load' otherlv_7= '->' ( (lv_load_8_0= RULE_INT ) ) otherlv_9= ':' otherlv_10= 'tankSize' otherlv_11= '->' ( (lv_tankSize_12_0= RULE_INT ) ) otherlv_13= ':' otherlv_14= 'fuelConsumption' otherlv_15= '->' ( (lv_fuelConsumption_16_0= ruleDOUBLE ) ) otherlv_17= ']' ) )
+            // InternalMyDsl.g:354:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '[' otherlv_2= 'speed' otherlv_3= '->' ( (lv_speed_4_0= RULE_INT ) ) otherlv_5= ':' otherlv_6= 'load' otherlv_7= '->' ( (lv_load_8_0= RULE_INT ) ) otherlv_9= ':' otherlv_10= 'tankSize' otherlv_11= '->' ( (lv_tankSize_12_0= RULE_INT ) ) otherlv_13= ':' otherlv_14= 'fuelConsumption' otherlv_15= '->' ( (lv_fuelConsumption_16_0= ruleDOUBLE ) ) otherlv_17= ']' )
+            {
+            // InternalMyDsl.g:354:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '[' otherlv_2= 'speed' otherlv_3= '->' ( (lv_speed_4_0= RULE_INT ) ) otherlv_5= ':' otherlv_6= 'load' otherlv_7= '->' ( (lv_load_8_0= RULE_INT ) ) otherlv_9= ':' otherlv_10= 'tankSize' otherlv_11= '->' ( (lv_tankSize_12_0= RULE_INT ) ) otherlv_13= ':' otherlv_14= 'fuelConsumption' otherlv_15= '->' ( (lv_fuelConsumption_16_0= ruleDOUBLE ) ) otherlv_17= ']' )
+            // InternalMyDsl.g:355:3: ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '[' otherlv_2= 'speed' otherlv_3= '->' ( (lv_speed_4_0= RULE_INT ) ) otherlv_5= ':' otherlv_6= 'load' otherlv_7= '->' ( (lv_load_8_0= RULE_INT ) ) otherlv_9= ':' otherlv_10= 'tankSize' otherlv_11= '->' ( (lv_tankSize_12_0= RULE_INT ) ) otherlv_13= ':' otherlv_14= 'fuelConsumption' otherlv_15= '->' ( (lv_fuelConsumption_16_0= ruleDOUBLE ) ) otherlv_17= ']'
+            {
+            // InternalMyDsl.g:355:3: ( (lv_name_0_0= RULE_ID ) )
+            // InternalMyDsl.g:356:4: (lv_name_0_0= RULE_ID )
+            {
+            // InternalMyDsl.g:356:4: (lv_name_0_0= RULE_ID )
+            // InternalMyDsl.g:357:5: lv_name_0_0= RULE_ID
+            {
+            lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_5); 
+
+            					newLeafNode(lv_name_0_0, grammarAccess.getSingleVehicleAccess().getNameIDTerminalRuleCall_0_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getSingleVehicleRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"name",
+            						lv_name_0_0,
+            						"org.eclipse.xtext.common.Terminals.ID");
+            				
+
+            }
+
+
+            }
+
+            otherlv_1=(Token)match(input,12,FOLLOW_14); 
+
+            			newLeafNode(otherlv_1, grammarAccess.getSingleVehicleAccess().getLeftSquareBracketKeyword_1());
+            		
+            otherlv_2=(Token)match(input,20,FOLLOW_7); 
+
+            			newLeafNode(otherlv_2, grammarAccess.getSingleVehicleAccess().getSpeedKeyword_2());
+            		
+            otherlv_3=(Token)match(input,14,FOLLOW_8); 
+
+            			newLeafNode(otherlv_3, grammarAccess.getSingleVehicleAccess().getHyphenMinusGreaterThanSignKeyword_3());
+            		
+            // InternalMyDsl.g:385:3: ( (lv_speed_4_0= RULE_INT ) )
+            // InternalMyDsl.g:386:4: (lv_speed_4_0= RULE_INT )
+            {
+            // InternalMyDsl.g:386:4: (lv_speed_4_0= RULE_INT )
+            // InternalMyDsl.g:387:5: lv_speed_4_0= RULE_INT
+            {
+            lv_speed_4_0=(Token)match(input,RULE_INT,FOLLOW_9); 
+
+            					newLeafNode(lv_speed_4_0, grammarAccess.getSingleVehicleAccess().getSpeedINTTerminalRuleCall_4_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getSingleVehicleRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"speed",
+            						lv_speed_4_0,
+            						"org.eclipse.xtext.common.Terminals.INT");
+            				
+
+            }
+
+
+            }
+
+            otherlv_5=(Token)match(input,15,FOLLOW_15); 
+
+            			newLeafNode(otherlv_5, grammarAccess.getSingleVehicleAccess().getColonKeyword_5());
+            		
+            otherlv_6=(Token)match(input,21,FOLLOW_7); 
+
+            			newLeafNode(otherlv_6, grammarAccess.getSingleVehicleAccess().getLoadKeyword_6());
+            		
+            otherlv_7=(Token)match(input,14,FOLLOW_8); 
+
+            			newLeafNode(otherlv_7, grammarAccess.getSingleVehicleAccess().getHyphenMinusGreaterThanSignKeyword_7());
+            		
+            // InternalMyDsl.g:415:3: ( (lv_load_8_0= RULE_INT ) )
+            // InternalMyDsl.g:416:4: (lv_load_8_0= RULE_INT )
+            {
+            // InternalMyDsl.g:416:4: (lv_load_8_0= RULE_INT )
+            // InternalMyDsl.g:417:5: lv_load_8_0= RULE_INT
+            {
+            lv_load_8_0=(Token)match(input,RULE_INT,FOLLOW_9); 
+
+            					newLeafNode(lv_load_8_0, grammarAccess.getSingleVehicleAccess().getLoadINTTerminalRuleCall_8_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getSingleVehicleRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"load",
+            						lv_load_8_0,
+            						"org.eclipse.xtext.common.Terminals.INT");
+            				
+
+            }
+
+
+            }
+
+            otherlv_9=(Token)match(input,15,FOLLOW_16); 
+
+            			newLeafNode(otherlv_9, grammarAccess.getSingleVehicleAccess().getColonKeyword_9());
+            		
+            otherlv_10=(Token)match(input,22,FOLLOW_7); 
+
+            			newLeafNode(otherlv_10, grammarAccess.getSingleVehicleAccess().getTankSizeKeyword_10());
+            		
+            otherlv_11=(Token)match(input,14,FOLLOW_8); 
+
+            			newLeafNode(otherlv_11, grammarAccess.getSingleVehicleAccess().getHyphenMinusGreaterThanSignKeyword_11());
+            		
+            // InternalMyDsl.g:445:3: ( (lv_tankSize_12_0= RULE_INT ) )
+            // InternalMyDsl.g:446:4: (lv_tankSize_12_0= RULE_INT )
+            {
+            // InternalMyDsl.g:446:4: (lv_tankSize_12_0= RULE_INT )
+            // InternalMyDsl.g:447:5: lv_tankSize_12_0= RULE_INT
+            {
+            lv_tankSize_12_0=(Token)match(input,RULE_INT,FOLLOW_9); 
+
+            					newLeafNode(lv_tankSize_12_0, grammarAccess.getSingleVehicleAccess().getTankSizeINTTerminalRuleCall_12_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getSingleVehicleRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"tankSize",
+            						lv_tankSize_12_0,
+            						"org.eclipse.xtext.common.Terminals.INT");
+            				
+
+            }
+
+
+            }
+
+            otherlv_13=(Token)match(input,15,FOLLOW_17); 
+
+            			newLeafNode(otherlv_13, grammarAccess.getSingleVehicleAccess().getColonKeyword_13());
+            		
+            otherlv_14=(Token)match(input,23,FOLLOW_7); 
+
+            			newLeafNode(otherlv_14, grammarAccess.getSingleVehicleAccess().getFuelConsumptionKeyword_14());
+            		
+            otherlv_15=(Token)match(input,14,FOLLOW_8); 
+
+            			newLeafNode(otherlv_15, grammarAccess.getSingleVehicleAccess().getHyphenMinusGreaterThanSignKeyword_15());
+            		
+            // InternalMyDsl.g:475:3: ( (lv_fuelConsumption_16_0= ruleDOUBLE ) )
+            // InternalMyDsl.g:476:4: (lv_fuelConsumption_16_0= ruleDOUBLE )
+            {
+            // InternalMyDsl.g:476:4: (lv_fuelConsumption_16_0= ruleDOUBLE )
+            // InternalMyDsl.g:477:5: lv_fuelConsumption_16_0= ruleDOUBLE
+            {
+
+            					newCompositeNode(grammarAccess.getSingleVehicleAccess().getFuelConsumptionDOUBLEParserRuleCall_16_0());
+            				
+            pushFollow(FOLLOW_18);
+            lv_fuelConsumption_16_0=ruleDOUBLE();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getSingleVehicleRule());
+            					}
+            					set(
+            						current,
+            						"fuelConsumption",
+            						lv_fuelConsumption_16_0,
+            						"org.xtext.industryempire.MyDsl.DOUBLE");
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
+            otherlv_17=(Token)match(input,18,FOLLOW_2); 
+
+            			newLeafNode(otherlv_17, grammarAccess.getSingleVehicleAccess().getRightSquareBracketKeyword_17());
+            		
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleSingleVehicle"
+
+
     // $ANTLR start "entryRuleFactories"
-    // InternalMyDsl.g:330:1: entryRuleFactories returns [EObject current=null] : iv_ruleFactories= ruleFactories EOF ;
+    // InternalMyDsl.g:502:1: entryRuleFactories returns [EObject current=null] : iv_ruleFactories= ruleFactories EOF ;
     public final EObject entryRuleFactories() throws RecognitionException {
         EObject current = null;
 
@@ -802,8 +1107,8 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalMyDsl.g:330:50: (iv_ruleFactories= ruleFactories EOF )
-            // InternalMyDsl.g:331:2: iv_ruleFactories= ruleFactories EOF
+            // InternalMyDsl.g:502:50: (iv_ruleFactories= ruleFactories EOF )
+            // InternalMyDsl.g:503:2: iv_ruleFactories= ruleFactories EOF
             {
              newCompositeNode(grammarAccess.getFactoriesRule()); 
             pushFollow(FOLLOW_1);
@@ -830,7 +1135,7 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFactories"
-    // InternalMyDsl.g:337:1: ruleFactories returns [EObject current=null] : (otherlv_0= 'Factories:' () ( (lv_factories_2_0= ruleSingleFactory ) )* ) ;
+    // InternalMyDsl.g:509:1: ruleFactories returns [EObject current=null] : (otherlv_0= 'Factories:' () ( (lv_factories_2_0= ruleSingleFactory ) )* ) ;
     public final EObject ruleFactories() throws RecognitionException {
         EObject current = null;
 
@@ -842,18 +1147,18 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalMyDsl.g:343:2: ( (otherlv_0= 'Factories:' () ( (lv_factories_2_0= ruleSingleFactory ) )* ) )
-            // InternalMyDsl.g:344:2: (otherlv_0= 'Factories:' () ( (lv_factories_2_0= ruleSingleFactory ) )* )
+            // InternalMyDsl.g:515:2: ( (otherlv_0= 'Factories:' () ( (lv_factories_2_0= ruleSingleFactory ) )* ) )
+            // InternalMyDsl.g:516:2: (otherlv_0= 'Factories:' () ( (lv_factories_2_0= ruleSingleFactory ) )* )
             {
-            // InternalMyDsl.g:344:2: (otherlv_0= 'Factories:' () ( (lv_factories_2_0= ruleSingleFactory ) )* )
-            // InternalMyDsl.g:345:3: otherlv_0= 'Factories:' () ( (lv_factories_2_0= ruleSingleFactory ) )*
+            // InternalMyDsl.g:516:2: (otherlv_0= 'Factories:' () ( (lv_factories_2_0= ruleSingleFactory ) )* )
+            // InternalMyDsl.g:517:3: otherlv_0= 'Factories:' () ( (lv_factories_2_0= ruleSingleFactory ) )*
             {
-            otherlv_0=(Token)match(input,19,FOLLOW_12); 
+            otherlv_0=(Token)match(input,24,FOLLOW_13); 
 
             			newLeafNode(otherlv_0, grammarAccess.getFactoriesAccess().getFactoriesKeyword_0());
             		
-            // InternalMyDsl.g:349:3: ()
-            // InternalMyDsl.g:350:4: 
+            // InternalMyDsl.g:521:3: ()
+            // InternalMyDsl.g:522:4: 
             {
 
             				current = forceCreateModelElement(
@@ -863,7 +1168,7 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalMyDsl.g:356:3: ( (lv_factories_2_0= ruleSingleFactory ) )*
+            // InternalMyDsl.g:528:3: ( (lv_factories_2_0= ruleSingleFactory ) )*
             loop6:
             do {
                 int alt6=2;
@@ -876,15 +1181,15 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
 
                 switch (alt6) {
             	case 1 :
-            	    // InternalMyDsl.g:357:4: (lv_factories_2_0= ruleSingleFactory )
+            	    // InternalMyDsl.g:529:4: (lv_factories_2_0= ruleSingleFactory )
             	    {
-            	    // InternalMyDsl.g:357:4: (lv_factories_2_0= ruleSingleFactory )
-            	    // InternalMyDsl.g:358:5: lv_factories_2_0= ruleSingleFactory
+            	    // InternalMyDsl.g:529:4: (lv_factories_2_0= ruleSingleFactory )
+            	    // InternalMyDsl.g:530:5: lv_factories_2_0= ruleSingleFactory
             	    {
 
             	    					newCompositeNode(grammarAccess.getFactoriesAccess().getFactoriesSingleFactoryParserRuleCall_2_0());
             	    				
-            	    pushFollow(FOLLOW_12);
+            	    pushFollow(FOLLOW_13);
             	    lv_factories_2_0=ruleSingleFactory();
 
             	    state._fsp--;
@@ -935,7 +1240,7 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSingleFactory"
-    // InternalMyDsl.g:379:1: entryRuleSingleFactory returns [EObject current=null] : iv_ruleSingleFactory= ruleSingleFactory EOF ;
+    // InternalMyDsl.g:551:1: entryRuleSingleFactory returns [EObject current=null] : iv_ruleSingleFactory= ruleSingleFactory EOF ;
     public final EObject entryRuleSingleFactory() throws RecognitionException {
         EObject current = null;
 
@@ -943,8 +1248,8 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalMyDsl.g:379:54: (iv_ruleSingleFactory= ruleSingleFactory EOF )
-            // InternalMyDsl.g:380:2: iv_ruleSingleFactory= ruleSingleFactory EOF
+            // InternalMyDsl.g:551:54: (iv_ruleSingleFactory= ruleSingleFactory EOF )
+            // InternalMyDsl.g:552:2: iv_ruleSingleFactory= ruleSingleFactory EOF
             {
              newCompositeNode(grammarAccess.getSingleFactoryRule()); 
             pushFollow(FOLLOW_1);
@@ -971,7 +1276,7 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSingleFactory"
-    // InternalMyDsl.g:386:1: ruleSingleFactory returns [EObject current=null] : ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '[' ( (otherlv_2= RULE_ID ) )? otherlv_3= ':' ( (otherlv_4= RULE_ID ) )? otherlv_5= ']' ) ;
+    // InternalMyDsl.g:558:1: ruleSingleFactory returns [EObject current=null] : ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '[' (otherlv_2= 'in' otherlv_3= '->' ( (otherlv_4= RULE_ID ) ) )? otherlv_5= ':' (otherlv_6= 'out' otherlv_7= '->' ( (otherlv_8= RULE_ID ) ) )? otherlv_9= ']' ) ;
     public final EObject ruleSingleFactory() throws RecognitionException {
         EObject current = null;
 
@@ -981,22 +1286,26 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
         Token otherlv_3=null;
         Token otherlv_4=null;
         Token otherlv_5=null;
+        Token otherlv_6=null;
+        Token otherlv_7=null;
+        Token otherlv_8=null;
+        Token otherlv_9=null;
 
 
         	enterRule();
 
         try {
-            // InternalMyDsl.g:392:2: ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '[' ( (otherlv_2= RULE_ID ) )? otherlv_3= ':' ( (otherlv_4= RULE_ID ) )? otherlv_5= ']' ) )
-            // InternalMyDsl.g:393:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '[' ( (otherlv_2= RULE_ID ) )? otherlv_3= ':' ( (otherlv_4= RULE_ID ) )? otherlv_5= ']' )
+            // InternalMyDsl.g:564:2: ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '[' (otherlv_2= 'in' otherlv_3= '->' ( (otherlv_4= RULE_ID ) ) )? otherlv_5= ':' (otherlv_6= 'out' otherlv_7= '->' ( (otherlv_8= RULE_ID ) ) )? otherlv_9= ']' ) )
+            // InternalMyDsl.g:565:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '[' (otherlv_2= 'in' otherlv_3= '->' ( (otherlv_4= RULE_ID ) ) )? otherlv_5= ':' (otherlv_6= 'out' otherlv_7= '->' ( (otherlv_8= RULE_ID ) ) )? otherlv_9= ']' )
             {
-            // InternalMyDsl.g:393:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '[' ( (otherlv_2= RULE_ID ) )? otherlv_3= ':' ( (otherlv_4= RULE_ID ) )? otherlv_5= ']' )
-            // InternalMyDsl.g:394:3: ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '[' ( (otherlv_2= RULE_ID ) )? otherlv_3= ':' ( (otherlv_4= RULE_ID ) )? otherlv_5= ']'
+            // InternalMyDsl.g:565:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '[' (otherlv_2= 'in' otherlv_3= '->' ( (otherlv_4= RULE_ID ) ) )? otherlv_5= ':' (otherlv_6= 'out' otherlv_7= '->' ( (otherlv_8= RULE_ID ) ) )? otherlv_9= ']' )
+            // InternalMyDsl.g:566:3: ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '[' (otherlv_2= 'in' otherlv_3= '->' ( (otherlv_4= RULE_ID ) ) )? otherlv_5= ':' (otherlv_6= 'out' otherlv_7= '->' ( (otherlv_8= RULE_ID ) ) )? otherlv_9= ']'
             {
-            // InternalMyDsl.g:394:3: ( (lv_name_0_0= RULE_ID ) )
-            // InternalMyDsl.g:395:4: (lv_name_0_0= RULE_ID )
+            // InternalMyDsl.g:566:3: ( (lv_name_0_0= RULE_ID ) )
+            // InternalMyDsl.g:567:4: (lv_name_0_0= RULE_ID )
             {
-            // InternalMyDsl.g:395:4: (lv_name_0_0= RULE_ID )
-            // InternalMyDsl.g:396:5: lv_name_0_0= RULE_ID
+            // InternalMyDsl.g:567:4: (lv_name_0_0= RULE_ID )
+            // InternalMyDsl.g:568:5: lv_name_0_0= RULE_ID
             {
             lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_5); 
 
@@ -1018,33 +1327,47 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,12,FOLLOW_13); 
+            otherlv_1=(Token)match(input,12,FOLLOW_19); 
 
             			newLeafNode(otherlv_1, grammarAccess.getSingleFactoryAccess().getLeftSquareBracketKeyword_1());
             		
-            // InternalMyDsl.g:416:3: ( (otherlv_2= RULE_ID ) )?
+            // InternalMyDsl.g:588:3: (otherlv_2= 'in' otherlv_3= '->' ( (otherlv_4= RULE_ID ) ) )?
             int alt7=2;
             int LA7_0 = input.LA(1);
 
-            if ( (LA7_0==RULE_ID) ) {
+            if ( (LA7_0==25) ) {
                 alt7=1;
             }
             switch (alt7) {
                 case 1 :
-                    // InternalMyDsl.g:417:4: (otherlv_2= RULE_ID )
+                    // InternalMyDsl.g:589:4: otherlv_2= 'in' otherlv_3= '->' ( (otherlv_4= RULE_ID ) )
                     {
-                    // InternalMyDsl.g:417:4: (otherlv_2= RULE_ID )
-                    // InternalMyDsl.g:418:5: otherlv_2= RULE_ID
+                    otherlv_2=(Token)match(input,25,FOLLOW_7); 
+
+                    				newLeafNode(otherlv_2, grammarAccess.getSingleFactoryAccess().getInKeyword_2_0());
+                    			
+                    otherlv_3=(Token)match(input,14,FOLLOW_4); 
+
+                    				newLeafNode(otherlv_3, grammarAccess.getSingleFactoryAccess().getHyphenMinusGreaterThanSignKeyword_2_1());
+                    			
+                    // InternalMyDsl.g:597:4: ( (otherlv_4= RULE_ID ) )
+                    // InternalMyDsl.g:598:5: (otherlv_4= RULE_ID )
+                    {
+                    // InternalMyDsl.g:598:5: (otherlv_4= RULE_ID )
+                    // InternalMyDsl.g:599:6: otherlv_4= RULE_ID
                     {
 
-                    					if (current==null) {
-                    						current = createModelElement(grammarAccess.getSingleFactoryRule());
-                    					}
-                    				
-                    otherlv_2=(Token)match(input,RULE_ID,FOLLOW_8); 
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getSingleFactoryRule());
+                    						}
+                    					
+                    otherlv_4=(Token)match(input,RULE_ID,FOLLOW_9); 
 
-                    					newLeafNode(otherlv_2, grammarAccess.getSingleFactoryAccess().getInputSingleResourceCrossReference_2_0());
-                    				
+                    						newLeafNode(otherlv_4, grammarAccess.getSingleFactoryAccess().getInputSingleResourceCrossReference_2_2_0());
+                    					
+
+                    }
+
 
                     }
 
@@ -1054,33 +1377,47 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,14,FOLLOW_14); 
+            otherlv_5=(Token)match(input,15,FOLLOW_20); 
 
-            			newLeafNode(otherlv_3, grammarAccess.getSingleFactoryAccess().getColonKeyword_3());
+            			newLeafNode(otherlv_5, grammarAccess.getSingleFactoryAccess().getColonKeyword_3());
             		
-            // InternalMyDsl.g:433:3: ( (otherlv_4= RULE_ID ) )?
+            // InternalMyDsl.g:615:3: (otherlv_6= 'out' otherlv_7= '->' ( (otherlv_8= RULE_ID ) ) )?
             int alt8=2;
             int LA8_0 = input.LA(1);
 
-            if ( (LA8_0==RULE_ID) ) {
+            if ( (LA8_0==26) ) {
                 alt8=1;
             }
             switch (alt8) {
                 case 1 :
-                    // InternalMyDsl.g:434:4: (otherlv_4= RULE_ID )
+                    // InternalMyDsl.g:616:4: otherlv_6= 'out' otherlv_7= '->' ( (otherlv_8= RULE_ID ) )
                     {
-                    // InternalMyDsl.g:434:4: (otherlv_4= RULE_ID )
-                    // InternalMyDsl.g:435:5: otherlv_4= RULE_ID
+                    otherlv_6=(Token)match(input,26,FOLLOW_7); 
+
+                    				newLeafNode(otherlv_6, grammarAccess.getSingleFactoryAccess().getOutKeyword_4_0());
+                    			
+                    otherlv_7=(Token)match(input,14,FOLLOW_4); 
+
+                    				newLeafNode(otherlv_7, grammarAccess.getSingleFactoryAccess().getHyphenMinusGreaterThanSignKeyword_4_1());
+                    			
+                    // InternalMyDsl.g:624:4: ( (otherlv_8= RULE_ID ) )
+                    // InternalMyDsl.g:625:5: (otherlv_8= RULE_ID )
+                    {
+                    // InternalMyDsl.g:625:5: (otherlv_8= RULE_ID )
+                    // InternalMyDsl.g:626:6: otherlv_8= RULE_ID
                     {
 
-                    					if (current==null) {
-                    						current = createModelElement(grammarAccess.getSingleFactoryRule());
-                    					}
-                    				
-                    otherlv_4=(Token)match(input,RULE_ID,FOLLOW_15); 
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getSingleFactoryRule());
+                    						}
+                    					
+                    otherlv_8=(Token)match(input,RULE_ID,FOLLOW_18); 
 
-                    					newLeafNode(otherlv_4, grammarAccess.getSingleFactoryAccess().getOutputSingleResourceCrossReference_4_0());
-                    				
+                    						newLeafNode(otherlv_8, grammarAccess.getSingleFactoryAccess().getOutputSingleResourceCrossReference_4_2_0());
+                    					
+
+                    }
+
 
                     }
 
@@ -1090,9 +1427,9 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,17,FOLLOW_2); 
+            otherlv_9=(Token)match(input,18,FOLLOW_2); 
 
-            			newLeafNode(otherlv_5, grammarAccess.getSingleFactoryAccess().getRightSquareBracketKeyword_5());
+            			newLeafNode(otherlv_9, grammarAccess.getSingleFactoryAccess().getRightSquareBracketKeyword_5());
             		
 
             }
@@ -1117,7 +1454,7 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleResources"
-    // InternalMyDsl.g:454:1: entryRuleResources returns [EObject current=null] : iv_ruleResources= ruleResources EOF ;
+    // InternalMyDsl.g:646:1: entryRuleResources returns [EObject current=null] : iv_ruleResources= ruleResources EOF ;
     public final EObject entryRuleResources() throws RecognitionException {
         EObject current = null;
 
@@ -1125,8 +1462,8 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalMyDsl.g:454:50: (iv_ruleResources= ruleResources EOF )
-            // InternalMyDsl.g:455:2: iv_ruleResources= ruleResources EOF
+            // InternalMyDsl.g:646:50: (iv_ruleResources= ruleResources EOF )
+            // InternalMyDsl.g:647:2: iv_ruleResources= ruleResources EOF
             {
              newCompositeNode(grammarAccess.getResourcesRule()); 
             pushFollow(FOLLOW_1);
@@ -1153,7 +1490,7 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleResources"
-    // InternalMyDsl.g:461:1: ruleResources returns [EObject current=null] : (otherlv_0= 'Resources:' () ( (lv_resources_2_0= ruleSingleResource ) )* ) ;
+    // InternalMyDsl.g:653:1: ruleResources returns [EObject current=null] : (otherlv_0= 'Resources:' () ( (lv_resources_2_0= ruleSingleResource ) )* ) ;
     public final EObject ruleResources() throws RecognitionException {
         EObject current = null;
 
@@ -1165,18 +1502,18 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalMyDsl.g:467:2: ( (otherlv_0= 'Resources:' () ( (lv_resources_2_0= ruleSingleResource ) )* ) )
-            // InternalMyDsl.g:468:2: (otherlv_0= 'Resources:' () ( (lv_resources_2_0= ruleSingleResource ) )* )
+            // InternalMyDsl.g:659:2: ( (otherlv_0= 'Resources:' () ( (lv_resources_2_0= ruleSingleResource ) )* ) )
+            // InternalMyDsl.g:660:2: (otherlv_0= 'Resources:' () ( (lv_resources_2_0= ruleSingleResource ) )* )
             {
-            // InternalMyDsl.g:468:2: (otherlv_0= 'Resources:' () ( (lv_resources_2_0= ruleSingleResource ) )* )
-            // InternalMyDsl.g:469:3: otherlv_0= 'Resources:' () ( (lv_resources_2_0= ruleSingleResource ) )*
+            // InternalMyDsl.g:660:2: (otherlv_0= 'Resources:' () ( (lv_resources_2_0= ruleSingleResource ) )* )
+            // InternalMyDsl.g:661:3: otherlv_0= 'Resources:' () ( (lv_resources_2_0= ruleSingleResource ) )*
             {
-            otherlv_0=(Token)match(input,20,FOLLOW_12); 
+            otherlv_0=(Token)match(input,27,FOLLOW_13); 
 
             			newLeafNode(otherlv_0, grammarAccess.getResourcesAccess().getResourcesKeyword_0());
             		
-            // InternalMyDsl.g:473:3: ()
-            // InternalMyDsl.g:474:4: 
+            // InternalMyDsl.g:665:3: ()
+            // InternalMyDsl.g:666:4: 
             {
 
             				current = forceCreateModelElement(
@@ -1186,7 +1523,7 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalMyDsl.g:480:3: ( (lv_resources_2_0= ruleSingleResource ) )*
+            // InternalMyDsl.g:672:3: ( (lv_resources_2_0= ruleSingleResource ) )*
             loop9:
             do {
                 int alt9=2;
@@ -1199,15 +1536,15 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
 
                 switch (alt9) {
             	case 1 :
-            	    // InternalMyDsl.g:481:4: (lv_resources_2_0= ruleSingleResource )
+            	    // InternalMyDsl.g:673:4: (lv_resources_2_0= ruleSingleResource )
             	    {
-            	    // InternalMyDsl.g:481:4: (lv_resources_2_0= ruleSingleResource )
-            	    // InternalMyDsl.g:482:5: lv_resources_2_0= ruleSingleResource
+            	    // InternalMyDsl.g:673:4: (lv_resources_2_0= ruleSingleResource )
+            	    // InternalMyDsl.g:674:5: lv_resources_2_0= ruleSingleResource
             	    {
 
             	    					newCompositeNode(grammarAccess.getResourcesAccess().getResourcesSingleResourceParserRuleCall_2_0());
             	    				
-            	    pushFollow(FOLLOW_12);
+            	    pushFollow(FOLLOW_13);
             	    lv_resources_2_0=ruleSingleResource();
 
             	    state._fsp--;
@@ -1258,7 +1595,7 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSingleResource"
-    // InternalMyDsl.g:503:1: entryRuleSingleResource returns [EObject current=null] : iv_ruleSingleResource= ruleSingleResource EOF ;
+    // InternalMyDsl.g:695:1: entryRuleSingleResource returns [EObject current=null] : iv_ruleSingleResource= ruleSingleResource EOF ;
     public final EObject entryRuleSingleResource() throws RecognitionException {
         EObject current = null;
 
@@ -1266,8 +1603,8 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalMyDsl.g:503:55: (iv_ruleSingleResource= ruleSingleResource EOF )
-            // InternalMyDsl.g:504:2: iv_ruleSingleResource= ruleSingleResource EOF
+            // InternalMyDsl.g:695:55: (iv_ruleSingleResource= ruleSingleResource EOF )
+            // InternalMyDsl.g:696:2: iv_ruleSingleResource= ruleSingleResource EOF
             {
              newCompositeNode(grammarAccess.getSingleResourceRule()); 
             pushFollow(FOLLOW_1);
@@ -1294,42 +1631,95 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSingleResource"
-    // InternalMyDsl.g:510:1: ruleSingleResource returns [EObject current=null] : ( (lv_name_0_0= RULE_ID ) ) ;
+    // InternalMyDsl.g:702:1: ruleSingleResource returns [EObject current=null] : ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '[' otherlv_2= 'cost' otherlv_3= '->' ( (lv_cost_4_0= RULE_INT ) ) otherlv_5= ']' ) ;
     public final EObject ruleSingleResource() throws RecognitionException {
         EObject current = null;
 
         Token lv_name_0_0=null;
+        Token otherlv_1=null;
+        Token otherlv_2=null;
+        Token otherlv_3=null;
+        Token lv_cost_4_0=null;
+        Token otherlv_5=null;
 
 
         	enterRule();
 
         try {
-            // InternalMyDsl.g:516:2: ( ( (lv_name_0_0= RULE_ID ) ) )
-            // InternalMyDsl.g:517:2: ( (lv_name_0_0= RULE_ID ) )
+            // InternalMyDsl.g:708:2: ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '[' otherlv_2= 'cost' otherlv_3= '->' ( (lv_cost_4_0= RULE_INT ) ) otherlv_5= ']' ) )
+            // InternalMyDsl.g:709:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '[' otherlv_2= 'cost' otherlv_3= '->' ( (lv_cost_4_0= RULE_INT ) ) otherlv_5= ']' )
             {
-            // InternalMyDsl.g:517:2: ( (lv_name_0_0= RULE_ID ) )
-            // InternalMyDsl.g:518:3: (lv_name_0_0= RULE_ID )
+            // InternalMyDsl.g:709:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '[' otherlv_2= 'cost' otherlv_3= '->' ( (lv_cost_4_0= RULE_INT ) ) otherlv_5= ']' )
+            // InternalMyDsl.g:710:3: ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '[' otherlv_2= 'cost' otherlv_3= '->' ( (lv_cost_4_0= RULE_INT ) ) otherlv_5= ']'
             {
-            // InternalMyDsl.g:518:3: (lv_name_0_0= RULE_ID )
-            // InternalMyDsl.g:519:4: lv_name_0_0= RULE_ID
+            // InternalMyDsl.g:710:3: ( (lv_name_0_0= RULE_ID ) )
+            // InternalMyDsl.g:711:4: (lv_name_0_0= RULE_ID )
             {
-            lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_2); 
+            // InternalMyDsl.g:711:4: (lv_name_0_0= RULE_ID )
+            // InternalMyDsl.g:712:5: lv_name_0_0= RULE_ID
+            {
+            lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_5); 
 
-            				newLeafNode(lv_name_0_0, grammarAccess.getSingleResourceAccess().getNameIDTerminalRuleCall_0());
-            			
+            					newLeafNode(lv_name_0_0, grammarAccess.getSingleResourceAccess().getNameIDTerminalRuleCall_0_0());
+            				
 
-            				if (current==null) {
-            					current = createModelElement(grammarAccess.getSingleResourceRule());
-            				}
-            				setWithLastConsumed(
-            					current,
-            					"name",
-            					lv_name_0_0,
-            					"org.eclipse.xtext.common.Terminals.ID");
-            			
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getSingleResourceRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"name",
+            						lv_name_0_0,
+            						"org.eclipse.xtext.common.Terminals.ID");
+            				
 
             }
 
+
+            }
+
+            otherlv_1=(Token)match(input,12,FOLLOW_21); 
+
+            			newLeafNode(otherlv_1, grammarAccess.getSingleResourceAccess().getLeftSquareBracketKeyword_1());
+            		
+            otherlv_2=(Token)match(input,28,FOLLOW_7); 
+
+            			newLeafNode(otherlv_2, grammarAccess.getSingleResourceAccess().getCostKeyword_2());
+            		
+            otherlv_3=(Token)match(input,14,FOLLOW_8); 
+
+            			newLeafNode(otherlv_3, grammarAccess.getSingleResourceAccess().getHyphenMinusGreaterThanSignKeyword_3());
+            		
+            // InternalMyDsl.g:740:3: ( (lv_cost_4_0= RULE_INT ) )
+            // InternalMyDsl.g:741:4: (lv_cost_4_0= RULE_INT )
+            {
+            // InternalMyDsl.g:741:4: (lv_cost_4_0= RULE_INT )
+            // InternalMyDsl.g:742:5: lv_cost_4_0= RULE_INT
+            {
+            lv_cost_4_0=(Token)match(input,RULE_INT,FOLLOW_18); 
+
+            					newLeafNode(lv_cost_4_0, grammarAccess.getSingleResourceAccess().getCostINTTerminalRuleCall_4_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getSingleResourceRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"cost",
+            						lv_cost_4_0,
+            						"org.eclipse.xtext.common.Terminals.INT");
+            				
+
+            }
+
+
+            }
+
+            otherlv_5=(Token)match(input,18,FOLLOW_2); 
+
+            			newLeafNode(otherlv_5, grammarAccess.getSingleResourceAccess().getRightSquareBracketKeyword_5());
+            		
 
             }
 
@@ -1351,6 +1741,160 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
     }
     // $ANTLR end "ruleSingleResource"
 
+
+    // $ANTLR start "entryRuleDOUBLE"
+    // InternalMyDsl.g:766:1: entryRuleDOUBLE returns [String current=null] : iv_ruleDOUBLE= ruleDOUBLE EOF ;
+    public final String entryRuleDOUBLE() throws RecognitionException {
+        String current = null;
+
+        AntlrDatatypeRuleToken iv_ruleDOUBLE = null;
+
+
+        try {
+            // InternalMyDsl.g:766:46: (iv_ruleDOUBLE= ruleDOUBLE EOF )
+            // InternalMyDsl.g:767:2: iv_ruleDOUBLE= ruleDOUBLE EOF
+            {
+             newCompositeNode(grammarAccess.getDOUBLERule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleDOUBLE=ruleDOUBLE();
+
+            state._fsp--;
+
+             current =iv_ruleDOUBLE.getText(); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleDOUBLE"
+
+
+    // $ANTLR start "ruleDOUBLE"
+    // InternalMyDsl.g:773:1: ruleDOUBLE returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( (this_INT_0= RULE_INT )+ kw= '.' (this_INT_2= RULE_INT )+ ) ;
+    public final AntlrDatatypeRuleToken ruleDOUBLE() throws RecognitionException {
+        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
+
+        Token this_INT_0=null;
+        Token kw=null;
+        Token this_INT_2=null;
+
+
+        	enterRule();
+
+        try {
+            // InternalMyDsl.g:779:2: ( ( (this_INT_0= RULE_INT )+ kw= '.' (this_INT_2= RULE_INT )+ ) )
+            // InternalMyDsl.g:780:2: ( (this_INT_0= RULE_INT )+ kw= '.' (this_INT_2= RULE_INT )+ )
+            {
+            // InternalMyDsl.g:780:2: ( (this_INT_0= RULE_INT )+ kw= '.' (this_INT_2= RULE_INT )+ )
+            // InternalMyDsl.g:781:3: (this_INT_0= RULE_INT )+ kw= '.' (this_INT_2= RULE_INT )+
+            {
+            // InternalMyDsl.g:781:3: (this_INT_0= RULE_INT )+
+            int cnt10=0;
+            loop10:
+            do {
+                int alt10=2;
+                int LA10_0 = input.LA(1);
+
+                if ( (LA10_0==RULE_INT) ) {
+                    alt10=1;
+                }
+
+
+                switch (alt10) {
+            	case 1 :
+            	    // InternalMyDsl.g:782:4: this_INT_0= RULE_INT
+            	    {
+            	    this_INT_0=(Token)match(input,RULE_INT,FOLLOW_22); 
+
+            	    				current.merge(this_INT_0);
+            	    			
+
+            	    				newLeafNode(this_INT_0, grammarAccess.getDOUBLEAccess().getINTTerminalRuleCall_0());
+            	    			
+
+            	    }
+            	    break;
+
+            	default :
+            	    if ( cnt10 >= 1 ) break loop10;
+                        EarlyExitException eee =
+                            new EarlyExitException(10, input);
+                        throw eee;
+                }
+                cnt10++;
+            } while (true);
+
+            kw=(Token)match(input,29,FOLLOW_8); 
+
+            			current.merge(kw);
+            			newLeafNode(kw, grammarAccess.getDOUBLEAccess().getFullStopKeyword_1());
+            		
+            // InternalMyDsl.g:795:3: (this_INT_2= RULE_INT )+
+            int cnt11=0;
+            loop11:
+            do {
+                int alt11=2;
+                int LA11_0 = input.LA(1);
+
+                if ( (LA11_0==RULE_INT) ) {
+                    alt11=1;
+                }
+
+
+                switch (alt11) {
+            	case 1 :
+            	    // InternalMyDsl.g:796:4: this_INT_2= RULE_INT
+            	    {
+            	    this_INT_2=(Token)match(input,RULE_INT,FOLLOW_23); 
+
+            	    				current.merge(this_INT_2);
+            	    			
+
+            	    				newLeafNode(this_INT_2, grammarAccess.getDOUBLEAccess().getINTTerminalRuleCall_2());
+            	    			
+
+            	    }
+            	    break;
+
+            	default :
+            	    if ( cnt11 >= 1 ) break loop11;
+                        EarlyExitException eee =
+                            new EarlyExitException(11, input);
+                        throw eee;
+                }
+                cnt11++;
+            } while (true);
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleDOUBLE"
+
     // Delegated rules
 
 
@@ -1358,18 +1902,26 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x00000000001C0802L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000009080802L});
     public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000001000L});
     public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000030010L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000030000L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000004010L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000020010L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000060010L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000060000L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000002008000L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000004040000L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000020000020L});
+    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000000000022L});
 
 }

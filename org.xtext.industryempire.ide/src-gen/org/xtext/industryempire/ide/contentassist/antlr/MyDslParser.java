@@ -32,29 +32,36 @@ public class MyDslParser extends AbstractContentAssistParser {
 				private static final long serialVersionUID = 1L;
 				{
 					put(grammarAccess.getElementAccess().getAlternatives(), "rule__Element__Alternatives");
-					put(grammarAccess.getDOUBLEAccess().getAlternatives_0(), "rule__DOUBLE__Alternatives_0");
-					put(grammarAccess.getDOUBLEAccess().getAlternatives_2(), "rule__DOUBLE__Alternatives_2");
 					put(grammarAccess.getCitiesAccess().getGroup(), "rule__Cities__Group__0");
-					put(grammarAccess.getCitiesAccess().getGroup_10(), "rule__Cities__Group_10__0");
+					put(grammarAccess.getCitiesAccess().getGroup_11(), "rule__Cities__Group_11__0");
 					put(grammarAccess.getVehiclesAccess().getGroup(), "rule__Vehicles__Group__0");
+					put(grammarAccess.getSingleVehicleAccess().getGroup(), "rule__SingleVehicle__Group__0");
 					put(grammarAccess.getFactoriesAccess().getGroup(), "rule__Factories__Group__0");
 					put(grammarAccess.getSingleFactoryAccess().getGroup(), "rule__SingleFactory__Group__0");
+					put(grammarAccess.getSingleFactoryAccess().getGroup_2(), "rule__SingleFactory__Group_2__0");
+					put(grammarAccess.getSingleFactoryAccess().getGroup_4(), "rule__SingleFactory__Group_4__0");
 					put(grammarAccess.getResourcesAccess().getGroup(), "rule__Resources__Group__0");
+					put(grammarAccess.getSingleResourceAccess().getGroup(), "rule__SingleResource__Group__0");
 					put(grammarAccess.getDOUBLEAccess().getGroup(), "rule__DOUBLE__Group__0");
 					put(grammarAccess.getClazzModelAccess().getElementAssignment(), "rule__ClazzModel__ElementAssignment");
 					put(grammarAccess.getCitiesAccess().getNameAssignment_1(), "rule__Cities__NameAssignment_1");
-					put(grammarAccess.getCitiesAccess().getXAssignment_4(), "rule__Cities__XAssignment_4");
-					put(grammarAccess.getCitiesAccess().getYAssignment_7(), "rule__Cities__YAssignment_7");
-					put(grammarAccess.getCitiesAccess().getFactoryAssignment_9(), "rule__Cities__FactoryAssignment_9");
-					put(grammarAccess.getCitiesAccess().getFactoryAssignment_10_1(), "rule__Cities__FactoryAssignment_10_1");
+					put(grammarAccess.getCitiesAccess().getXAssignment_5(), "rule__Cities__XAssignment_5");
+					put(grammarAccess.getCitiesAccess().getYAssignment_8(), "rule__Cities__YAssignment_8");
+					put(grammarAccess.getCitiesAccess().getFactoryAssignment_10(), "rule__Cities__FactoryAssignment_10");
+					put(grammarAccess.getCitiesAccess().getFactoryAssignment_11_1(), "rule__Cities__FactoryAssignment_11_1");
 					put(grammarAccess.getVehiclesAccess().getVehiclesAssignment_2(), "rule__Vehicles__VehiclesAssignment_2");
-					put(grammarAccess.getSingleVehicleAccess().getNameAssignment(), "rule__SingleVehicle__NameAssignment");
+					put(grammarAccess.getSingleVehicleAccess().getNameAssignment_0(), "rule__SingleVehicle__NameAssignment_0");
+					put(grammarAccess.getSingleVehicleAccess().getSpeedAssignment_4(), "rule__SingleVehicle__SpeedAssignment_4");
+					put(grammarAccess.getSingleVehicleAccess().getLoadAssignment_8(), "rule__SingleVehicle__LoadAssignment_8");
+					put(grammarAccess.getSingleVehicleAccess().getTankSizeAssignment_12(), "rule__SingleVehicle__TankSizeAssignment_12");
+					put(grammarAccess.getSingleVehicleAccess().getFuelConsumptionAssignment_16(), "rule__SingleVehicle__FuelConsumptionAssignment_16");
 					put(grammarAccess.getFactoriesAccess().getFactoriesAssignment_2(), "rule__Factories__FactoriesAssignment_2");
 					put(grammarAccess.getSingleFactoryAccess().getNameAssignment_0(), "rule__SingleFactory__NameAssignment_0");
-					put(grammarAccess.getSingleFactoryAccess().getInputAssignment_2(), "rule__SingleFactory__InputAssignment_2");
-					put(grammarAccess.getSingleFactoryAccess().getOutputAssignment_4(), "rule__SingleFactory__OutputAssignment_4");
+					put(grammarAccess.getSingleFactoryAccess().getInputAssignment_2_2(), "rule__SingleFactory__InputAssignment_2_2");
+					put(grammarAccess.getSingleFactoryAccess().getOutputAssignment_4_2(), "rule__SingleFactory__OutputAssignment_4_2");
 					put(grammarAccess.getResourcesAccess().getResourcesAssignment_2(), "rule__Resources__ResourcesAssignment_2");
-					put(grammarAccess.getSingleResourceAccess().getNameAssignment(), "rule__SingleResource__NameAssignment");
+					put(grammarAccess.getSingleResourceAccess().getNameAssignment_0(), "rule__SingleResource__NameAssignment_0");
+					put(grammarAccess.getSingleResourceAccess().getCostAssignment_4(), "rule__SingleResource__CostAssignment_4");
 				}
 			};
 		}

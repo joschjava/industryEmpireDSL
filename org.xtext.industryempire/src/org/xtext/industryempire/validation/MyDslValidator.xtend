@@ -3,6 +3,11 @@
  */
 package org.xtext.industryempire.validation
 
+import org.eclipse.xtext.validation.Check
+import org.xtext.industryempire.myDsl.ClazzModel
+import org.xtext.industryempire.myDsl.impl.MyDslPackageImpl
+import org.xtext.industryempire.myDsl.MyDslPackage
+import org.xtext.industryempire.myDsl.impl.ResourcesImpl
 
 /**
  * This class contains custom validation rules. 
@@ -11,15 +16,13 @@ package org.xtext.industryempire.validation
  */
 class MyDslValidator extends AbstractMyDslValidator {
 	
-//	public static val INVALID_NAME = 'invalidName'
-//
-//	@Check
-//	def checkGreetingStartsWithCapital(Greeting greeting) {
-//		if (!Character.isUpperCase(greeting.name.charAt(0))) {
-//			warning('Name should start with a capital', 
-//					MyDslPackage.Literals.GREETING__NAME,
-//					INVALID_NAME)
-//		}
-//	}
+	public static val INVALID_NAME = 'invalidName'
+
+	@Check
+	def checkGreetingStartsWithCapital(ClazzModel clazzes) {
+		if(!clazzes.element.get(0).equals("Resources")){
+			error("Resource must be 1", MyDslPackage.eINSTANCE.eContainingFeature);
+		}
+	}
 	
 }

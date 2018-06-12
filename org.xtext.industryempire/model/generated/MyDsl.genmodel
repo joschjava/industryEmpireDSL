@@ -17,10 +17,14 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Cities/factory"/>
     </genClasses>
     <genClasses ecoreClass="MyDsl.ecore#//Vehicles">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Vehicles/vehicles"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Vehicles/vehicles"/>
     </genClasses>
     <genClasses ecoreClass="MyDsl.ecore#//SingleVehicle">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//SingleVehicle/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//SingleVehicle/speed"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//SingleVehicle/load"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//SingleVehicle/tankSize"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//SingleVehicle/fuelConsumption"/>
     </genClasses>
     <genClasses ecoreClass="MyDsl.ecore#//Factories">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Factories/factories"/>
@@ -35,6 +39,7 @@
     </genClasses>
     <genClasses ecoreClass="MyDsl.ecore#//SingleResource">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//SingleResource/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//SingleResource/cost"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

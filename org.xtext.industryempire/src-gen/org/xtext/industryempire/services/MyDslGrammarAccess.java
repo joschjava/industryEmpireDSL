@@ -81,34 +81,37 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cLeftSquareBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Keyword cXKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cXAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cXINTTerminalRuleCall_4_0 = (RuleCall)cXAssignment_4.eContents().get(0);
-		private final Keyword cColonKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Keyword cYKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Assignment cYAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final RuleCall cYINTTerminalRuleCall_7_0 = (RuleCall)cYAssignment_7.eContents().get(0);
-		private final Keyword cColonKeyword_8 = (Keyword)cGroup.eContents().get(8);
-		private final Assignment cFactoryAssignment_9 = (Assignment)cGroup.eContents().get(9);
-		private final CrossReference cFactorySingleFactoryCrossReference_9_0 = (CrossReference)cFactoryAssignment_9.eContents().get(0);
-		private final RuleCall cFactorySingleFactoryIDTerminalRuleCall_9_0_1 = (RuleCall)cFactorySingleFactoryCrossReference_9_0.eContents().get(1);
-		private final Group cGroup_10 = (Group)cGroup.eContents().get(10);
-		private final Keyword cCommaKeyword_10_0 = (Keyword)cGroup_10.eContents().get(0);
-		private final Assignment cFactoryAssignment_10_1 = (Assignment)cGroup_10.eContents().get(1);
-		private final CrossReference cFactorySingleFactoryCrossReference_10_1_0 = (CrossReference)cFactoryAssignment_10_1.eContents().get(0);
-		private final RuleCall cFactorySingleFactoryIDTerminalRuleCall_10_1_0_1 = (RuleCall)cFactorySingleFactoryCrossReference_10_1_0.eContents().get(1);
-		private final Keyword cRightSquareBracketKeyword_11 = (Keyword)cGroup.eContents().get(11);
+		private final Keyword cHyphenMinusGreaterThanSignKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cXAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cXINTTerminalRuleCall_5_0 = (RuleCall)cXAssignment_5.eContents().get(0);
+		private final Keyword cColonKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Keyword cYKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Assignment cYAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final RuleCall cYINTTerminalRuleCall_8_0 = (RuleCall)cYAssignment_8.eContents().get(0);
+		private final Keyword cColonKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Assignment cFactoryAssignment_10 = (Assignment)cGroup.eContents().get(10);
+		private final CrossReference cFactorySingleFactoryCrossReference_10_0 = (CrossReference)cFactoryAssignment_10.eContents().get(0);
+		private final RuleCall cFactorySingleFactoryIDTerminalRuleCall_10_0_1 = (RuleCall)cFactorySingleFactoryCrossReference_10_0.eContents().get(1);
+		private final Group cGroup_11 = (Group)cGroup.eContents().get(11);
+		private final Keyword cCommaKeyword_11_0 = (Keyword)cGroup_11.eContents().get(0);
+		private final Assignment cFactoryAssignment_11_1 = (Assignment)cGroup_11.eContents().get(1);
+		private final CrossReference cFactorySingleFactoryCrossReference_11_1_0 = (CrossReference)cFactoryAssignment_11_1.eContents().get(0);
+		private final RuleCall cFactorySingleFactoryIDTerminalRuleCall_11_1_0_1 = (RuleCall)cFactorySingleFactoryCrossReference_11_1_0.eContents().get(1);
+		private final Keyword cRightSquareBracketKeyword_12 = (Keyword)cGroup.eContents().get(12);
 		
-		//Cities:
-		//	'Cities:' name=ID '[' 'x->' x=INT ':' 'y->' y=INT ':' factory+=[SingleFactory]* (',' factory+=[SingleFactory])* ']';
+		////Gruppe | Validator ClazzModel, Filter resourcen, length max 1
+		// Cities:
+		//	'Cities:' name+=ID '[' 'x' '->' x=INT ':' 'y->' y=INT ':' factory+=[SingleFactory]* (',' factory+=[SingleFactory])*
+		//	']';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Cities:' name=ID '[' 'x->' x=INT ':' 'y->' y=INT ':' factory+=[SingleFactory]* (',' factory+=[SingleFactory])* ']'
+		//'Cities:' name+=ID '[' 'x' '->' x=INT ':' 'y->' y=INT ':' factory+=[SingleFactory]* (',' factory+=[SingleFactory])* ']'
 		public Group getGroup() { return cGroup; }
 		
 		//'Cities:'
 		public Keyword getCitiesKeyword_0() { return cCitiesKeyword_0; }
 		
-		//name=ID
+		//name+=ID
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
 		//ID
@@ -117,56 +120,59 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//'['
 		public Keyword getLeftSquareBracketKeyword_2() { return cLeftSquareBracketKeyword_2; }
 		
-		//'x->'
+		//'x'
 		public Keyword getXKeyword_3() { return cXKeyword_3; }
 		
+		//'->'
+		public Keyword getHyphenMinusGreaterThanSignKeyword_4() { return cHyphenMinusGreaterThanSignKeyword_4; }
+		
 		//x=INT
-		public Assignment getXAssignment_4() { return cXAssignment_4; }
+		public Assignment getXAssignment_5() { return cXAssignment_5; }
 		
 		//INT
-		public RuleCall getXINTTerminalRuleCall_4_0() { return cXINTTerminalRuleCall_4_0; }
+		public RuleCall getXINTTerminalRuleCall_5_0() { return cXINTTerminalRuleCall_5_0; }
 		
 		//':'
-		public Keyword getColonKeyword_5() { return cColonKeyword_5; }
+		public Keyword getColonKeyword_6() { return cColonKeyword_6; }
 		
 		//'y->'
-		public Keyword getYKeyword_6() { return cYKeyword_6; }
+		public Keyword getYKeyword_7() { return cYKeyword_7; }
 		
 		//y=INT
-		public Assignment getYAssignment_7() { return cYAssignment_7; }
+		public Assignment getYAssignment_8() { return cYAssignment_8; }
 		
 		//INT
-		public RuleCall getYINTTerminalRuleCall_7_0() { return cYINTTerminalRuleCall_7_0; }
+		public RuleCall getYINTTerminalRuleCall_8_0() { return cYINTTerminalRuleCall_8_0; }
 		
 		//':'
-		public Keyword getColonKeyword_8() { return cColonKeyword_8; }
+		public Keyword getColonKeyword_9() { return cColonKeyword_9; }
 		
 		//factory+=[SingleFactory]*
-		public Assignment getFactoryAssignment_9() { return cFactoryAssignment_9; }
+		public Assignment getFactoryAssignment_10() { return cFactoryAssignment_10; }
 		
 		//[SingleFactory]
-		public CrossReference getFactorySingleFactoryCrossReference_9_0() { return cFactorySingleFactoryCrossReference_9_0; }
+		public CrossReference getFactorySingleFactoryCrossReference_10_0() { return cFactorySingleFactoryCrossReference_10_0; }
 		
 		//ID
-		public RuleCall getFactorySingleFactoryIDTerminalRuleCall_9_0_1() { return cFactorySingleFactoryIDTerminalRuleCall_9_0_1; }
+		public RuleCall getFactorySingleFactoryIDTerminalRuleCall_10_0_1() { return cFactorySingleFactoryIDTerminalRuleCall_10_0_1; }
 		
 		//(',' factory+=[SingleFactory])*
-		public Group getGroup_10() { return cGroup_10; }
+		public Group getGroup_11() { return cGroup_11; }
 		
 		//','
-		public Keyword getCommaKeyword_10_0() { return cCommaKeyword_10_0; }
+		public Keyword getCommaKeyword_11_0() { return cCommaKeyword_11_0; }
 		
 		//factory+=[SingleFactory]
-		public Assignment getFactoryAssignment_10_1() { return cFactoryAssignment_10_1; }
+		public Assignment getFactoryAssignment_11_1() { return cFactoryAssignment_11_1; }
 		
 		//[SingleFactory]
-		public CrossReference getFactorySingleFactoryCrossReference_10_1_0() { return cFactorySingleFactoryCrossReference_10_1_0; }
+		public CrossReference getFactorySingleFactoryCrossReference_11_1_0() { return cFactorySingleFactoryCrossReference_11_1_0; }
 		
 		//ID
-		public RuleCall getFactorySingleFactoryIDTerminalRuleCall_10_1_0_1() { return cFactorySingleFactoryIDTerminalRuleCall_10_1_0_1; }
+		public RuleCall getFactorySingleFactoryIDTerminalRuleCall_11_1_0_1() { return cFactorySingleFactoryIDTerminalRuleCall_11_1_0_1; }
 		
 		//']'
-		public Keyword getRightSquareBracketKeyword_11() { return cRightSquareBracketKeyword_11; }
+		public Keyword getRightSquareBracketKeyword_12() { return cRightSquareBracketKeyword_12; }
 	}
 	public class VehiclesElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.industryempire.MyDsl.Vehicles");
@@ -174,14 +180,21 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cVehiclesKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Action cVehiclesAction_1 = (Action)cGroup.eContents().get(1);
 		private final Assignment cVehiclesAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final CrossReference cVehiclesSingleVehicleCrossReference_2_0 = (CrossReference)cVehiclesAssignment_2.eContents().get(0);
-		private final RuleCall cVehiclesSingleVehicleIDTerminalRuleCall_2_0_1 = (RuleCall)cVehiclesSingleVehicleCrossReference_2_0.eContents().get(1);
+		private final RuleCall cVehiclesSingleVehicleParserRuleCall_2_0 = (RuleCall)cVehiclesAssignment_2.eContents().get(0);
 		
+		////Cities:
+		////	'Cities:'
+		////	{SingleCity} (cities += [SingleCity]*)
+		////	;
+		////
+		////SingleCity:
+		////	name += ID '[' 'x->' x = INT ':' 'y->' y = INT ':' factory += [SingleFactory]* (',' factory+=[SingleFactory])* ']'
+		////;
 		//Vehicles:
-		//	'Vehicles:' {Vehicles} vehicles+=[SingleVehicle]*;
+		//	'Vehicles:' {Vehicles} vehicles+=SingleVehicle*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Vehicles:' {Vehicles} vehicles+=[SingleVehicle]*
+		//'Vehicles:' {Vehicles} vehicles+=SingleVehicle*
 		public Group getGroup() { return cGroup; }
 		
 		//'Vehicles:'
@@ -190,35 +203,118 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//{Vehicles}
 		public Action getVehiclesAction_1() { return cVehiclesAction_1; }
 		
-		//vehicles+=[SingleVehicle]*
+		//vehicles+=SingleVehicle*
 		public Assignment getVehiclesAssignment_2() { return cVehiclesAssignment_2; }
 		
-		//[SingleVehicle]
-		public CrossReference getVehiclesSingleVehicleCrossReference_2_0() { return cVehiclesSingleVehicleCrossReference_2_0; }
-		
-		//ID
-		public RuleCall getVehiclesSingleVehicleIDTerminalRuleCall_2_0_1() { return cVehiclesSingleVehicleIDTerminalRuleCall_2_0_1; }
+		//SingleVehicle
+		public RuleCall getVehiclesSingleVehicleParserRuleCall_2_0() { return cVehiclesSingleVehicleParserRuleCall_2_0; }
 	}
 	public class SingleVehicleElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.industryempire.MyDsl.SingleVehicle");
-		private final Assignment cNameAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_0 = (RuleCall)cNameAssignment.eContents().get(0);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cNameIDTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
+		private final Keyword cLeftSquareBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cSpeedKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cHyphenMinusGreaterThanSignKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cSpeedAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cSpeedINTTerminalRuleCall_4_0 = (RuleCall)cSpeedAssignment_4.eContents().get(0);
+		private final Keyword cColonKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cLoadKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Keyword cHyphenMinusGreaterThanSignKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Assignment cLoadAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final RuleCall cLoadINTTerminalRuleCall_8_0 = (RuleCall)cLoadAssignment_8.eContents().get(0);
+		private final Keyword cColonKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Keyword cTankSizeKeyword_10 = (Keyword)cGroup.eContents().get(10);
+		private final Keyword cHyphenMinusGreaterThanSignKeyword_11 = (Keyword)cGroup.eContents().get(11);
+		private final Assignment cTankSizeAssignment_12 = (Assignment)cGroup.eContents().get(12);
+		private final RuleCall cTankSizeINTTerminalRuleCall_12_0 = (RuleCall)cTankSizeAssignment_12.eContents().get(0);
+		private final Keyword cColonKeyword_13 = (Keyword)cGroup.eContents().get(13);
+		private final Keyword cFuelConsumptionKeyword_14 = (Keyword)cGroup.eContents().get(14);
+		private final Keyword cHyphenMinusGreaterThanSignKeyword_15 = (Keyword)cGroup.eContents().get(15);
+		private final Assignment cFuelConsumptionAssignment_16 = (Assignment)cGroup.eContents().get(16);
+		private final RuleCall cFuelConsumptionDOUBLEParserRuleCall_16_0 = (RuleCall)cFuelConsumptionAssignment_16.eContents().get(0);
+		private final Keyword cRightSquareBracketKeyword_17 = (Keyword)cGroup.eContents().get(17);
 		
 		//SingleVehicle:
-		//	name=ID
-		//	//	values =  '[' 'speed' '->' speed = INT ':'
-		//	//					'load' '->' load = INT ':'
-		//	//					'tankSize' '->' tankSize = INT ':'
-		//	//					'fuelConsumption' '->' fuelConsumption = DOUBLE
-		//	//	 				']'
-		//;
+		//	name=ID '[' 'speed' '->' speed=INT ':'
+		//	'load' '->' load=INT ':'
+		//	'tankSize' '->' tankSize=INT ':'
+		//	'fuelConsumption' '->' fuelConsumption=DOUBLE ']';
 		@Override public ParserRule getRule() { return rule; }
 		
+		//name=ID '[' 'speed' '->' speed=INT ':' 'load' '->' load=INT ':' 'tankSize' '->' tankSize=INT ':' 'fuelConsumption' '->'
+		//fuelConsumption=DOUBLE ']'
+		public Group getGroup() { return cGroup; }
+		
 		//name=ID
-		public Assignment getNameAssignment() { return cNameAssignment; }
+		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
 		
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_0() { return cNameIDTerminalRuleCall_0; }
+		public RuleCall getNameIDTerminalRuleCall_0_0() { return cNameIDTerminalRuleCall_0_0; }
+		
+		//'['
+		public Keyword getLeftSquareBracketKeyword_1() { return cLeftSquareBracketKeyword_1; }
+		
+		//'speed'
+		public Keyword getSpeedKeyword_2() { return cSpeedKeyword_2; }
+		
+		//'->'
+		public Keyword getHyphenMinusGreaterThanSignKeyword_3() { return cHyphenMinusGreaterThanSignKeyword_3; }
+		
+		//speed=INT
+		public Assignment getSpeedAssignment_4() { return cSpeedAssignment_4; }
+		
+		//INT
+		public RuleCall getSpeedINTTerminalRuleCall_4_0() { return cSpeedINTTerminalRuleCall_4_0; }
+		
+		//':'
+		public Keyword getColonKeyword_5() { return cColonKeyword_5; }
+		
+		//'load'
+		public Keyword getLoadKeyword_6() { return cLoadKeyword_6; }
+		
+		//'->'
+		public Keyword getHyphenMinusGreaterThanSignKeyword_7() { return cHyphenMinusGreaterThanSignKeyword_7; }
+		
+		//load=INT
+		public Assignment getLoadAssignment_8() { return cLoadAssignment_8; }
+		
+		//INT
+		public RuleCall getLoadINTTerminalRuleCall_8_0() { return cLoadINTTerminalRuleCall_8_0; }
+		
+		//':'
+		public Keyword getColonKeyword_9() { return cColonKeyword_9; }
+		
+		//'tankSize'
+		public Keyword getTankSizeKeyword_10() { return cTankSizeKeyword_10; }
+		
+		//'->'
+		public Keyword getHyphenMinusGreaterThanSignKeyword_11() { return cHyphenMinusGreaterThanSignKeyword_11; }
+		
+		//tankSize=INT
+		public Assignment getTankSizeAssignment_12() { return cTankSizeAssignment_12; }
+		
+		//INT
+		public RuleCall getTankSizeINTTerminalRuleCall_12_0() { return cTankSizeINTTerminalRuleCall_12_0; }
+		
+		//':'
+		public Keyword getColonKeyword_13() { return cColonKeyword_13; }
+		
+		//'fuelConsumption'
+		public Keyword getFuelConsumptionKeyword_14() { return cFuelConsumptionKeyword_14; }
+		
+		//'->'
+		public Keyword getHyphenMinusGreaterThanSignKeyword_15() { return cHyphenMinusGreaterThanSignKeyword_15; }
+		
+		//fuelConsumption=DOUBLE
+		public Assignment getFuelConsumptionAssignment_16() { return cFuelConsumptionAssignment_16; }
+		
+		//DOUBLE
+		public RuleCall getFuelConsumptionDOUBLEParserRuleCall_16_0() { return cFuelConsumptionDOUBLEParserRuleCall_16_0; }
+		
+		//']'
+		public Keyword getRightSquareBracketKeyword_17() { return cRightSquareBracketKeyword_17; }
 	}
 	public class FactoriesElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.industryempire.MyDsl.Factories");
@@ -261,20 +357,26 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cNameIDTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
 		private final Keyword cLeftSquareBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cInputAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final CrossReference cInputSingleResourceCrossReference_2_0 = (CrossReference)cInputAssignment_2.eContents().get(0);
-		private final RuleCall cInputSingleResourceIDTerminalRuleCall_2_0_1 = (RuleCall)cInputSingleResourceCrossReference_2_0.eContents().get(1);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cInKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Keyword cHyphenMinusGreaterThanSignKeyword_2_1 = (Keyword)cGroup_2.eContents().get(1);
+		private final Assignment cInputAssignment_2_2 = (Assignment)cGroup_2.eContents().get(2);
+		private final CrossReference cInputSingleResourceCrossReference_2_2_0 = (CrossReference)cInputAssignment_2_2.eContents().get(0);
+		private final RuleCall cInputSingleResourceIDTerminalRuleCall_2_2_0_1 = (RuleCall)cInputSingleResourceCrossReference_2_2_0.eContents().get(1);
 		private final Keyword cColonKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cOutputAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final CrossReference cOutputSingleResourceCrossReference_4_0 = (CrossReference)cOutputAssignment_4.eContents().get(0);
-		private final RuleCall cOutputSingleResourceIDTerminalRuleCall_4_0_1 = (RuleCall)cOutputSingleResourceCrossReference_4_0.eContents().get(1);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cOutKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Keyword cHyphenMinusGreaterThanSignKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
+		private final Assignment cOutputAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
+		private final CrossReference cOutputSingleResourceCrossReference_4_2_0 = (CrossReference)cOutputAssignment_4_2.eContents().get(0);
+		private final RuleCall cOutputSingleResourceIDTerminalRuleCall_4_2_0_1 = (RuleCall)cOutputSingleResourceCrossReference_4_2_0.eContents().get(1);
 		private final Keyword cRightSquareBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//SingleFactory:
-		//	name=ID '[' input=[SingleResource]? ':' output=[SingleResource]? ']';
+		//	name=ID '[' ('in' '->' input=[SingleResource])? ':' ('out' '->' output=[SingleResource])? ']';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name=ID '[' input=[SingleResource]? ':' output=[SingleResource]? ']'
+		//name=ID '[' ('in' '->' input=[SingleResource])? ':' ('out' '->' output=[SingleResource])? ']'
 		public Group getGroup() { return cGroup; }
 		
 		//name=ID
@@ -286,26 +388,44 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//'['
 		public Keyword getLeftSquareBracketKeyword_1() { return cLeftSquareBracketKeyword_1; }
 		
-		//input=[SingleResource]?
-		public Assignment getInputAssignment_2() { return cInputAssignment_2; }
+		//('in' '->' input=[SingleResource])?
+		public Group getGroup_2() { return cGroup_2; }
+		
+		//'in'
+		public Keyword getInKeyword_2_0() { return cInKeyword_2_0; }
+		
+		//'->'
+		public Keyword getHyphenMinusGreaterThanSignKeyword_2_1() { return cHyphenMinusGreaterThanSignKeyword_2_1; }
+		
+		//input=[SingleResource]
+		public Assignment getInputAssignment_2_2() { return cInputAssignment_2_2; }
 		
 		//[SingleResource]
-		public CrossReference getInputSingleResourceCrossReference_2_0() { return cInputSingleResourceCrossReference_2_0; }
+		public CrossReference getInputSingleResourceCrossReference_2_2_0() { return cInputSingleResourceCrossReference_2_2_0; }
 		
 		//ID
-		public RuleCall getInputSingleResourceIDTerminalRuleCall_2_0_1() { return cInputSingleResourceIDTerminalRuleCall_2_0_1; }
+		public RuleCall getInputSingleResourceIDTerminalRuleCall_2_2_0_1() { return cInputSingleResourceIDTerminalRuleCall_2_2_0_1; }
 		
 		//':'
 		public Keyword getColonKeyword_3() { return cColonKeyword_3; }
 		
-		//output=[SingleResource]?
-		public Assignment getOutputAssignment_4() { return cOutputAssignment_4; }
+		//('out' '->' output=[SingleResource])?
+		public Group getGroup_4() { return cGroup_4; }
+		
+		//'out'
+		public Keyword getOutKeyword_4_0() { return cOutKeyword_4_0; }
+		
+		//'->'
+		public Keyword getHyphenMinusGreaterThanSignKeyword_4_1() { return cHyphenMinusGreaterThanSignKeyword_4_1; }
+		
+		//output=[SingleResource]
+		public Assignment getOutputAssignment_4_2() { return cOutputAssignment_4_2; }
 		
 		//[SingleResource]
-		public CrossReference getOutputSingleResourceCrossReference_4_0() { return cOutputSingleResourceCrossReference_4_0; }
+		public CrossReference getOutputSingleResourceCrossReference_4_2_0() { return cOutputSingleResourceCrossReference_4_2_0; }
 		
 		//ID
-		public RuleCall getOutputSingleResourceIDTerminalRuleCall_4_0_1() { return cOutputSingleResourceIDTerminalRuleCall_4_0_1; }
+		public RuleCall getOutputSingleResourceIDTerminalRuleCall_4_2_0_1() { return cOutputSingleResourceIDTerminalRuleCall_4_2_0_1; }
 		
 		//']'
 		public Keyword getRightSquareBracketKeyword_5() { return cRightSquareBracketKeyword_5; }
@@ -339,125 +459,71 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	public class SingleResourceElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.industryempire.MyDsl.SingleResource");
-		private final Assignment cNameAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_0 = (RuleCall)cNameAssignment.eContents().get(0);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cNameIDTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
+		private final Keyword cLeftSquareBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cCostKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cHyphenMinusGreaterThanSignKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cCostAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cCostINTTerminalRuleCall_4_0 = (RuleCall)cCostAssignment_4.eContents().get(0);
+		private final Keyword cRightSquareBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//SingleResource:
-		//	name=ID //'[cost:' cost = INT ']'
-		//;
+		//	name=ID '[' 'cost' '->' cost=INT ']';
 		@Override public ParserRule getRule() { return rule; }
 		
 		////Two words not possible, how do i let it wait for [
+		//name=ID '[' 'cost' '->' cost=INT ']'
+		public Group getGroup() { return cGroup; }
+		
+		////Two words not possible, how do i let it wait for [
 		//name=ID
-		public Assignment getNameAssignment() { return cNameAssignment; }
+		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
 		
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_0() { return cNameIDTerminalRuleCall_0; }
+		public RuleCall getNameIDTerminalRuleCall_0_0() { return cNameIDTerminalRuleCall_0_0; }
+		
+		//'['
+		public Keyword getLeftSquareBracketKeyword_1() { return cLeftSquareBracketKeyword_1; }
+		
+		//'cost'
+		public Keyword getCostKeyword_2() { return cCostKeyword_2; }
+		
+		//'->'
+		public Keyword getHyphenMinusGreaterThanSignKeyword_3() { return cHyphenMinusGreaterThanSignKeyword_3; }
+		
+		//cost=INT
+		public Assignment getCostAssignment_4() { return cCostAssignment_4; }
+		
+		//INT
+		public RuleCall getCostINTTerminalRuleCall_4_0() { return cCostINTTerminalRuleCall_4_0; }
+		
+		//']'
+		public Keyword getRightSquareBracketKeyword_5() { return cRightSquareBracketKeyword_5; }
 	}
 	public class DOUBLEElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.industryempire.MyDsl.DOUBLE");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
-		private final Keyword cDigitZeroKeyword_0_0 = (Keyword)cAlternatives_0.eContents().get(0);
-		private final Keyword cDigitOneKeyword_0_1 = (Keyword)cAlternatives_0.eContents().get(1);
-		private final Keyword cDigitTwoKeyword_0_2 = (Keyword)cAlternatives_0.eContents().get(2);
-		private final Keyword cDigitThreeKeyword_0_3 = (Keyword)cAlternatives_0.eContents().get(3);
-		private final Keyword cDigitFourKeyword_0_4 = (Keyword)cAlternatives_0.eContents().get(4);
-		private final Keyword cDigitFiveKeyword_0_5 = (Keyword)cAlternatives_0.eContents().get(5);
-		private final Keyword cDigitSixKeyword_0_6 = (Keyword)cAlternatives_0.eContents().get(6);
-		private final Keyword cDigitSevenKeyword_0_7 = (Keyword)cAlternatives_0.eContents().get(7);
-		private final Keyword cDigitEightKeyword_0_8 = (Keyword)cAlternatives_0.eContents().get(8);
-		private final Keyword cDigitNineKeyword_0_9 = (Keyword)cAlternatives_0.eContents().get(9);
+		private final RuleCall cINTTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Keyword cFullStopKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Alternatives cAlternatives_2 = (Alternatives)cGroup.eContents().get(2);
-		private final Keyword cDigitZeroKeyword_2_0 = (Keyword)cAlternatives_2.eContents().get(0);
-		private final Keyword cDigitOneKeyword_2_1 = (Keyword)cAlternatives_2.eContents().get(1);
-		private final Keyword cDigitTwoKeyword_2_2 = (Keyword)cAlternatives_2.eContents().get(2);
-		private final Keyword cDigitThreeKeyword_2_3 = (Keyword)cAlternatives_2.eContents().get(3);
-		private final Keyword cDigitFourKeyword_2_4 = (Keyword)cAlternatives_2.eContents().get(4);
-		private final Keyword cDigitFiveKeyword_2_5 = (Keyword)cAlternatives_2.eContents().get(5);
-		private final Keyword cDigitSixKeyword_2_6 = (Keyword)cAlternatives_2.eContents().get(6);
-		private final Keyword cDigitSevenKeyword_2_7 = (Keyword)cAlternatives_2.eContents().get(7);
-		private final Keyword cDigitEightKeyword_2_8 = (Keyword)cAlternatives_2.eContents().get(8);
-		private final Keyword cDigitNineKeyword_2_9 = (Keyword)cAlternatives_2.eContents().get(9);
+		private final RuleCall cINTTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
 		
 		//DOUBLE:
-		//	('0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9')+ '.' ('0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8'
-		//	| '9')+;
+		//	INT+ '.' INT+;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//('0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9')+ '.' ('0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' |
-		//'9')+
+		//INT+ '.' INT+
 		public Group getGroup() { return cGroup; }
 		
-		//('0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9')+
-		public Alternatives getAlternatives_0() { return cAlternatives_0; }
-		
-		//'0'
-		public Keyword getDigitZeroKeyword_0_0() { return cDigitZeroKeyword_0_0; }
-		
-		//'1'
-		public Keyword getDigitOneKeyword_0_1() { return cDigitOneKeyword_0_1; }
-		
-		//'2'
-		public Keyword getDigitTwoKeyword_0_2() { return cDigitTwoKeyword_0_2; }
-		
-		//'3'
-		public Keyword getDigitThreeKeyword_0_3() { return cDigitThreeKeyword_0_3; }
-		
-		//'4'
-		public Keyword getDigitFourKeyword_0_4() { return cDigitFourKeyword_0_4; }
-		
-		//'5'
-		public Keyword getDigitFiveKeyword_0_5() { return cDigitFiveKeyword_0_5; }
-		
-		//'6'
-		public Keyword getDigitSixKeyword_0_6() { return cDigitSixKeyword_0_6; }
-		
-		//'7'
-		public Keyword getDigitSevenKeyword_0_7() { return cDigitSevenKeyword_0_7; }
-		
-		//'8'
-		public Keyword getDigitEightKeyword_0_8() { return cDigitEightKeyword_0_8; }
-		
-		//'9'
-		public Keyword getDigitNineKeyword_0_9() { return cDigitNineKeyword_0_9; }
+		//INT+
+		public RuleCall getINTTerminalRuleCall_0() { return cINTTerminalRuleCall_0; }
 		
 		//'.'
 		public Keyword getFullStopKeyword_1() { return cFullStopKeyword_1; }
 		
-		//('0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9')+
-		public Alternatives getAlternatives_2() { return cAlternatives_2; }
-		
-		//'0'
-		public Keyword getDigitZeroKeyword_2_0() { return cDigitZeroKeyword_2_0; }
-		
-		//'1'
-		public Keyword getDigitOneKeyword_2_1() { return cDigitOneKeyword_2_1; }
-		
-		//'2'
-		public Keyword getDigitTwoKeyword_2_2() { return cDigitTwoKeyword_2_2; }
-		
-		//'3'
-		public Keyword getDigitThreeKeyword_2_3() { return cDigitThreeKeyword_2_3; }
-		
-		//'4'
-		public Keyword getDigitFourKeyword_2_4() { return cDigitFourKeyword_2_4; }
-		
-		//'5'
-		public Keyword getDigitFiveKeyword_2_5() { return cDigitFiveKeyword_2_5; }
-		
-		//'6'
-		public Keyword getDigitSixKeyword_2_6() { return cDigitSixKeyword_2_6; }
-		
-		//'7'
-		public Keyword getDigitSevenKeyword_2_7() { return cDigitSevenKeyword_2_7; }
-		
-		//'8'
-		public Keyword getDigitEightKeyword_2_8() { return cDigitEightKeyword_2_8; }
-		
-		//'9'
-		public Keyword getDigitNineKeyword_2_9() { return cDigitNineKeyword_2_9; }
+		//INT+
+		public RuleCall getINTTerminalRuleCall_2() { return cINTTerminalRuleCall_2; }
 	}
 	
 	
@@ -547,8 +613,10 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getElementAccess().getRule();
 	}
 	
-	//Cities:
-	//	'Cities:' name=ID '[' 'x->' x=INT ':' 'y->' y=INT ':' factory+=[SingleFactory]* (',' factory+=[SingleFactory])* ']';
+	////Gruppe | Validator ClazzModel, Filter resourcen, length max 1
+	// Cities:
+	//	'Cities:' name+=ID '[' 'x' '->' x=INT ':' 'y->' y=INT ':' factory+=[SingleFactory]* (',' factory+=[SingleFactory])*
+	//	']';
 	public CitiesElements getCitiesAccess() {
 		return pCities;
 	}
@@ -557,8 +625,16 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getCitiesAccess().getRule();
 	}
 	
+	////Cities:
+	////	'Cities:'
+	////	{SingleCity} (cities += [SingleCity]*)
+	////	;
+	////
+	////SingleCity:
+	////	name += ID '[' 'x->' x = INT ':' 'y->' y = INT ':' factory += [SingleFactory]* (',' factory+=[SingleFactory])* ']'
+	////;
 	//Vehicles:
-	//	'Vehicles:' {Vehicles} vehicles+=[SingleVehicle]*;
+	//	'Vehicles:' {Vehicles} vehicles+=SingleVehicle*;
 	public VehiclesElements getVehiclesAccess() {
 		return pVehicles;
 	}
@@ -568,13 +644,10 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//SingleVehicle:
-	//	name=ID
-	//	//	values =  '[' 'speed' '->' speed = INT ':'
-	//	//					'load' '->' load = INT ':'
-	//	//					'tankSize' '->' tankSize = INT ':'
-	//	//					'fuelConsumption' '->' fuelConsumption = DOUBLE
-	//	//	 				']'
-	//;
+	//	name=ID '[' 'speed' '->' speed=INT ':'
+	//	'load' '->' load=INT ':'
+	//	'tankSize' '->' tankSize=INT ':'
+	//	'fuelConsumption' '->' fuelConsumption=DOUBLE ']';
 	public SingleVehicleElements getSingleVehicleAccess() {
 		return pSingleVehicle;
 	}
@@ -602,7 +675,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//SingleFactory:
-	//	name=ID '[' input=[SingleResource]? ':' output=[SingleResource]? ']';
+	//	name=ID '[' ('in' '->' input=[SingleResource])? ':' ('out' '->' output=[SingleResource])? ']';
 	public SingleFactoryElements getSingleFactoryAccess() {
 		return pSingleFactory;
 	}
@@ -622,8 +695,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//SingleResource:
-	//	name=ID //'[cost:' cost = INT ']'
-	//;
+	//	name=ID '[' 'cost' '->' cost=INT ']';
 	public SingleResourceElements getSingleResourceAccess() {
 		return pSingleResource;
 	}
@@ -633,8 +705,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//DOUBLE:
-	//	('0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9')+ '.' ('0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8'
-	//	| '9')+;
+	//	INT+ '.' INT+;
 	public DOUBLEElements getDOUBLEAccess() {
 		return pDOUBLE;
 	}

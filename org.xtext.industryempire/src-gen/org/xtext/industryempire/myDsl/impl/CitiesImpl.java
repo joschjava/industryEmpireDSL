@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EDataTypeEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 import org.xtext.industryempire.myDsl.Cities;
@@ -38,24 +39,14 @@ import org.xtext.industryempire.myDsl.SingleFactory;
 public class CitiesImpl extends ElementImpl implements Cities
 {
   /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getName()
    * @generated
    * @ordered
    */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
+  protected EList<String> name;
 
   /**
    * The default value of the '{@link #getX() <em>X</em>}' attribute.
@@ -133,22 +124,13 @@ public class CitiesImpl extends ElementImpl implements Cities
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getName()
+  public EList<String> getName()
   {
+    if (name == null)
+    {
+      name = new EDataTypeEList<String>(String.class, this, MyDslPackage.CITIES__NAME);
+    }
     return name;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setName(String newName)
-  {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.CITIES__NAME, oldName, name));
   }
 
   /**
@@ -245,7 +227,8 @@ public class CitiesImpl extends ElementImpl implements Cities
     switch (featureID)
     {
       case MyDslPackage.CITIES__NAME:
-        setName((String)newValue);
+        getName().clear();
+        getName().addAll((Collection<? extends String>)newValue);
         return;
       case MyDslPackage.CITIES__X:
         setX((Integer)newValue);
@@ -272,7 +255,7 @@ public class CitiesImpl extends ElementImpl implements Cities
     switch (featureID)
     {
       case MyDslPackage.CITIES__NAME:
-        setName(NAME_EDEFAULT);
+        getName().clear();
         return;
       case MyDslPackage.CITIES__X:
         setX(X_EDEFAULT);
@@ -298,7 +281,7 @@ public class CitiesImpl extends ElementImpl implements Cities
     switch (featureID)
     {
       case MyDslPackage.CITIES__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+        return name != null && !name.isEmpty();
       case MyDslPackage.CITIES__X:
         return x != X_EDEFAULT;
       case MyDslPackage.CITIES__Y:

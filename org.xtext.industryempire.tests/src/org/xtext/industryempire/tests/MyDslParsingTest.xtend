@@ -23,8 +23,8 @@ class MyDslParsingTest {
 	def void resourceTest(){
 		'''
 		Resources:
-			FirstResource [cost:50]
-			SecondResource [cost:100]
+			FirstResource [cost -> 50]
+			SecondResource [cost -> 100]
 		'''.parse.assertNoErrors
 	}
 	
@@ -32,15 +32,15 @@ class MyDslParsingTest {
 	def void factoryTest(){
 		'''
 		Resources:
-			FirstResource
-			SecondResource
+			FirstResource [cost -> 15]
+			SecondResource [cost -> 15]
 			
 		Factories:
 			testFactory [:]
-			testFactory2 [FirstResource:SecondResource]
+			testFactory2 [in->FirstResource:out->SecondResource]
 			
-		Cities: 
-			BombedBerlin [x->50:y->20:]
+		Vehicles:
+			test [spee -> 30]
 
 		'''.parse.assertNoErrors
 	}	
@@ -49,7 +49,7 @@ class MyDslParsingTest {
 	def void vehicleTest(){
 		'''
 		Vehicles:
-		PowerLoader [speed->40:load->110:tankSize->42:fuelConsumption->2.3]
+			PowerLoader [speed->40:load->110:tankSize->42:fuelConsumption->2.3]
 ллл		PowerSaver [speed->40:load->110:tankSize->42:fuelConsumption->0.6]
 		'''.parse.assertNoErrors
 	}
@@ -69,7 +69,19 @@ class MyDslParsingTest {
 			
 		Cities: 
 			Berlin [50:20:testFactory, testFactory2]
- 			BombedBerlin [50:20:]
+			BombedBerlin [50:20:]
+		'''.parse.assertNoErrors
+	}
+	
+		@Test
+	def void doubleResourceTest(){
+		'''
+		Cities:
+			Berlin [x->50:y->20:]
+			
+		Resources:
+			FirstResource [cost -> 50]
+			SecondResource [cost -> 100]
 		'''.parse.assertNoErrors
 	}
 	

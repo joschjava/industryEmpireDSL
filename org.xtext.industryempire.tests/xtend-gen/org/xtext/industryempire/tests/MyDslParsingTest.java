@@ -35,10 +35,10 @@ public class MyDslParsingTest {
       _builder.append("Resources:");
       _builder.newLine();
       _builder.append("\t");
-      _builder.append("FirstResource [cost:50]");
+      _builder.append("FirstResource [cost -> 50]");
       _builder.newLine();
       _builder.append("\t");
-      _builder.append("SecondResource [cost:100]");
+      _builder.append("SecondResource [cost -> 100]");
       _builder.newLine();
       this._validationTestHelper.assertNoErrors(this._parseHelper.parse(_builder));
     } catch (Throwable _e) {
@@ -53,10 +53,10 @@ public class MyDslParsingTest {
       _builder.append("Resources:");
       _builder.newLine();
       _builder.append("\t");
-      _builder.append("FirstResource");
+      _builder.append("FirstResource [cost -> 15]");
       _builder.newLine();
       _builder.append("\t");
-      _builder.append("SecondResource");
+      _builder.append("SecondResource [cost -> 15]");
       _builder.newLine();
       _builder.append("\t");
       _builder.newLine();
@@ -66,14 +66,14 @@ public class MyDslParsingTest {
       _builder.append("testFactory [:]");
       _builder.newLine();
       _builder.append("\t");
-      _builder.append("testFactory2 [FirstResource:SecondResource]");
+      _builder.append("testFactory2 [in->FirstResource:out->SecondResource]");
       _builder.newLine();
       _builder.append("\t");
       _builder.newLine();
-      _builder.append("Cities: ");
+      _builder.append("Vehicles:");
       _builder.newLine();
       _builder.append("\t");
-      _builder.append("BombedBerlin [x->50:y->20:]");
+      _builder.append("test [spee -> 30]");
       _builder.newLine();
       _builder.newLine();
       this._validationTestHelper.assertNoErrors(this._parseHelper.parse(_builder));
@@ -88,6 +88,7 @@ public class MyDslParsingTest {
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("Vehicles:");
       _builder.newLine();
+      _builder.append("\t");
       _builder.append("PowerLoader [speed->40:load->110:tankSize->42:fuelConsumption->2.3]");
       _builder.newLine();
       this._validationTestHelper.assertNoErrors(this._parseHelper.parse(_builder));
@@ -125,8 +126,33 @@ public class MyDslParsingTest {
       _builder.append("\t");
       _builder.append("Berlin [50:20:testFactory, testFactory2]");
       _builder.newLine();
-      _builder.append(" \t\t\t");
+      _builder.append("\t");
       _builder.append("BombedBerlin [50:20:]");
+      _builder.newLine();
+      this._validationTestHelper.assertNoErrors(this._parseHelper.parse(_builder));
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void doubleResourceTest() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("Cities:");
+      _builder.newLine();
+      _builder.append("\t");
+      _builder.append("Berlin [x->50:y->20:]");
+      _builder.newLine();
+      _builder.append("\t");
+      _builder.newLine();
+      _builder.append("Resources:");
+      _builder.newLine();
+      _builder.append("\t");
+      _builder.append("FirstResource [cost -> 50]");
+      _builder.newLine();
+      _builder.append("\t");
+      _builder.append("SecondResource [cost -> 100]");
       _builder.newLine();
       this._validationTestHelper.assertNoErrors(this._parseHelper.parse(_builder));
     } catch (Throwable _e) {

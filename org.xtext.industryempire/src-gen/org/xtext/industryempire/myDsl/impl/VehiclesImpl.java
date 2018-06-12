@@ -5,11 +5,15 @@ package org.xtext.industryempire.myDsl.impl;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.xtext.industryempire.myDsl.MyDslPackage;
 import org.xtext.industryempire.myDsl.SingleVehicle;
@@ -31,7 +35,7 @@ import org.xtext.industryempire.myDsl.Vehicles;
 public class VehiclesImpl extends ElementImpl implements Vehicles
 {
   /**
-   * The cached value of the '{@link #getVehicles() <em>Vehicles</em>}' reference list.
+   * The cached value of the '{@link #getVehicles() <em>Vehicles</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getVehicles()
@@ -70,9 +74,25 @@ public class VehiclesImpl extends ElementImpl implements Vehicles
   {
     if (vehicles == null)
     {
-      vehicles = new EObjectResolvingEList<SingleVehicle>(SingleVehicle.class, this, MyDslPackage.VEHICLES__VEHICLES);
+      vehicles = new EObjectContainmentEList<SingleVehicle>(SingleVehicle.class, this, MyDslPackage.VEHICLES__VEHICLES);
     }
     return vehicles;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case MyDslPackage.VEHICLES__VEHICLES:
+        return ((InternalEList<?>)getVehicles()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**

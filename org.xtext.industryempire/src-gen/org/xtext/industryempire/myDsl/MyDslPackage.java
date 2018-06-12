@@ -115,7 +115,7 @@ public interface MyDslPackage extends EPackage
   int CITIES = 2;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * The feature id for the '<em><b>Name</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -170,7 +170,7 @@ public interface MyDslPackage extends EPackage
   int VEHICLES = 3;
 
   /**
-   * The feature id for the '<em><b>Vehicles</b></em>' reference list.
+   * The feature id for the '<em><b>Vehicles</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -207,13 +207,49 @@ public interface MyDslPackage extends EPackage
   int SINGLE_VEHICLE__NAME = 0;
 
   /**
+   * The feature id for the '<em><b>Speed</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SINGLE_VEHICLE__SPEED = 1;
+
+  /**
+   * The feature id for the '<em><b>Load</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SINGLE_VEHICLE__LOAD = 2;
+
+  /**
+   * The feature id for the '<em><b>Tank Size</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SINGLE_VEHICLE__TANK_SIZE = 3;
+
+  /**
+   * The feature id for the '<em><b>Fuel Consumption</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SINGLE_VEHICLE__FUEL_CONSUMPTION = 4;
+
+  /**
    * The number of structural features of the '<em>Single Vehicle</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SINGLE_VEHICLE_FEATURE_COUNT = 1;
+  int SINGLE_VEHICLE_FEATURE_COUNT = 5;
 
   /**
    * The meta object id for the '{@link org.xtext.industryempire.myDsl.impl.FactoriesImpl <em>Factories</em>}' class.
@@ -337,13 +373,22 @@ public interface MyDslPackage extends EPackage
   int SINGLE_RESOURCE__NAME = 0;
 
   /**
+   * The feature id for the '<em><b>Cost</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SINGLE_RESOURCE__COST = 1;
+
+  /**
    * The number of structural features of the '<em>Single Resource</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SINGLE_RESOURCE_FEATURE_COUNT = 1;
+  int SINGLE_RESOURCE_FEATURE_COUNT = 2;
 
 
   /**
@@ -388,10 +433,10 @@ public interface MyDslPackage extends EPackage
   EClass getCities();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.industryempire.myDsl.Cities#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute list '{@link org.xtext.industryempire.myDsl.Cities#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
+   * @return the meta object for the attribute list '<em>Name</em>'.
    * @see org.xtext.industryempire.myDsl.Cities#getName()
    * @see #getCities()
    * @generated
@@ -442,10 +487,10 @@ public interface MyDslPackage extends EPackage
   EClass getVehicles();
 
   /**
-   * Returns the meta object for the reference list '{@link org.xtext.industryempire.myDsl.Vehicles#getVehicles <em>Vehicles</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.industryempire.myDsl.Vehicles#getVehicles <em>Vehicles</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Vehicles</em>'.
+   * @return the meta object for the containment reference list '<em>Vehicles</em>'.
    * @see org.xtext.industryempire.myDsl.Vehicles#getVehicles()
    * @see #getVehicles()
    * @generated
@@ -472,6 +517,50 @@ public interface MyDslPackage extends EPackage
    * @generated
    */
   EAttribute getSingleVehicle_Name();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.industryempire.myDsl.SingleVehicle#getSpeed <em>Speed</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Speed</em>'.
+   * @see org.xtext.industryempire.myDsl.SingleVehicle#getSpeed()
+   * @see #getSingleVehicle()
+   * @generated
+   */
+  EAttribute getSingleVehicle_Speed();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.industryempire.myDsl.SingleVehicle#getLoad <em>Load</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Load</em>'.
+   * @see org.xtext.industryempire.myDsl.SingleVehicle#getLoad()
+   * @see #getSingleVehicle()
+   * @generated
+   */
+  EAttribute getSingleVehicle_Load();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.industryempire.myDsl.SingleVehicle#getTankSize <em>Tank Size</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Tank Size</em>'.
+   * @see org.xtext.industryempire.myDsl.SingleVehicle#getTankSize()
+   * @see #getSingleVehicle()
+   * @generated
+   */
+  EAttribute getSingleVehicle_TankSize();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.industryempire.myDsl.SingleVehicle#getFuelConsumption <em>Fuel Consumption</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Fuel Consumption</em>'.
+   * @see org.xtext.industryempire.myDsl.SingleVehicle#getFuelConsumption()
+   * @see #getSingleVehicle()
+   * @generated
+   */
+  EAttribute getSingleVehicle_FuelConsumption();
 
   /**
    * Returns the meta object for class '{@link org.xtext.industryempire.myDsl.Factories <em>Factories</em>}'.
@@ -580,6 +669,17 @@ public interface MyDslPackage extends EPackage
   EAttribute getSingleResource_Name();
 
   /**
+   * Returns the meta object for the attribute '{@link org.xtext.industryempire.myDsl.SingleResource#getCost <em>Cost</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Cost</em>'.
+   * @see org.xtext.industryempire.myDsl.SingleResource#getCost()
+   * @see #getSingleResource()
+   * @generated
+   */
+  EAttribute getSingleResource_Cost();
+
+  /**
    * Returns the factory that creates the instances of the model.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -641,7 +741,7 @@ public interface MyDslPackage extends EPackage
     EClass CITIES = eINSTANCE.getCities();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Name</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -683,7 +783,7 @@ public interface MyDslPackage extends EPackage
     EClass VEHICLES = eINSTANCE.getVehicles();
 
     /**
-     * The meta object literal for the '<em><b>Vehicles</b></em>' reference list feature.
+     * The meta object literal for the '<em><b>Vehicles</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -707,6 +807,38 @@ public interface MyDslPackage extends EPackage
      * @generated
      */
     EAttribute SINGLE_VEHICLE__NAME = eINSTANCE.getSingleVehicle_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Speed</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SINGLE_VEHICLE__SPEED = eINSTANCE.getSingleVehicle_Speed();
+
+    /**
+     * The meta object literal for the '<em><b>Load</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SINGLE_VEHICLE__LOAD = eINSTANCE.getSingleVehicle_Load();
+
+    /**
+     * The meta object literal for the '<em><b>Tank Size</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SINGLE_VEHICLE__TANK_SIZE = eINSTANCE.getSingleVehicle_TankSize();
+
+    /**
+     * The meta object literal for the '<em><b>Fuel Consumption</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SINGLE_VEHICLE__FUEL_CONSUMPTION = eINSTANCE.getSingleVehicle_FuelConsumption();
 
     /**
      * The meta object literal for the '{@link org.xtext.industryempire.myDsl.impl.FactoriesImpl <em>Factories</em>}' class.
@@ -795,6 +927,14 @@ public interface MyDslPackage extends EPackage
      * @generated
      */
     EAttribute SINGLE_RESOURCE__NAME = eINSTANCE.getSingleResource_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Cost</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SINGLE_RESOURCE__COST = eINSTANCE.getSingleResource_Cost();
 
   }
 

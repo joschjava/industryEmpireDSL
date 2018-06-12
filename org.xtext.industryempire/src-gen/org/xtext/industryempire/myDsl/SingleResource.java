@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.industryempire.myDsl.SingleResource#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.industryempire.myDsl.SingleResource#getCost <em>Cost</em>}</li>
  * </ul>
  *
  * @see org.xtext.industryempire.myDsl.MyDslPackage#getSingleResource()
@@ -48,5 +49,31 @@ public interface SingleResource extends EObject
    * @generated
    */
   void setName(String value);
+
+  /**
+   * Returns the value of the '<em><b>Cost</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Cost</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Cost</em>' attribute.
+   * @see #setCost(int)
+   * @see org.xtext.industryempire.myDsl.MyDslPackage#getSingleResource_Cost()
+   * @model
+   * @generated
+   */
+  int getCost();
+
+  /**
+   * Sets the value of the '{@link org.xtext.industryempire.myDsl.SingleResource#getCost <em>Cost</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Cost</em>' attribute.
+   * @see #getCost()
+   * @generated
+   */
+  void setCost(int value);
 
 } // SingleResource

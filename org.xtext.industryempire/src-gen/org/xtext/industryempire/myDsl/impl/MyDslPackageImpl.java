@@ -281,6 +281,46 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getSingleVehicle_Speed()
+  {
+    return (EAttribute)singleVehicleEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSingleVehicle_Load()
+  {
+    return (EAttribute)singleVehicleEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSingleVehicle_TankSize()
+  {
+    return (EAttribute)singleVehicleEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSingleVehicle_FuelConsumption()
+  {
+    return (EAttribute)singleVehicleEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getFactories()
   {
     return factoriesEClass;
@@ -381,6 +421,16 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getSingleResource_Cost()
+  {
+    return (EAttribute)singleResourceEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public MyDslFactory getMyDslFactory()
   {
     return (MyDslFactory)getEFactoryInstance();
@@ -422,6 +472,10 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
 
     singleVehicleEClass = createEClass(SINGLE_VEHICLE);
     createEAttribute(singleVehicleEClass, SINGLE_VEHICLE__NAME);
+    createEAttribute(singleVehicleEClass, SINGLE_VEHICLE__SPEED);
+    createEAttribute(singleVehicleEClass, SINGLE_VEHICLE__LOAD);
+    createEAttribute(singleVehicleEClass, SINGLE_VEHICLE__TANK_SIZE);
+    createEAttribute(singleVehicleEClass, SINGLE_VEHICLE__FUEL_CONSUMPTION);
 
     factoriesEClass = createEClass(FACTORIES);
     createEReference(factoriesEClass, FACTORIES__FACTORIES);
@@ -436,6 +490,7 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
 
     singleResourceEClass = createEClass(SINGLE_RESOURCE);
     createEAttribute(singleResourceEClass, SINGLE_RESOURCE__NAME);
+    createEAttribute(singleResourceEClass, SINGLE_RESOURCE__COST);
   }
 
   /**
@@ -479,16 +534,20 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
     initEClass(elementEClass, Element.class, "Element", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(citiesEClass, Cities.class, "Cities", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getCities_Name(), ecorePackage.getEString(), "name", null, 0, 1, Cities.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getCities_Name(), ecorePackage.getEString(), "name", null, 0, -1, Cities.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getCities_X(), ecorePackage.getEInt(), "x", null, 0, 1, Cities.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getCities_Y(), ecorePackage.getEInt(), "y", null, 0, 1, Cities.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getCities_Factory(), this.getSingleFactory(), null, "factory", null, 0, -1, Cities.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(vehiclesEClass, Vehicles.class, "Vehicles", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getVehicles_Vehicles(), this.getSingleVehicle(), null, "vehicles", null, 0, -1, Vehicles.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getVehicles_Vehicles(), this.getSingleVehicle(), null, "vehicles", null, 0, -1, Vehicles.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(singleVehicleEClass, SingleVehicle.class, "SingleVehicle", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getSingleVehicle_Name(), ecorePackage.getEString(), "name", null, 0, 1, SingleVehicle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSingleVehicle_Speed(), ecorePackage.getEInt(), "speed", null, 0, 1, SingleVehicle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSingleVehicle_Load(), ecorePackage.getEInt(), "load", null, 0, 1, SingleVehicle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSingleVehicle_TankSize(), ecorePackage.getEInt(), "tankSize", null, 0, 1, SingleVehicle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSingleVehicle_FuelConsumption(), ecorePackage.getEString(), "fuelConsumption", null, 0, 1, SingleVehicle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(factoriesEClass, Factories.class, "Factories", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getFactories_Factories(), this.getSingleFactory(), null, "factories", null, 0, -1, Factories.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -503,6 +562,7 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
 
     initEClass(singleResourceEClass, SingleResource.class, "SingleResource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getSingleResource_Name(), ecorePackage.getEString(), "name", null, 0, 1, SingleResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSingleResource_Cost(), ecorePackage.getEInt(), "cost", null, 0, 1, SingleResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

@@ -3,6 +3,9 @@
  */
 package org.xtext.industryempire.validation;
 
+import org.eclipse.xtext.validation.Check;
+import org.xtext.industryempire.myDsl.ClazzModel;
+import org.xtext.industryempire.myDsl.MyDslPackage;
 import org.xtext.industryempire.validation.AbstractMyDslValidator;
 
 /**
@@ -12,4 +15,14 @@ import org.xtext.industryempire.validation.AbstractMyDslValidator;
  */
 @SuppressWarnings("all")
 public class MyDslValidator extends AbstractMyDslValidator {
+  public final static String INVALID_NAME = "invalidName";
+  
+  @Check
+  public void checkGreetingStartsWithCapital(final ClazzModel clazzes) {
+    boolean _equals = clazzes.getElement().get(0).equals("Resources");
+    boolean _not = (!_equals);
+    if (_not) {
+      this.error("Resource must be 1", MyDslPackage.eINSTANCE.eContainingFeature());
+    }
+  }
 }
