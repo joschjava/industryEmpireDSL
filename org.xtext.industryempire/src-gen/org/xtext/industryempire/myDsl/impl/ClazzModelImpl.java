@@ -5,6 +5,7 @@ package org.xtext.industryempire.myDsl.impl;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -12,6 +13,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -29,6 +31,7 @@ import org.xtext.industryempire.myDsl.MyDslPackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.xtext.industryempire.myDsl.impl.ClazzModelImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.industryempire.myDsl.impl.ClazzModelImpl#getElement <em>Element</em>}</li>
  * </ul>
  *
@@ -36,6 +39,26 @@ import org.xtext.industryempire.myDsl.MyDslPackage;
  */
 public class ClazzModelImpl extends MinimalEObjectImpl.Container implements ClazzModel
 {
+  /**
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
+
   /**
    * The cached value of the '{@link #getElement() <em>Element</em>}' containment reference list.
    * <!-- begin-user-doc -->
@@ -65,6 +88,29 @@ public class ClazzModelImpl extends MinimalEObjectImpl.Container implements Claz
   protected EClass eStaticClass()
   {
     return MyDslPackage.Literals.CLAZZ_MODEL;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getName()
+  {
+    return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setName(String newName)
+  {
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.CLAZZ_MODEL__NAME, oldName, name));
   }
 
   /**
@@ -107,6 +153,8 @@ public class ClazzModelImpl extends MinimalEObjectImpl.Container implements Claz
   {
     switch (featureID)
     {
+      case MyDslPackage.CLAZZ_MODEL__NAME:
+        return getName();
       case MyDslPackage.CLAZZ_MODEL__ELEMENT:
         return getElement();
     }
@@ -124,6 +172,9 @@ public class ClazzModelImpl extends MinimalEObjectImpl.Container implements Claz
   {
     switch (featureID)
     {
+      case MyDslPackage.CLAZZ_MODEL__NAME:
+        setName((String)newValue);
+        return;
       case MyDslPackage.CLAZZ_MODEL__ELEMENT:
         getElement().clear();
         getElement().addAll((Collection<? extends Element>)newValue);
@@ -142,6 +193,9 @@ public class ClazzModelImpl extends MinimalEObjectImpl.Container implements Claz
   {
     switch (featureID)
     {
+      case MyDslPackage.CLAZZ_MODEL__NAME:
+        setName(NAME_EDEFAULT);
+        return;
       case MyDslPackage.CLAZZ_MODEL__ELEMENT:
         getElement().clear();
         return;
@@ -159,10 +213,29 @@ public class ClazzModelImpl extends MinimalEObjectImpl.Container implements Claz
   {
     switch (featureID)
     {
+      case MyDslPackage.CLAZZ_MODEL__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case MyDslPackage.CLAZZ_MODEL__ELEMENT:
         return element != null && !element.isEmpty();
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (name: ");
+    result.append(name);
+    result.append(')');
+    return result.toString();
   }
 
 } //ClazzModelImpl

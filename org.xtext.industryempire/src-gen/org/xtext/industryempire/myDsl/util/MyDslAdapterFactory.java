@@ -101,14 +101,14 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
         return createSingleVehicleAdapter();
       }
       @Override
-      public Adapter caseFactories(Factories object)
+      public Adapter caseBuildings(Buildings object)
       {
-        return createFactoriesAdapter();
+        return createBuildingsAdapter();
       }
       @Override
-      public Adapter caseSingleFactory(SingleFactory object)
+      public Adapter caseSingleBuilding(SingleBuilding object)
       {
-        return createSingleFactoryAdapter();
+        return createSingleBuildingAdapter();
       }
       @Override
       public Adapter caseResources(Resources object)
@@ -119,6 +119,11 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
       public Adapter caseSingleResource(SingleResource object)
       {
         return createSingleResourceAdapter();
+      }
+      @Override
+      public Adapter caseFactories(Factories object)
+      {
+        return createFactoriesAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -218,31 +223,31 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.industryempire.myDsl.Factories <em>Factories</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.industryempire.myDsl.Buildings <em>Buildings</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.industryempire.myDsl.Factories
+   * @see org.xtext.industryempire.myDsl.Buildings
    * @generated
    */
-  public Adapter createFactoriesAdapter()
+  public Adapter createBuildingsAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.industryempire.myDsl.SingleFactory <em>Single Factory</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.industryempire.myDsl.SingleBuilding <em>Single Building</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.industryempire.myDsl.SingleFactory
+   * @see org.xtext.industryempire.myDsl.SingleBuilding
    * @generated
    */
-  public Adapter createSingleFactoryAdapter()
+  public Adapter createSingleBuildingAdapter()
   {
     return null;
   }
@@ -273,6 +278,21 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createSingleResourceAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.industryempire.myDsl.Factories <em>Factories</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.industryempire.myDsl.Factories
+   * @generated
+   */
+  public Adapter createFactoriesAdapter()
   {
     return null;
   }

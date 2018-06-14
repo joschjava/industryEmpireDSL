@@ -68,13 +68,22 @@ public interface MyDslPackage extends EPackage
   int CLAZZ_MODEL = 0;
 
   /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLAZZ_MODEL__NAME = 0;
+
+  /**
    * The feature id for the '<em><b>Element</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CLAZZ_MODEL__ELEMENT = 0;
+  int CLAZZ_MODEL__ELEMENT = 1;
 
   /**
    * The number of structural features of the '<em>Clazz Model</em>' class.
@@ -83,7 +92,7 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CLAZZ_MODEL_FEATURE_COUNT = 1;
+  int CLAZZ_MODEL_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link org.xtext.industryempire.myDsl.impl.ElementImpl <em>Element</em>}' class.
@@ -252,42 +261,33 @@ public interface MyDslPackage extends EPackage
   int SINGLE_VEHICLE_FEATURE_COUNT = 5;
 
   /**
-   * The meta object id for the '{@link org.xtext.industryempire.myDsl.impl.FactoriesImpl <em>Factories</em>}' class.
+   * The meta object id for the '{@link org.xtext.industryempire.myDsl.impl.BuildingsImpl <em>Buildings</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.xtext.industryempire.myDsl.impl.FactoriesImpl
-   * @see org.xtext.industryempire.myDsl.impl.MyDslPackageImpl#getFactories()
+   * @see org.xtext.industryempire.myDsl.impl.BuildingsImpl
+   * @see org.xtext.industryempire.myDsl.impl.MyDslPackageImpl#getBuildings()
    * @generated
    */
-  int FACTORIES = 5;
+  int BUILDINGS = 5;
 
   /**
-   * The feature id for the '<em><b>Factories</b></em>' containment reference list.
+   * The number of structural features of the '<em>Buildings</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FACTORIES__FACTORIES = ELEMENT_FEATURE_COUNT + 0;
+  int BUILDINGS_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 0;
 
   /**
-   * The number of structural features of the '<em>Factories</em>' class.
+   * The meta object id for the '{@link org.xtext.industryempire.myDsl.impl.SingleBuildingImpl <em>Single Building</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FACTORIES_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link org.xtext.industryempire.myDsl.impl.SingleFactoryImpl <em>Single Factory</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.industryempire.myDsl.impl.SingleFactoryImpl
-   * @see org.xtext.industryempire.myDsl.impl.MyDslPackageImpl#getSingleFactory()
+   * @see org.xtext.industryempire.myDsl.impl.SingleBuildingImpl
+   * @see org.xtext.industryempire.myDsl.impl.MyDslPackageImpl#getSingleBuilding()
    * @generated
    */
-  int SINGLE_FACTORY = 6;
+  int SINGLE_BUILDING = 6;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -296,7 +296,7 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SINGLE_FACTORY__NAME = 0;
+  int SINGLE_BUILDING__NAME = 0;
 
   /**
    * The feature id for the '<em><b>Input</b></em>' reference.
@@ -305,7 +305,7 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SINGLE_FACTORY__INPUT = 1;
+  int SINGLE_BUILDING__INPUT = 1;
 
   /**
    * The feature id for the '<em><b>Output</b></em>' reference.
@@ -314,16 +314,16 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SINGLE_FACTORY__OUTPUT = 2;
+  int SINGLE_BUILDING__OUTPUT = 2;
 
   /**
-   * The number of structural features of the '<em>Single Factory</em>' class.
+   * The number of structural features of the '<em>Single Building</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SINGLE_FACTORY_FEATURE_COUNT = 3;
+  int SINGLE_BUILDING_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link org.xtext.industryempire.myDsl.impl.ResourcesImpl <em>Resources</em>}' class.
@@ -390,6 +390,34 @@ public interface MyDslPackage extends EPackage
    */
   int SINGLE_RESOURCE_FEATURE_COUNT = 2;
 
+  /**
+   * The meta object id for the '{@link org.xtext.industryempire.myDsl.impl.FactoriesImpl <em>Factories</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.industryempire.myDsl.impl.FactoriesImpl
+   * @see org.xtext.industryempire.myDsl.impl.MyDslPackageImpl#getFactories()
+   * @generated
+   */
+  int FACTORIES = 9;
+
+  /**
+   * The feature id for the '<em><b>Factories</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FACTORIES__FACTORIES = BUILDINGS_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Factories</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FACTORIES_FEATURE_COUNT = BUILDINGS_FEATURE_COUNT + 1;
+
 
   /**
    * Returns the meta object for class '{@link org.xtext.industryempire.myDsl.ClazzModel <em>Clazz Model</em>}'.
@@ -400,6 +428,17 @@ public interface MyDslPackage extends EPackage
    * @generated
    */
   EClass getClazzModel();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.industryempire.myDsl.ClazzModel#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.industryempire.myDsl.ClazzModel#getName()
+   * @see #getClazzModel()
+   * @generated
+   */
+  EAttribute getClazzModel_Name();
 
   /**
    * Returns the meta object for the containment reference list '{@link org.xtext.industryempire.myDsl.ClazzModel#getElement <em>Element</em>}'.
@@ -563,68 +602,57 @@ public interface MyDslPackage extends EPackage
   EAttribute getSingleVehicle_FuelConsumption();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.industryempire.myDsl.Factories <em>Factories</em>}'.
+   * Returns the meta object for class '{@link org.xtext.industryempire.myDsl.Buildings <em>Buildings</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Factories</em>'.
-   * @see org.xtext.industryempire.myDsl.Factories
+   * @return the meta object for class '<em>Buildings</em>'.
+   * @see org.xtext.industryempire.myDsl.Buildings
    * @generated
    */
-  EClass getFactories();
+  EClass getBuildings();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.industryempire.myDsl.Factories#getFactories <em>Factories</em>}'.
+   * Returns the meta object for class '{@link org.xtext.industryempire.myDsl.SingleBuilding <em>Single Building</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Factories</em>'.
-   * @see org.xtext.industryempire.myDsl.Factories#getFactories()
-   * @see #getFactories()
+   * @return the meta object for class '<em>Single Building</em>'.
+   * @see org.xtext.industryempire.myDsl.SingleBuilding
    * @generated
    */
-  EReference getFactories_Factories();
+  EClass getSingleBuilding();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.industryempire.myDsl.SingleFactory <em>Single Factory</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Single Factory</em>'.
-   * @see org.xtext.industryempire.myDsl.SingleFactory
-   * @generated
-   */
-  EClass getSingleFactory();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.industryempire.myDsl.SingleFactory#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.industryempire.myDsl.SingleBuilding#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.xtext.industryempire.myDsl.SingleFactory#getName()
-   * @see #getSingleFactory()
+   * @see org.xtext.industryempire.myDsl.SingleBuilding#getName()
+   * @see #getSingleBuilding()
    * @generated
    */
-  EAttribute getSingleFactory_Name();
+  EAttribute getSingleBuilding_Name();
 
   /**
-   * Returns the meta object for the reference '{@link org.xtext.industryempire.myDsl.SingleFactory#getInput <em>Input</em>}'.
+   * Returns the meta object for the reference '{@link org.xtext.industryempire.myDsl.SingleBuilding#getInput <em>Input</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference '<em>Input</em>'.
-   * @see org.xtext.industryempire.myDsl.SingleFactory#getInput()
-   * @see #getSingleFactory()
+   * @see org.xtext.industryempire.myDsl.SingleBuilding#getInput()
+   * @see #getSingleBuilding()
    * @generated
    */
-  EReference getSingleFactory_Input();
+  EReference getSingleBuilding_Input();
 
   /**
-   * Returns the meta object for the reference '{@link org.xtext.industryempire.myDsl.SingleFactory#getOutput <em>Output</em>}'.
+   * Returns the meta object for the reference '{@link org.xtext.industryempire.myDsl.SingleBuilding#getOutput <em>Output</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference '<em>Output</em>'.
-   * @see org.xtext.industryempire.myDsl.SingleFactory#getOutput()
-   * @see #getSingleFactory()
+   * @see org.xtext.industryempire.myDsl.SingleBuilding#getOutput()
+   * @see #getSingleBuilding()
    * @generated
    */
-  EReference getSingleFactory_Output();
+  EReference getSingleBuilding_Output();
 
   /**
    * Returns the meta object for class '{@link org.xtext.industryempire.myDsl.Resources <em>Resources</em>}'.
@@ -680,6 +708,27 @@ public interface MyDslPackage extends EPackage
   EAttribute getSingleResource_Cost();
 
   /**
+   * Returns the meta object for class '{@link org.xtext.industryempire.myDsl.Factories <em>Factories</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Factories</em>'.
+   * @see org.xtext.industryempire.myDsl.Factories
+   * @generated
+   */
+  EClass getFactories();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.industryempire.myDsl.Factories#getFactories <em>Factories</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Factories</em>'.
+   * @see org.xtext.industryempire.myDsl.Factories#getFactories()
+   * @see #getFactories()
+   * @generated
+   */
+  EReference getFactories_Factories();
+
+  /**
    * Returns the factory that creates the instances of the model.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -711,6 +760,14 @@ public interface MyDslPackage extends EPackage
      * @generated
      */
     EClass CLAZZ_MODEL = eINSTANCE.getClazzModel();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CLAZZ_MODEL__NAME = eINSTANCE.getClazzModel_Name();
 
     /**
      * The meta object literal for the '<em><b>Element</b></em>' containment reference list feature.
@@ -841,32 +898,24 @@ public interface MyDslPackage extends EPackage
     EAttribute SINGLE_VEHICLE__FUEL_CONSUMPTION = eINSTANCE.getSingleVehicle_FuelConsumption();
 
     /**
-     * The meta object literal for the '{@link org.xtext.industryempire.myDsl.impl.FactoriesImpl <em>Factories</em>}' class.
+     * The meta object literal for the '{@link org.xtext.industryempire.myDsl.impl.BuildingsImpl <em>Buildings</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.xtext.industryempire.myDsl.impl.FactoriesImpl
-     * @see org.xtext.industryempire.myDsl.impl.MyDslPackageImpl#getFactories()
+     * @see org.xtext.industryempire.myDsl.impl.BuildingsImpl
+     * @see org.xtext.industryempire.myDsl.impl.MyDslPackageImpl#getBuildings()
      * @generated
      */
-    EClass FACTORIES = eINSTANCE.getFactories();
+    EClass BUILDINGS = eINSTANCE.getBuildings();
 
     /**
-     * The meta object literal for the '<em><b>Factories</b></em>' containment reference list feature.
+     * The meta object literal for the '{@link org.xtext.industryempire.myDsl.impl.SingleBuildingImpl <em>Single Building</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see org.xtext.industryempire.myDsl.impl.SingleBuildingImpl
+     * @see org.xtext.industryempire.myDsl.impl.MyDslPackageImpl#getSingleBuilding()
      * @generated
      */
-    EReference FACTORIES__FACTORIES = eINSTANCE.getFactories_Factories();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.industryempire.myDsl.impl.SingleFactoryImpl <em>Single Factory</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.industryempire.myDsl.impl.SingleFactoryImpl
-     * @see org.xtext.industryempire.myDsl.impl.MyDslPackageImpl#getSingleFactory()
-     * @generated
-     */
-    EClass SINGLE_FACTORY = eINSTANCE.getSingleFactory();
+    EClass SINGLE_BUILDING = eINSTANCE.getSingleBuilding();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -874,7 +923,7 @@ public interface MyDslPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute SINGLE_FACTORY__NAME = eINSTANCE.getSingleFactory_Name();
+    EAttribute SINGLE_BUILDING__NAME = eINSTANCE.getSingleBuilding_Name();
 
     /**
      * The meta object literal for the '<em><b>Input</b></em>' reference feature.
@@ -882,7 +931,7 @@ public interface MyDslPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference SINGLE_FACTORY__INPUT = eINSTANCE.getSingleFactory_Input();
+    EReference SINGLE_BUILDING__INPUT = eINSTANCE.getSingleBuilding_Input();
 
     /**
      * The meta object literal for the '<em><b>Output</b></em>' reference feature.
@@ -890,7 +939,7 @@ public interface MyDslPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference SINGLE_FACTORY__OUTPUT = eINSTANCE.getSingleFactory_Output();
+    EReference SINGLE_BUILDING__OUTPUT = eINSTANCE.getSingleBuilding_Output();
 
     /**
      * The meta object literal for the '{@link org.xtext.industryempire.myDsl.impl.ResourcesImpl <em>Resources</em>}' class.
@@ -935,6 +984,24 @@ public interface MyDslPackage extends EPackage
      * @generated
      */
     EAttribute SINGLE_RESOURCE__COST = eINSTANCE.getSingleResource_Cost();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.industryempire.myDsl.impl.FactoriesImpl <em>Factories</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.industryempire.myDsl.impl.FactoriesImpl
+     * @see org.xtext.industryempire.myDsl.impl.MyDslPackageImpl#getFactories()
+     * @generated
+     */
+    EClass FACTORIES = eINSTANCE.getFactories();
+
+    /**
+     * The meta object literal for the '<em><b>Factories</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FACTORIES__FACTORIES = eINSTANCE.getFactories_Factories();
 
   }
 

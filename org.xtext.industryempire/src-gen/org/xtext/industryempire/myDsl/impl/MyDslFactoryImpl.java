@@ -70,10 +70,11 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
       case MyDslPackage.CITIES: return createCities();
       case MyDslPackage.VEHICLES: return createVehicles();
       case MyDslPackage.SINGLE_VEHICLE: return createSingleVehicle();
-      case MyDslPackage.FACTORIES: return createFactories();
-      case MyDslPackage.SINGLE_FACTORY: return createSingleFactory();
+      case MyDslPackage.BUILDINGS: return createBuildings();
+      case MyDslPackage.SINGLE_BUILDING: return createSingleBuilding();
       case MyDslPackage.RESOURCES: return createResources();
       case MyDslPackage.SINGLE_RESOURCE: return createSingleResource();
+      case MyDslPackage.FACTORIES: return createFactories();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -139,10 +140,10 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Factories createFactories()
+  public Buildings createBuildings()
   {
-    FactoriesImpl factories = new FactoriesImpl();
-    return factories;
+    BuildingsImpl buildings = new BuildingsImpl();
+    return buildings;
   }
 
   /**
@@ -150,10 +151,10 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public SingleFactory createSingleFactory()
+  public SingleBuilding createSingleBuilding()
   {
-    SingleFactoryImpl singleFactory = new SingleFactoryImpl();
-    return singleFactory;
+    SingleBuildingImpl singleBuilding = new SingleBuildingImpl();
+    return singleBuilding;
   }
 
   /**
@@ -176,6 +177,17 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
   {
     SingleResourceImpl singleResource = new SingleResourceImpl();
     return singleResource;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Factories createFactories()
+  {
+    FactoriesImpl factories = new FactoriesImpl();
+    return factories;
   }
 
   /**

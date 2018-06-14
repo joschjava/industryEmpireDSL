@@ -31,6 +31,7 @@ class MyDslParsingTest {
 	@Test
 	def void factoryTest(){
 		'''
+		
 		Resources:
 			FirstResource [cost -> 15]
 			SecondResource [cost -> 15]
@@ -40,7 +41,7 @@ class MyDslParsingTest {
 			testFactory2 [in->FirstResource:out->SecondResource]
 			
 		Vehicles:
-			test [spee -> 30]
+			test [speed -> 30]
 
 		'''.parse.assertNoErrors
 	}	
@@ -73,7 +74,7 @@ class MyDslParsingTest {
 		'''.parse.assertNoErrors
 	}
 	
-		@Test
+	@Test
 	def void doubleResourceTest(){
 		'''
 		Cities:
@@ -82,6 +83,9 @@ class MyDslParsingTest {
 		Resources:
 			FirstResource [cost -> 50]
 			SecondResource [cost -> 100]
+			
+		Resources:
+			ThirdResource [cost -> 50]
 		'''.parse.assertNoErrors
 	}
 	

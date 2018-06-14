@@ -69,22 +69,22 @@ public interface MyDslFactory extends EFactory
   SingleVehicle createSingleVehicle();
 
   /**
-   * Returns a new object of class '<em>Factories</em>'.
+   * Returns a new object of class '<em>Buildings</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Factories</em>'.
+   * @return a new object of class '<em>Buildings</em>'.
    * @generated
    */
-  Factories createFactories();
+  Buildings createBuildings();
 
   /**
-   * Returns a new object of class '<em>Single Factory</em>'.
+   * Returns a new object of class '<em>Single Building</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Single Factory</em>'.
+   * @return a new object of class '<em>Single Building</em>'.
    * @generated
    */
-  SingleFactory createSingleFactory();
+  SingleBuilding createSingleBuilding();
 
   /**
    * Returns a new object of class '<em>Resources</em>'.
@@ -103,6 +103,15 @@ public interface MyDslFactory extends EFactory
    * @generated
    */
   SingleResource createSingleResource();
+
+  /**
+   * Returns a new object of class '<em>Factories</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Factories</em>'.
+   * @generated
+   */
+  Factories createFactories();
 
   /**
    * Returns the package supported by this factory.

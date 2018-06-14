@@ -110,18 +110,18 @@ public class MyDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case MyDslPackage.FACTORIES:
+      case MyDslPackage.BUILDINGS:
       {
-        Factories factories = (Factories)theEObject;
-        T result = caseFactories(factories);
-        if (result == null) result = caseElement(factories);
+        Buildings buildings = (Buildings)theEObject;
+        T result = caseBuildings(buildings);
+        if (result == null) result = caseElement(buildings);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case MyDslPackage.SINGLE_FACTORY:
+      case MyDslPackage.SINGLE_BUILDING:
       {
-        SingleFactory singleFactory = (SingleFactory)theEObject;
-        T result = caseSingleFactory(singleFactory);
+        SingleBuilding singleBuilding = (SingleBuilding)theEObject;
+        T result = caseSingleBuilding(singleBuilding);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -137,6 +137,15 @@ public class MyDslSwitch<T> extends Switch<T>
       {
         SingleResource singleResource = (SingleResource)theEObject;
         T result = caseSingleResource(singleResource);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MyDslPackage.FACTORIES:
+      {
+        Factories factories = (Factories)theEObject;
+        T result = caseFactories(factories);
+        if (result == null) result = caseBuildings(factories);
+        if (result == null) result = caseElement(factories);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -225,33 +234,33 @@ public class MyDslSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Factories</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Buildings</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Factories</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Buildings</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseFactories(Factories object)
+  public T caseBuildings(Buildings object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Single Factory</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Single Building</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Single Factory</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Single Building</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseSingleFactory(SingleFactory object)
+  public T caseSingleBuilding(SingleBuilding object)
   {
     return null;
   }
@@ -284,6 +293,22 @@ public class MyDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseSingleResource(SingleResource object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Factories</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Factories</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFactories(Factories object)
   {
     return null;
   }

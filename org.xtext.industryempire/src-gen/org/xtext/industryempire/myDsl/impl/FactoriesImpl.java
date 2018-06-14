@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.xtext.industryempire.myDsl.Factories;
 import org.xtext.industryempire.myDsl.MyDslPackage;
-import org.xtext.industryempire.myDsl.SingleFactory;
+import org.xtext.industryempire.myDsl.SingleBuilding;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,7 +32,7 @@ import org.xtext.industryempire.myDsl.SingleFactory;
  *
  * @generated
  */
-public class FactoriesImpl extends ElementImpl implements Factories
+public class FactoriesImpl extends BuildingsImpl implements Factories
 {
   /**
    * The cached value of the '{@link #getFactories() <em>Factories</em>}' containment reference list.
@@ -42,7 +42,7 @@ public class FactoriesImpl extends ElementImpl implements Factories
    * @generated
    * @ordered
    */
-  protected EList<SingleFactory> factories;
+  protected EList<SingleBuilding> factories;
 
   /**
    * <!-- begin-user-doc -->
@@ -70,11 +70,11 @@ public class FactoriesImpl extends ElementImpl implements Factories
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<SingleFactory> getFactories()
+  public EList<SingleBuilding> getFactories()
   {
     if (factories == null)
     {
-      factories = new EObjectContainmentEList<SingleFactory>(SingleFactory.class, this, MyDslPackage.FACTORIES__FACTORIES);
+      factories = new EObjectContainmentEList<SingleBuilding>(SingleBuilding.class, this, MyDslPackage.FACTORIES__FACTORIES);
     }
     return factories;
   }
@@ -124,7 +124,7 @@ public class FactoriesImpl extends ElementImpl implements Factories
     {
       case MyDslPackage.FACTORIES__FACTORIES:
         getFactories().clear();
-        getFactories().addAll((Collection<? extends SingleFactory>)newValue);
+        getFactories().addAll((Collection<? extends SingleBuilding>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

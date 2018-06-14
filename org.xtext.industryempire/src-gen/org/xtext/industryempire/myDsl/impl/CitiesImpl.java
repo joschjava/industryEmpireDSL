@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 import org.xtext.industryempire.myDsl.Cities;
 import org.xtext.industryempire.myDsl.MyDslPackage;
-import org.xtext.industryempire.myDsl.SingleFactory;
+import org.xtext.industryempire.myDsl.SingleBuilding;
 
 /**
  * <!-- begin-user-doc -->
@@ -96,7 +96,7 @@ public class CitiesImpl extends ElementImpl implements Cities
    * @generated
    * @ordered
    */
-  protected EList<SingleFactory> factory;
+  protected EList<SingleBuilding> factory;
 
   /**
    * <!-- begin-user-doc -->
@@ -184,11 +184,11 @@ public class CitiesImpl extends ElementImpl implements Cities
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<SingleFactory> getFactory()
+  public EList<SingleBuilding> getFactory()
   {
     if (factory == null)
     {
-      factory = new EObjectResolvingEList<SingleFactory>(SingleFactory.class, this, MyDslPackage.CITIES__FACTORY);
+      factory = new EObjectResolvingEList<SingleBuilding>(SingleBuilding.class, this, MyDslPackage.CITIES__FACTORY);
     }
     return factory;
   }
@@ -238,7 +238,7 @@ public class CitiesImpl extends ElementImpl implements Cities
         return;
       case MyDslPackage.CITIES__FACTORY:
         getFactory().clear();
-        getFactory().addAll((Collection<? extends SingleFactory>)newValue);
+        getFactory().addAll((Collection<? extends SingleBuilding>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

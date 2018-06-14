@@ -10,6 +10,7 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import org.xtext.industryempire.myDsl.Buildings;
 import org.xtext.industryempire.myDsl.Cities;
 import org.xtext.industryempire.myDsl.ClazzModel;
 import org.xtext.industryempire.myDsl.Element;
@@ -17,7 +18,7 @@ import org.xtext.industryempire.myDsl.Factories;
 import org.xtext.industryempire.myDsl.MyDslFactory;
 import org.xtext.industryempire.myDsl.MyDslPackage;
 import org.xtext.industryempire.myDsl.Resources;
-import org.xtext.industryempire.myDsl.SingleFactory;
+import org.xtext.industryempire.myDsl.SingleBuilding;
 import org.xtext.industryempire.myDsl.SingleResource;
 import org.xtext.industryempire.myDsl.SingleVehicle;
 import org.xtext.industryempire.myDsl.Vehicles;
@@ -70,14 +71,14 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass factoriesEClass = null;
+  private EClass buildingsEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass singleFactoryEClass = null;
+  private EClass singleBuildingEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -92,6 +93,13 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * @generated
    */
   private EClass singleResourceEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass factoriesEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -171,9 +179,19 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getClazzModel_Name()
+  {
+    return (EAttribute)clazzModelEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getClazzModel_Element()
   {
-    return (EReference)clazzModelEClass.getEStructuralFeatures().get(0);
+    return (EReference)clazzModelEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -321,9 +339,9 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getFactories()
+  public EClass getBuildings()
   {
-    return factoriesEClass;
+    return buildingsEClass;
   }
 
   /**
@@ -331,9 +349,9 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getFactories_Factories()
+  public EClass getSingleBuilding()
   {
-    return (EReference)factoriesEClass.getEStructuralFeatures().get(0);
+    return singleBuildingEClass;
   }
 
   /**
@@ -341,9 +359,9 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getSingleFactory()
+  public EAttribute getSingleBuilding_Name()
   {
-    return singleFactoryEClass;
+    return (EAttribute)singleBuildingEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -351,9 +369,9 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getSingleFactory_Name()
+  public EReference getSingleBuilding_Input()
   {
-    return (EAttribute)singleFactoryEClass.getEStructuralFeatures().get(0);
+    return (EReference)singleBuildingEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -361,19 +379,9 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getSingleFactory_Input()
+  public EReference getSingleBuilding_Output()
   {
-    return (EReference)singleFactoryEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getSingleFactory_Output()
-  {
-    return (EReference)singleFactoryEClass.getEStructuralFeatures().get(2);
+    return (EReference)singleBuildingEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -431,6 +439,26 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getFactories()
+  {
+    return factoriesEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getFactories_Factories()
+  {
+    return (EReference)factoriesEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public MyDslFactory getMyDslFactory()
   {
     return (MyDslFactory)getEFactoryInstance();
@@ -457,6 +485,7 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
 
     // Create classes and their features
     clazzModelEClass = createEClass(CLAZZ_MODEL);
+    createEAttribute(clazzModelEClass, CLAZZ_MODEL__NAME);
     createEReference(clazzModelEClass, CLAZZ_MODEL__ELEMENT);
 
     elementEClass = createEClass(ELEMENT);
@@ -477,13 +506,12 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
     createEAttribute(singleVehicleEClass, SINGLE_VEHICLE__TANK_SIZE);
     createEAttribute(singleVehicleEClass, SINGLE_VEHICLE__FUEL_CONSUMPTION);
 
-    factoriesEClass = createEClass(FACTORIES);
-    createEReference(factoriesEClass, FACTORIES__FACTORIES);
+    buildingsEClass = createEClass(BUILDINGS);
 
-    singleFactoryEClass = createEClass(SINGLE_FACTORY);
-    createEAttribute(singleFactoryEClass, SINGLE_FACTORY__NAME);
-    createEReference(singleFactoryEClass, SINGLE_FACTORY__INPUT);
-    createEReference(singleFactoryEClass, SINGLE_FACTORY__OUTPUT);
+    singleBuildingEClass = createEClass(SINGLE_BUILDING);
+    createEAttribute(singleBuildingEClass, SINGLE_BUILDING__NAME);
+    createEReference(singleBuildingEClass, SINGLE_BUILDING__INPUT);
+    createEReference(singleBuildingEClass, SINGLE_BUILDING__OUTPUT);
 
     resourcesEClass = createEClass(RESOURCES);
     createEReference(resourcesEClass, RESOURCES__RESOURCES);
@@ -491,6 +519,9 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
     singleResourceEClass = createEClass(SINGLE_RESOURCE);
     createEAttribute(singleResourceEClass, SINGLE_RESOURCE__NAME);
     createEAttribute(singleResourceEClass, SINGLE_RESOURCE__COST);
+
+    factoriesEClass = createEClass(FACTORIES);
+    createEReference(factoriesEClass, FACTORIES__FACTORIES);
   }
 
   /**
@@ -524,11 +555,13 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
     // Add supertypes to classes
     citiesEClass.getESuperTypes().add(this.getElement());
     vehiclesEClass.getESuperTypes().add(this.getElement());
-    factoriesEClass.getESuperTypes().add(this.getElement());
+    buildingsEClass.getESuperTypes().add(this.getElement());
     resourcesEClass.getESuperTypes().add(this.getElement());
+    factoriesEClass.getESuperTypes().add(this.getBuildings());
 
     // Initialize classes and features; add operations and parameters
     initEClass(clazzModelEClass, ClazzModel.class, "ClazzModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getClazzModel_Name(), ecorePackage.getEString(), "name", null, 0, 1, ClazzModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getClazzModel_Element(), this.getElement(), null, "element", null, 0, -1, ClazzModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(elementEClass, Element.class, "Element", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -537,7 +570,7 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
     initEAttribute(getCities_Name(), ecorePackage.getEString(), "name", null, 0, -1, Cities.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getCities_X(), ecorePackage.getEInt(), "x", null, 0, 1, Cities.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getCities_Y(), ecorePackage.getEInt(), "y", null, 0, 1, Cities.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getCities_Factory(), this.getSingleFactory(), null, "factory", null, 0, -1, Cities.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCities_Factory(), this.getSingleBuilding(), null, "factory", null, 0, -1, Cities.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(vehiclesEClass, Vehicles.class, "Vehicles", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getVehicles_Vehicles(), this.getSingleVehicle(), null, "vehicles", null, 0, -1, Vehicles.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -549,13 +582,12 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
     initEAttribute(getSingleVehicle_TankSize(), ecorePackage.getEInt(), "tankSize", null, 0, 1, SingleVehicle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getSingleVehicle_FuelConsumption(), ecorePackage.getEString(), "fuelConsumption", null, 0, 1, SingleVehicle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(factoriesEClass, Factories.class, "Factories", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getFactories_Factories(), this.getSingleFactory(), null, "factories", null, 0, -1, Factories.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(buildingsEClass, Buildings.class, "Buildings", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-    initEClass(singleFactoryEClass, SingleFactory.class, "SingleFactory", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getSingleFactory_Name(), ecorePackage.getEString(), "name", null, 0, 1, SingleFactory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getSingleFactory_Input(), this.getSingleResource(), null, "input", null, 0, 1, SingleFactory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getSingleFactory_Output(), this.getSingleResource(), null, "output", null, 0, 1, SingleFactory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(singleBuildingEClass, SingleBuilding.class, "SingleBuilding", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getSingleBuilding_Name(), ecorePackage.getEString(), "name", null, 0, 1, SingleBuilding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSingleBuilding_Input(), this.getSingleResource(), null, "input", null, 0, 1, SingleBuilding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSingleBuilding_Output(), this.getSingleResource(), null, "output", null, 0, 1, SingleBuilding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(resourcesEClass, Resources.class, "Resources", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getResources_Resources(), this.getSingleResource(), null, "resources", null, 0, -1, Resources.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -563,6 +595,9 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
     initEClass(singleResourceEClass, SingleResource.class, "SingleResource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getSingleResource_Name(), ecorePackage.getEString(), "name", null, 0, 1, SingleResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getSingleResource_Cost(), ecorePackage.getEInt(), "cost", null, 0, 1, SingleResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(factoriesEClass, Factories.class, "Factories", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getFactories_Factories(), this.getSingleBuilding(), null, "factories", null, 0, -1, Factories.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

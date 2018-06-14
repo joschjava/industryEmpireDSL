@@ -19,7 +19,7 @@ import org.xtext.industryempire.myDsl.ClazzModel;
 import org.xtext.industryempire.myDsl.Factories;
 import org.xtext.industryempire.myDsl.MyDslPackage;
 import org.xtext.industryempire.myDsl.Resources;
-import org.xtext.industryempire.myDsl.SingleFactory;
+import org.xtext.industryempire.myDsl.SingleBuilding;
 import org.xtext.industryempire.myDsl.SingleResource;
 import org.xtext.industryempire.myDsl.SingleVehicle;
 import org.xtext.industryempire.myDsl.Vehicles;
@@ -46,13 +46,13 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				sequence_ClazzModel(context, (ClazzModel) semanticObject); 
 				return; 
 			case MyDslPackage.FACTORIES:
-				sequence_Factories(context, (Factories) semanticObject); 
+				sequence_Buildings(context, (Factories) semanticObject); 
 				return; 
 			case MyDslPackage.RESOURCES:
 				sequence_Resources(context, (Resources) semanticObject); 
 				return; 
-			case MyDslPackage.SINGLE_FACTORY:
-				sequence_SingleFactory(context, (SingleFactory) semanticObject); 
+			case MyDslPackage.SINGLE_BUILDING:
+				sequence_SingleBuilding(context, (SingleBuilding) semanticObject); 
 				return; 
 			case MyDslPackage.SINGLE_RESOURCE:
 				sequence_SingleResource(context, (SingleResource) semanticObject); 
@@ -70,11 +70,24 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Contexts:
+	 *     Element returns Factories
+	 *     Buildings returns Factories
+	 *
+	 * Constraint:
+	 *     factories+=SingleBuilding*
+	 */
+	protected void sequence_Buildings(ISerializationContext context, Factories semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Element returns Cities
 	 *     Cities returns Cities
 	 *
 	 * Constraint:
-	 *     (name+=ID x=INT y=INT factory+=[SingleFactory|ID]* factory+=[SingleFactory|ID]*)
+	 *     (name+=ID x=INT y=INT factory+=[SingleBuilding|ID]* factory+=[SingleBuilding|ID]*)
 	 */
 	protected void sequence_Cities(ISerializationContext context, Cities semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -86,22 +99,9 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     ClazzModel returns ClazzModel
 	 *
 	 * Constraint:
-	 *     element+=Element+
+	 *     (name=ID element+=Element*)
 	 */
 	protected void sequence_ClazzModel(ISerializationContext context, ClazzModel semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     Element returns Factories
-	 *     Factories returns Factories
-	 *
-	 * Constraint:
-	 *     factories+=SingleFactory*
-	 */
-	protected void sequence_Factories(ISerializationContext context, Factories semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -121,12 +121,12 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Contexts:
-	 *     SingleFactory returns SingleFactory
+	 *     SingleBuilding returns SingleBuilding
 	 *
 	 * Constraint:
 	 *     (name=ID input=[SingleResource|ID]? output=[SingleResource|ID]?)
 	 */
-	protected void sequence_SingleFactory(ISerializationContext context, SingleFactory semanticObject) {
+	protected void sequence_SingleBuilding(ISerializationContext context, SingleBuilding semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -177,7 +177,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 		feeder.accept(grammarAccess.getSingleVehicleAccess().getSpeedINTTerminalRuleCall_4_0(), semanticObject.getSpeed());
 		feeder.accept(grammarAccess.getSingleVehicleAccess().getLoadINTTerminalRuleCall_8_0(), semanticObject.getLoad());
 		feeder.accept(grammarAccess.getSingleVehicleAccess().getTankSizeINTTerminalRuleCall_12_0(), semanticObject.getTankSize());
-		feeder.accept(grammarAccess.getSingleVehicleAccess().getFuelConsumptionDOUBLEParserRuleCall_16_0(), semanticObject.getFuelConsumption());
+		feeder.accept(grammarAccess.getSingleVehicleAccess().getFuelConsumptionDOUBLETerminalRuleCall_16_0(), semanticObject.getFuelConsumption());
 		feeder.finish();
 	}
 	

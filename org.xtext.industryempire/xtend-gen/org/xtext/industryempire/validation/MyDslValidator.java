@@ -3,9 +3,15 @@
  */
 package org.xtext.industryempire.validation;
 
+import com.google.common.collect.Iterables;
 import org.eclipse.xtext.validation.Check;
+import org.eclipse.xtext.xbase.lib.IterableExtensions;
+import org.xtext.industryempire.myDsl.Buildings;
+import org.xtext.industryempire.myDsl.Cities;
 import org.xtext.industryempire.myDsl.ClazzModel;
 import org.xtext.industryempire.myDsl.MyDslPackage;
+import org.xtext.industryempire.myDsl.Resources;
+import org.xtext.industryempire.myDsl.Vehicles;
 import org.xtext.industryempire.validation.AbstractMyDslValidator;
 
 /**
@@ -19,10 +25,25 @@ public class MyDslValidator extends AbstractMyDslValidator {
   
   @Check
   public void checkGreetingStartsWithCapital(final ClazzModel clazzes) {
-    boolean _equals = clazzes.getElement().get(0).equals("Resources");
-    boolean _not = (!_equals);
-    if (_not) {
-      this.error("Resource must be 1", MyDslPackage.eINSTANCE.eContainingFeature());
+    int _size = IterableExtensions.size(Iterables.<Resources>filter(clazzes.getElement(), Resources.class));
+    boolean _greaterThan = (_size > 1);
+    if (_greaterThan) {
+      this.error("Resources already defined", MyDslPackage.eINSTANCE.getClazzModel_Name());
+    }
+    int _size_1 = IterableExtensions.size(Iterables.<Buildings>filter(clazzes.getElement(), Buildings.class));
+    boolean _greaterThan_1 = (_size_1 > 1);
+    if (_greaterThan_1) {
+      this.error("Buildings already defined", MyDslPackage.eINSTANCE.getClazzModel_Name());
+    }
+    int _size_2 = IterableExtensions.size(Iterables.<Cities>filter(clazzes.getElement(), Cities.class));
+    boolean _greaterThan_2 = (_size_2 > 1);
+    if (_greaterThan_2) {
+      this.error("Cities already defined", MyDslPackage.eINSTANCE.getClazzModel_Name());
+    }
+    int _size_3 = IterableExtensions.size(Iterables.<Vehicles>filter(clazzes.getElement(), Vehicles.class));
+    boolean _greaterThan_3 = (_size_3 > 1);
+    if (_greaterThan_3) {
+      this.error("Vehicles already defined", MyDslPackage.eINSTANCE.getClazzModel_Name());
     }
   }
 }

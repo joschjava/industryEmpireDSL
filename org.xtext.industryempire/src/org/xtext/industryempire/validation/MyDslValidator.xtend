@@ -5,9 +5,11 @@ package org.xtext.industryempire.validation
 
 import org.eclipse.xtext.validation.Check
 import org.xtext.industryempire.myDsl.ClazzModel
-import org.xtext.industryempire.myDsl.impl.MyDslPackageImpl
 import org.xtext.industryempire.myDsl.MyDslPackage
-import org.xtext.industryempire.myDsl.impl.ResourcesImpl
+import org.xtext.industryempire.myDsl.Resources
+import org.xtext.industryempire.myDsl.Buildings
+import org.xtext.industryempire.myDsl.Cities
+import org.xtext.industryempire.myDsl.Vehicles
 
 /**
  * This class contains custom validation rules. 
@@ -20,9 +22,23 @@ class MyDslValidator extends AbstractMyDslValidator {
 
 	@Check
 	def checkGreetingStartsWithCapital(ClazzModel clazzes) {
-		if(!clazzes.element.get(0).equals("Resources")){
-			error("Resource must be 1", MyDslPackage.eINSTANCE.eContainingFeature);
+		if(clazzes.element.filter(Resources).size > 1){
+			error("Resources already defined", MyDslPackage.eINSTANCE.clazzModel_Name);
 		}
+		
+		if(clazzes.element.filter(Buildings).size > 1){
+			error("Buildings already defined", MyDslPackage.eINSTANCE.clazzModel_Name);
+		}
+		
+		if(clazzes.element.filter(Cities).size > 1){
+			error("Cities already defined", MyDslPackage.eINSTANCE.clazzModel_Name);
+		}
+		
+		if(clazzes.element.filter(Vehicles).size > 1){
+			error("Vehicles already defined", MyDslPackage.eINSTANCE.clazzModel_Name);
+		}
+		
 	}
+
 	
 }

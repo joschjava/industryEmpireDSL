@@ -50,6 +50,7 @@ public class MyDslParsingTest {
   public void factoryTest() {
     try {
       StringConcatenation _builder = new StringConcatenation();
+      _builder.newLine();
       _builder.append("Resources:");
       _builder.newLine();
       _builder.append("\t");
@@ -73,7 +74,7 @@ public class MyDslParsingTest {
       _builder.append("Vehicles:");
       _builder.newLine();
       _builder.append("\t");
-      _builder.append("test [spee -> 30]");
+      _builder.append("test [speed -> 30]");
       _builder.newLine();
       _builder.newLine();
       this._validationTestHelper.assertNoErrors(this._parseHelper.parse(_builder));
@@ -153,6 +154,13 @@ public class MyDslParsingTest {
       _builder.newLine();
       _builder.append("\t");
       _builder.append("SecondResource [cost -> 100]");
+      _builder.newLine();
+      _builder.append("\t");
+      _builder.newLine();
+      _builder.append("Resources:");
+      _builder.newLine();
+      _builder.append("\t");
+      _builder.append("ThirdResource [cost -> 50]");
       _builder.newLine();
       this._validationTestHelper.assertNoErrors(this._parseHelper.parse(_builder));
     } catch (Throwable _e) {

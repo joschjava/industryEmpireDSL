@@ -21,11 +21,11 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface Factories extends Element
+public interface Factories extends Buildings
 {
   /**
    * Returns the value of the '<em><b>Factories</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.industryempire.myDsl.SingleFactory}.
+   * The list contents are of type {@link org.xtext.industryempire.myDsl.SingleBuilding}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Factories</em>' containment reference list isn't clear,
@@ -37,6 +37,6 @@ public interface Factories extends Element
    * @model containment="true"
    * @generated
    */
-  EList<SingleFactory> getFactories();
+  EList<SingleBuilding> getFactories();
 
 } // Factories

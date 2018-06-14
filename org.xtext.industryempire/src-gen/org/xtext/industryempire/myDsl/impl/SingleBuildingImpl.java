@@ -12,25 +12,25 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.industryempire.myDsl.MyDslPackage;
-import org.xtext.industryempire.myDsl.SingleFactory;
+import org.xtext.industryempire.myDsl.SingleBuilding;
 import org.xtext.industryempire.myDsl.SingleResource;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Single Factory</b></em>'.
+ * An implementation of the model object '<em><b>Single Building</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.industryempire.myDsl.impl.SingleFactoryImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.xtext.industryempire.myDsl.impl.SingleFactoryImpl#getInput <em>Input</em>}</li>
- *   <li>{@link org.xtext.industryempire.myDsl.impl.SingleFactoryImpl#getOutput <em>Output</em>}</li>
+ *   <li>{@link org.xtext.industryempire.myDsl.impl.SingleBuildingImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.industryempire.myDsl.impl.SingleBuildingImpl#getInput <em>Input</em>}</li>
+ *   <li>{@link org.xtext.industryempire.myDsl.impl.SingleBuildingImpl#getOutput <em>Output</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class SingleFactoryImpl extends MinimalEObjectImpl.Container implements SingleFactory
+public class SingleBuildingImpl extends MinimalEObjectImpl.Container implements SingleBuilding
 {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -77,7 +77,7 @@ public class SingleFactoryImpl extends MinimalEObjectImpl.Container implements S
    * <!-- end-user-doc -->
    * @generated
    */
-  protected SingleFactoryImpl()
+  protected SingleBuildingImpl()
   {
     super();
   }
@@ -90,7 +90,7 @@ public class SingleFactoryImpl extends MinimalEObjectImpl.Container implements S
   @Override
   protected EClass eStaticClass()
   {
-    return MyDslPackage.Literals.SINGLE_FACTORY;
+    return MyDslPackage.Literals.SINGLE_BUILDING;
   }
 
   /**
@@ -113,7 +113,7 @@ public class SingleFactoryImpl extends MinimalEObjectImpl.Container implements S
     String oldName = name;
     name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.SINGLE_FACTORY__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.SINGLE_BUILDING__NAME, oldName, name));
   }
 
   /**
@@ -130,7 +130,7 @@ public class SingleFactoryImpl extends MinimalEObjectImpl.Container implements S
       if (input != oldInput)
       {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, MyDslPackage.SINGLE_FACTORY__INPUT, oldInput, input));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, MyDslPackage.SINGLE_BUILDING__INPUT, oldInput, input));
       }
     }
     return input;
@@ -156,7 +156,7 @@ public class SingleFactoryImpl extends MinimalEObjectImpl.Container implements S
     SingleResource oldInput = input;
     input = newInput;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.SINGLE_FACTORY__INPUT, oldInput, input));
+      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.SINGLE_BUILDING__INPUT, oldInput, input));
   }
 
   /**
@@ -173,7 +173,7 @@ public class SingleFactoryImpl extends MinimalEObjectImpl.Container implements S
       if (output != oldOutput)
       {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, MyDslPackage.SINGLE_FACTORY__OUTPUT, oldOutput, output));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, MyDslPackage.SINGLE_BUILDING__OUTPUT, oldOutput, output));
       }
     }
     return output;
@@ -199,7 +199,7 @@ public class SingleFactoryImpl extends MinimalEObjectImpl.Container implements S
     SingleResource oldOutput = output;
     output = newOutput;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.SINGLE_FACTORY__OUTPUT, oldOutput, output));
+      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.SINGLE_BUILDING__OUTPUT, oldOutput, output));
   }
 
   /**
@@ -212,12 +212,12 @@ public class SingleFactoryImpl extends MinimalEObjectImpl.Container implements S
   {
     switch (featureID)
     {
-      case MyDslPackage.SINGLE_FACTORY__NAME:
+      case MyDslPackage.SINGLE_BUILDING__NAME:
         return getName();
-      case MyDslPackage.SINGLE_FACTORY__INPUT:
+      case MyDslPackage.SINGLE_BUILDING__INPUT:
         if (resolve) return getInput();
         return basicGetInput();
-      case MyDslPackage.SINGLE_FACTORY__OUTPUT:
+      case MyDslPackage.SINGLE_BUILDING__OUTPUT:
         if (resolve) return getOutput();
         return basicGetOutput();
     }
@@ -234,13 +234,13 @@ public class SingleFactoryImpl extends MinimalEObjectImpl.Container implements S
   {
     switch (featureID)
     {
-      case MyDslPackage.SINGLE_FACTORY__NAME:
+      case MyDslPackage.SINGLE_BUILDING__NAME:
         setName((String)newValue);
         return;
-      case MyDslPackage.SINGLE_FACTORY__INPUT:
+      case MyDslPackage.SINGLE_BUILDING__INPUT:
         setInput((SingleResource)newValue);
         return;
-      case MyDslPackage.SINGLE_FACTORY__OUTPUT:
+      case MyDslPackage.SINGLE_BUILDING__OUTPUT:
         setOutput((SingleResource)newValue);
         return;
     }
@@ -257,13 +257,13 @@ public class SingleFactoryImpl extends MinimalEObjectImpl.Container implements S
   {
     switch (featureID)
     {
-      case MyDslPackage.SINGLE_FACTORY__NAME:
+      case MyDslPackage.SINGLE_BUILDING__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case MyDslPackage.SINGLE_FACTORY__INPUT:
+      case MyDslPackage.SINGLE_BUILDING__INPUT:
         setInput((SingleResource)null);
         return;
-      case MyDslPackage.SINGLE_FACTORY__OUTPUT:
+      case MyDslPackage.SINGLE_BUILDING__OUTPUT:
         setOutput((SingleResource)null);
         return;
     }
@@ -280,11 +280,11 @@ public class SingleFactoryImpl extends MinimalEObjectImpl.Container implements S
   {
     switch (featureID)
     {
-      case MyDslPackage.SINGLE_FACTORY__NAME:
+      case MyDslPackage.SINGLE_BUILDING__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case MyDslPackage.SINGLE_FACTORY__INPUT:
+      case MyDslPackage.SINGLE_BUILDING__INPUT:
         return input != null;
-      case MyDslPackage.SINGLE_FACTORY__OUTPUT:
+      case MyDslPackage.SINGLE_BUILDING__OUTPUT:
         return output != null;
     }
     return super.eIsSet(featureID);
@@ -307,4 +307,4 @@ public class SingleFactoryImpl extends MinimalEObjectImpl.Container implements S
     return result.toString();
   }
 
-} //SingleFactoryImpl
+} //SingleBuildingImpl

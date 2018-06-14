@@ -26,8 +26,12 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public class ClazzModelElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.industryempire.MyDsl.ClazzModel");
-		private final Assignment cElementAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cElementElementParserRuleCall_0 = (RuleCall)cElementAssignment.eContents().get(0);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cProjectKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Assignment cElementAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cElementElementParserRuleCall_2_0 = (RuleCall)cElementAssignment_2.eContents().get(0);
 		
 		////TODO: Only 1 of each element => &
 		////TODO: No factory at city
@@ -37,35 +41,48 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//// Vehicle Attributes: Wie attrib -> value :, sodass jedes nur einmal vorkommt?
 		//// Wie double richtig schreiben?
 		//ClazzModel:
+		//	"project" name=ID
 		//	element+=Element*;
 		@Override public ParserRule getRule() { return rule; }
 		
+		//"project" name=ID element+=Element*
+		public Group getGroup() { return cGroup; }
+		
+		//"project"
+		public Keyword getProjectKeyword_0() { return cProjectKeyword_0; }
+		
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		
 		//element+=Element*
-		public Assignment getElementAssignment() { return cElementAssignment; }
+		public Assignment getElementAssignment_2() { return cElementAssignment_2; }
 		
 		//Element
-		public RuleCall getElementElementParserRuleCall_0() { return cElementElementParserRuleCall_0; }
+		public RuleCall getElementElementParserRuleCall_2_0() { return cElementElementParserRuleCall_2_0; }
 	}
 	public class ElementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.industryempire.MyDsl.Element");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cResourcesParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cFactoriesParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cBuildingsParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cVehiclesParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		private final RuleCall cCitiesParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		
 		//Element:
-		//	Resources | Factories | Vehicles | Cities;
+		//	Resources | Buildings | Vehicles | Cities;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//Resources | Factories | Vehicles | Cities
+		//Resources | Buildings | Vehicles | Cities
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//Resources
 		public RuleCall getResourcesParserRuleCall_0() { return cResourcesParserRuleCall_0; }
 		
-		//Factories
-		public RuleCall getFactoriesParserRuleCall_1() { return cFactoriesParserRuleCall_1; }
+		//Buildings
+		public RuleCall getBuildingsParserRuleCall_1() { return cBuildingsParserRuleCall_1; }
 		
 		//Vehicles
 		public RuleCall getVehiclesParserRuleCall_2() { return cVehiclesParserRuleCall_2; }
@@ -90,22 +107,23 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cYINTTerminalRuleCall_8_0 = (RuleCall)cYAssignment_8.eContents().get(0);
 		private final Keyword cColonKeyword_9 = (Keyword)cGroup.eContents().get(9);
 		private final Assignment cFactoryAssignment_10 = (Assignment)cGroup.eContents().get(10);
-		private final CrossReference cFactorySingleFactoryCrossReference_10_0 = (CrossReference)cFactoryAssignment_10.eContents().get(0);
-		private final RuleCall cFactorySingleFactoryIDTerminalRuleCall_10_0_1 = (RuleCall)cFactorySingleFactoryCrossReference_10_0.eContents().get(1);
+		private final CrossReference cFactorySingleBuildingCrossReference_10_0 = (CrossReference)cFactoryAssignment_10.eContents().get(0);
+		private final RuleCall cFactorySingleBuildingIDTerminalRuleCall_10_0_1 = (RuleCall)cFactorySingleBuildingCrossReference_10_0.eContents().get(1);
 		private final Group cGroup_11 = (Group)cGroup.eContents().get(11);
 		private final Keyword cCommaKeyword_11_0 = (Keyword)cGroup_11.eContents().get(0);
 		private final Assignment cFactoryAssignment_11_1 = (Assignment)cGroup_11.eContents().get(1);
-		private final CrossReference cFactorySingleFactoryCrossReference_11_1_0 = (CrossReference)cFactoryAssignment_11_1.eContents().get(0);
-		private final RuleCall cFactorySingleFactoryIDTerminalRuleCall_11_1_0_1 = (RuleCall)cFactorySingleFactoryCrossReference_11_1_0.eContents().get(1);
+		private final CrossReference cFactorySingleBuildingCrossReference_11_1_0 = (CrossReference)cFactoryAssignment_11_1.eContents().get(0);
+		private final RuleCall cFactorySingleBuildingIDTerminalRuleCall_11_1_0_1 = (RuleCall)cFactorySingleBuildingCrossReference_11_1_0.eContents().get(1);
 		private final Keyword cRightSquareBracketKeyword_12 = (Keyword)cGroup.eContents().get(12);
 		
 		////Gruppe | Validator ClazzModel, Filter resourcen, length max 1
 		// Cities:
-		//	'Cities:' name+=ID '[' 'x' '->' x=INT ':' 'y->' y=INT ':' factory+=[SingleFactory]* (',' factory+=[SingleFactory])*
+		//	'Cities:' name+=ID '[' 'x' '->' x=INT ':' 'y->' y=INT ':' factory+=[SingleBuilding]* (',' factory+=[SingleBuilding])*
 		//	']';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Cities:' name+=ID '[' 'x' '->' x=INT ':' 'y->' y=INT ':' factory+=[SingleFactory]* (',' factory+=[SingleFactory])* ']'
+		//'Cities:' name+=ID '[' 'x' '->' x=INT ':' 'y->' y=INT ':' factory+=[SingleBuilding]* (',' factory+=[SingleBuilding])*
+		//']'
 		public Group getGroup() { return cGroup; }
 		
 		//'Cities:'
@@ -147,29 +165,29 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//':'
 		public Keyword getColonKeyword_9() { return cColonKeyword_9; }
 		
-		//factory+=[SingleFactory]*
+		//factory+=[SingleBuilding]*
 		public Assignment getFactoryAssignment_10() { return cFactoryAssignment_10; }
 		
-		//[SingleFactory]
-		public CrossReference getFactorySingleFactoryCrossReference_10_0() { return cFactorySingleFactoryCrossReference_10_0; }
+		//[SingleBuilding]
+		public CrossReference getFactorySingleBuildingCrossReference_10_0() { return cFactorySingleBuildingCrossReference_10_0; }
 		
 		//ID
-		public RuleCall getFactorySingleFactoryIDTerminalRuleCall_10_0_1() { return cFactorySingleFactoryIDTerminalRuleCall_10_0_1; }
+		public RuleCall getFactorySingleBuildingIDTerminalRuleCall_10_0_1() { return cFactorySingleBuildingIDTerminalRuleCall_10_0_1; }
 		
-		//(',' factory+=[SingleFactory])*
+		//(',' factory+=[SingleBuilding])*
 		public Group getGroup_11() { return cGroup_11; }
 		
 		//','
 		public Keyword getCommaKeyword_11_0() { return cCommaKeyword_11_0; }
 		
-		//factory+=[SingleFactory]
+		//factory+=[SingleBuilding]
 		public Assignment getFactoryAssignment_11_1() { return cFactoryAssignment_11_1; }
 		
-		//[SingleFactory]
-		public CrossReference getFactorySingleFactoryCrossReference_11_1_0() { return cFactorySingleFactoryCrossReference_11_1_0; }
+		//[SingleBuilding]
+		public CrossReference getFactorySingleBuildingCrossReference_11_1_0() { return cFactorySingleBuildingCrossReference_11_1_0; }
 		
 		//ID
-		public RuleCall getFactorySingleFactoryIDTerminalRuleCall_11_1_0_1() { return cFactorySingleFactoryIDTerminalRuleCall_11_1_0_1; }
+		public RuleCall getFactorySingleBuildingIDTerminalRuleCall_11_1_0_1() { return cFactorySingleBuildingIDTerminalRuleCall_11_1_0_1; }
 		
 		//']'
 		public Keyword getRightSquareBracketKeyword_12() { return cRightSquareBracketKeyword_12; }
@@ -233,7 +251,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cFuelConsumptionKeyword_14 = (Keyword)cGroup.eContents().get(14);
 		private final Keyword cHyphenMinusGreaterThanSignKeyword_15 = (Keyword)cGroup.eContents().get(15);
 		private final Assignment cFuelConsumptionAssignment_16 = (Assignment)cGroup.eContents().get(16);
-		private final RuleCall cFuelConsumptionDOUBLEParserRuleCall_16_0 = (RuleCall)cFuelConsumptionAssignment_16.eContents().get(0);
+		private final RuleCall cFuelConsumptionDOUBLETerminalRuleCall_16_0 = (RuleCall)cFuelConsumptionAssignment_16.eContents().get(0);
 		private final Keyword cRightSquareBracketKeyword_17 = (Keyword)cGroup.eContents().get(17);
 		
 		//SingleVehicle:
@@ -311,18 +329,18 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		public Assignment getFuelConsumptionAssignment_16() { return cFuelConsumptionAssignment_16; }
 		
 		//DOUBLE
-		public RuleCall getFuelConsumptionDOUBLEParserRuleCall_16_0() { return cFuelConsumptionDOUBLEParserRuleCall_16_0; }
+		public RuleCall getFuelConsumptionDOUBLETerminalRuleCall_16_0() { return cFuelConsumptionDOUBLETerminalRuleCall_16_0; }
 		
 		//']'
 		public Keyword getRightSquareBracketKeyword_17() { return cRightSquareBracketKeyword_17; }
 	}
-	public class FactoriesElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.industryempire.MyDsl.Factories");
+	public class BuildingsElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.industryempire.MyDsl.Buildings");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cFactoriesKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cBuildingsKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Action cFactoriesAction_1 = (Action)cGroup.eContents().get(1);
 		private final Assignment cFactoriesAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cFactoriesSingleFactoryParserRuleCall_2_0 = (RuleCall)cFactoriesAssignment_2.eContents().get(0);
+		private final RuleCall cFactoriesSingleBuildingParserRuleCall_2_0 = (RuleCall)cFactoriesAssignment_2.eContents().get(0);
 		
 		////Vehicles:
 		////	'Vehicles:'
@@ -332,27 +350,27 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		////VehicleAttributes:
 		////	'speed' & 'load' & 'tankSize' & 'fuelConsumption'
 		////;
-		//Factories:
-		//	'Factories:' {Factories} factories+=SingleFactory*;
+		//Buildings:
+		//	'Buildings:' {Factories} factories+=SingleBuilding*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Factories:' {Factories} factories+=SingleFactory*
+		//'Buildings:' {Factories} factories+=SingleBuilding*
 		public Group getGroup() { return cGroup; }
 		
-		//'Factories:'
-		public Keyword getFactoriesKeyword_0() { return cFactoriesKeyword_0; }
+		//'Buildings:'
+		public Keyword getBuildingsKeyword_0() { return cBuildingsKeyword_0; }
 		
 		//{Factories}
 		public Action getFactoriesAction_1() { return cFactoriesAction_1; }
 		
-		//factories+=SingleFactory*
+		//factories+=SingleBuilding*
 		public Assignment getFactoriesAssignment_2() { return cFactoriesAssignment_2; }
 		
-		//SingleFactory
-		public RuleCall getFactoriesSingleFactoryParserRuleCall_2_0() { return cFactoriesSingleFactoryParserRuleCall_2_0; }
+		//SingleBuilding
+		public RuleCall getFactoriesSingleBuildingParserRuleCall_2_0() { return cFactoriesSingleBuildingParserRuleCall_2_0; }
 	}
-	public class SingleFactoryElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.industryempire.MyDsl.SingleFactory");
+	public class SingleBuildingElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.industryempire.MyDsl.SingleBuilding");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cNameIDTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
@@ -372,7 +390,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cOutputSingleResourceIDTerminalRuleCall_4_2_0_1 = (RuleCall)cOutputSingleResourceCrossReference_4_2_0.eContents().get(1);
 		private final Keyword cRightSquareBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
-		//SingleFactory:
+		//SingleBuilding:
 		//	name=ID '[' ('in' '->' input=[SingleResource])? ':' ('out' '->' output=[SingleResource])? ']';
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -473,11 +491,9 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//	name=ID '[' 'cost' '->' cost=INT ']';
 		@Override public ParserRule getRule() { return rule; }
 		
-		////Two words not possible, how do i let it wait for [
 		//name=ID '[' 'cost' '->' cost=INT ']'
 		public Group getGroup() { return cGroup; }
 		
-		////Two words not possible, how do i let it wait for [
 		//name=ID
 		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
 		
@@ -502,29 +518,6 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//']'
 		public Keyword getRightSquareBracketKeyword_5() { return cRightSquareBracketKeyword_5; }
 	}
-	public class DOUBLEElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.industryempire.MyDsl.DOUBLE");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cINTTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
-		private final Keyword cFullStopKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final RuleCall cINTTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
-		
-		//DOUBLE:
-		//	INT+ '.' INT+;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//INT+ '.' INT+
-		public Group getGroup() { return cGroup; }
-		
-		//INT+
-		public RuleCall getINTTerminalRuleCall_0() { return cINTTerminalRuleCall_0; }
-		
-		//'.'
-		public Keyword getFullStopKeyword_1() { return cFullStopKeyword_1; }
-		
-		//INT+
-		public RuleCall getINTTerminalRuleCall_2() { return cINTTerminalRuleCall_2; }
-	}
 	
 	
 	private final ClazzModelElements pClazzModel;
@@ -532,11 +525,11 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	private final CitiesElements pCities;
 	private final VehiclesElements pVehicles;
 	private final SingleVehicleElements pSingleVehicle;
-	private final FactoriesElements pFactories;
-	private final SingleFactoryElements pSingleFactory;
+	private final BuildingsElements pBuildings;
+	private final SingleBuildingElements pSingleBuilding;
 	private final ResourcesElements pResources;
 	private final SingleResourceElements pSingleResource;
-	private final DOUBLEElements pDOUBLE;
+	private final TerminalRule tDOUBLE;
 	
 	private final Grammar grammar;
 	
@@ -552,11 +545,11 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		this.pCities = new CitiesElements();
 		this.pVehicles = new VehiclesElements();
 		this.pSingleVehicle = new SingleVehicleElements();
-		this.pFactories = new FactoriesElements();
-		this.pSingleFactory = new SingleFactoryElements();
+		this.pBuildings = new BuildingsElements();
+		this.pSingleBuilding = new SingleBuildingElements();
 		this.pResources = new ResourcesElements();
 		this.pSingleResource = new SingleResourceElements();
-		this.pDOUBLE = new DOUBLEElements();
+		this.tDOUBLE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.industryempire.MyDsl.DOUBLE");
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -594,6 +587,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	//// Vehicle Attributes: Wie attrib -> value :, sodass jedes nur einmal vorkommt?
 	//// Wie double richtig schreiben?
 	//ClazzModel:
+	//	"project" name=ID
 	//	element+=Element*;
 	public ClazzModelElements getClazzModelAccess() {
 		return pClazzModel;
@@ -604,7 +598,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Element:
-	//	Resources | Factories | Vehicles | Cities;
+	//	Resources | Buildings | Vehicles | Cities;
 	public ElementElements getElementAccess() {
 		return pElement;
 	}
@@ -615,7 +609,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	////Gruppe | Validator ClazzModel, Filter resourcen, length max 1
 	// Cities:
-	//	'Cities:' name+=ID '[' 'x' '->' x=INT ':' 'y->' y=INT ':' factory+=[SingleFactory]* (',' factory+=[SingleFactory])*
+	//	'Cities:' name+=ID '[' 'x' '->' x=INT ':' 'y->' y=INT ':' factory+=[SingleBuilding]* (',' factory+=[SingleBuilding])*
 	//	']';
 	public CitiesElements getCitiesAccess() {
 		return pCities;
@@ -664,24 +658,24 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	////VehicleAttributes:
 	////	'speed' & 'load' & 'tankSize' & 'fuelConsumption'
 	////;
-	//Factories:
-	//	'Factories:' {Factories} factories+=SingleFactory*;
-	public FactoriesElements getFactoriesAccess() {
-		return pFactories;
+	//Buildings:
+	//	'Buildings:' {Factories} factories+=SingleBuilding*;
+	public BuildingsElements getBuildingsAccess() {
+		return pBuildings;
 	}
 	
-	public ParserRule getFactoriesRule() {
-		return getFactoriesAccess().getRule();
+	public ParserRule getBuildingsRule() {
+		return getBuildingsAccess().getRule();
 	}
 	
-	//SingleFactory:
+	//SingleBuilding:
 	//	name=ID '[' ('in' '->' input=[SingleResource])? ':' ('out' '->' output=[SingleResource])? ']';
-	public SingleFactoryElements getSingleFactoryAccess() {
-		return pSingleFactory;
+	public SingleBuildingElements getSingleBuildingAccess() {
+		return pSingleBuilding;
 	}
 	
-	public ParserRule getSingleFactoryRule() {
-		return getSingleFactoryAccess().getRule();
+	public ParserRule getSingleBuildingRule() {
+		return getSingleBuildingAccess().getRule();
 	}
 	
 	//Resources:
@@ -704,14 +698,10 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getSingleResourceAccess().getRule();
 	}
 	
-	//DOUBLE:
+	//terminal DOUBLE:
 	//	INT+ '.' INT+;
-	public DOUBLEElements getDOUBLEAccess() {
-		return pDOUBLE;
-	}
-	
-	public ParserRule getDOUBLERule() {
-		return getDOUBLEAccess().getRule();
+	public TerminalRule getDOUBLERule() {
+		return tDOUBLE;
 	}
 	
 	//terminal ID:

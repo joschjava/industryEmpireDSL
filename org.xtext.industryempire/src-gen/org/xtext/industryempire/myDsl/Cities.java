@@ -96,7 +96,7 @@ public interface Cities extends Element
 
   /**
    * Returns the value of the '<em><b>Factory</b></em>' reference list.
-   * The list contents are of type {@link org.xtext.industryempire.myDsl.SingleFactory}.
+   * The list contents are of type {@link org.xtext.industryempire.myDsl.SingleBuilding}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Factory</em>' reference list isn't clear,
@@ -108,6 +108,6 @@ public interface Cities extends Element
    * @model
    * @generated
    */
-  EList<SingleFactory> getFactory();
+  EList<SingleBuilding> getFactory();
 
 } // Cities

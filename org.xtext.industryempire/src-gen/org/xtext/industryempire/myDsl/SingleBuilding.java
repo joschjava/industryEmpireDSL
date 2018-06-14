@@ -7,23 +7,23 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Single Factory</b></em>'.
+ * A representation of the model object '<em><b>Single Building</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.industryempire.myDsl.SingleFactory#getName <em>Name</em>}</li>
- *   <li>{@link org.xtext.industryempire.myDsl.SingleFactory#getInput <em>Input</em>}</li>
- *   <li>{@link org.xtext.industryempire.myDsl.SingleFactory#getOutput <em>Output</em>}</li>
+ *   <li>{@link org.xtext.industryempire.myDsl.SingleBuilding#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.industryempire.myDsl.SingleBuilding#getInput <em>Input</em>}</li>
+ *   <li>{@link org.xtext.industryempire.myDsl.SingleBuilding#getOutput <em>Output</em>}</li>
  * </ul>
  *
- * @see org.xtext.industryempire.myDsl.MyDslPackage#getSingleFactory()
+ * @see org.xtext.industryempire.myDsl.MyDslPackage#getSingleBuilding()
  * @model
  * @generated
  */
-public interface SingleFactory extends EObject
+public interface SingleBuilding extends EObject
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
@@ -35,14 +35,14 @@ public interface SingleFactory extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Name</em>' attribute.
    * @see #setName(String)
-   * @see org.xtext.industryempire.myDsl.MyDslPackage#getSingleFactory_Name()
+   * @see org.xtext.industryempire.myDsl.MyDslPackage#getSingleBuilding_Name()
    * @model
    * @generated
    */
   String getName();
 
   /**
-   * Sets the value of the '{@link org.xtext.industryempire.myDsl.SingleFactory#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.industryempire.myDsl.SingleBuilding#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Name</em>' attribute.
@@ -61,14 +61,14 @@ public interface SingleFactory extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Input</em>' reference.
    * @see #setInput(SingleResource)
-   * @see org.xtext.industryempire.myDsl.MyDslPackage#getSingleFactory_Input()
+   * @see org.xtext.industryempire.myDsl.MyDslPackage#getSingleBuilding_Input()
    * @model
    * @generated
    */
   SingleResource getInput();
 
   /**
-   * Sets the value of the '{@link org.xtext.industryempire.myDsl.SingleFactory#getInput <em>Input</em>}' reference.
+   * Sets the value of the '{@link org.xtext.industryempire.myDsl.SingleBuilding#getInput <em>Input</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Input</em>' reference.
@@ -87,14 +87,14 @@ public interface SingleFactory extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Output</em>' reference.
    * @see #setOutput(SingleResource)
-   * @see org.xtext.industryempire.myDsl.MyDslPackage#getSingleFactory_Output()
+   * @see org.xtext.industryempire.myDsl.MyDslPackage#getSingleBuilding_Output()
    * @model
    * @generated
    */
   SingleResource getOutput();
 
   /**
-   * Sets the value of the '{@link org.xtext.industryempire.myDsl.SingleFactory#getOutput <em>Output</em>}' reference.
+   * Sets the value of the '{@link org.xtext.industryempire.myDsl.SingleBuilding#getOutput <em>Output</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Output</em>' reference.
@@ -103,4 +103,4 @@ public interface SingleFactory extends EObject
    */
   void setOutput(SingleResource value);
 
-} // SingleFactory
+} // SingleBuilding

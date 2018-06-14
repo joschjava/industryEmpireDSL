@@ -2,6 +2,7 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="myDsl" nsURI="http://www.xtext.org/industryempire/MyDsl" nsPrefix="myDsl">
   <eClassifiers xsi:type="ecore:EClass" name="ClazzModel">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="element" upperBound="-1"
         eType="#//Element" containment="true"/>
   </eClassifiers>
@@ -12,7 +13,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="x" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="y" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="factory" unique="false"
-        upperBound="-1" eType="#//SingleFactory"/>
+        upperBound="-1" eType="#//SingleBuilding"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Vehicles" eSuperTypes="#//Element">
     <eStructuralFeatures xsi:type="ecore:EReference" name="vehicles" upperBound="-1"
@@ -25,11 +26,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="tankSize" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="fuelConsumption" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Factories" eSuperTypes="#//Element">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="factories" upperBound="-1"
-        eType="#//SingleFactory" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SingleFactory">
+  <eClassifiers xsi:type="ecore:EClass" name="Buildings" eSuperTypes="#//Element"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SingleBuilding">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="input" eType="#//SingleResource"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="output" eType="#//SingleResource"/>
@@ -41,5 +39,9 @@
   <eClassifiers xsi:type="ecore:EClass" name="SingleResource">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="cost" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Factories" eSuperTypes="#//Buildings">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="factories" upperBound="-1"
+        eType="#//SingleBuilding" containment="true"/>
   </eClassifiers>
 </ecore:EPackage>

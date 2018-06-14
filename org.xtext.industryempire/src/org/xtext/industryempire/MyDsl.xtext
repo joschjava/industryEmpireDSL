@@ -14,15 +14,16 @@ import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 // Wie double richtig schreiben?
 
 ClazzModel:
+	'project' name = ID
 	element+= Element* 
 ;
 
 Element:
-	Resources | Factories | Vehicles | Cities; //Gruppe | Validator ClazzModel, Filter resourcen, length max 1
+	Resources | Buildings | Vehicles | Cities; //Gruppe | Validator ClazzModel, Filter resourcen, length max 1
 
 Cities:
 	'Cities:'
-	name += ID '[' 'x' '->' x = INT ':' 'y->' y = INT ':' factory += [SingleFactory]* (',' factory+=[SingleFactory])* ']'
+	name += ID '[' 'x' '->' x = INT ':' 'y->' y = INT ':' factory += [SingleBuilding]* (',' factory+=[SingleBuilding])* ']'
 ;
 
 //Cities:
@@ -56,12 +57,12 @@ SingleVehicle:
 //	'speed' & 'load' & 'tankSize' & 'fuelConsumption'
 //;
 
-Factories:
-	'Factories:'
-	{Factories} (factories += SingleFactory*)	
+Buildings:
+	'Buildings:'
+	{Factories} (factories += SingleBuilding*)	
 ;
 
-SingleFactory:
+SingleBuilding:
 		name = ID '[' ('in' '->' input=[SingleResource])? ':' ('out' '->'output=[SingleResource])? ']'
 ;
 
@@ -72,9 +73,8 @@ Resources:
 ;
 
 SingleResource:
-	//Two words not possible, how do i let it wait for [
 	name = ID '[' 'cost' '->' cost = INT ']'
 ;
 
-DOUBLE:  INT+'.'INT+;
+terminal DOUBLE:  INT+'.'INT+;
 
