@@ -3,10 +3,16 @@
  */
 package org.xtext.industryempire.generator;
 
+import com.google.common.collect.Iterables;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.generator.AbstractGenerator;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
+import org.eclipse.xtext.xbase.lib.IteratorExtensions;
+import org.xtext.industryempire.myDsl.Element;
+import org.xtext.industryempire.myDsl.Resources;
 
 /**
  * Generates code from your model files on save.
@@ -17,5 +23,34 @@ import org.eclipse.xtext.generator.IGeneratorContext;
 public class MyDslGenerator extends AbstractGenerator {
   @Override
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
+    this.compile(Iterables.<Element>filter(IteratorExtensions.<EObject>toIterable(resource.getAllContents()), Element.class), fsa);
+  }
+  
+  public void compile(final Iterable<Element> elements, final IFileSystemAccess2 fsa) {
+    this.compileResource(Iterables.<Resources>filter(elements, Resources.class), fsa);
+  }
+  
+  public void compileResource(final Iterable<Resources> resources, final IFileSystemAccess2 fsa) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("game/Resources.java");
+    StringConcatenation _builder_1 = new StringConcatenation();
+    CharSequence _generateHeader = this.generateHeader("Resources");
+    _builder_1.append(_generateHeader);
+    _builder_1.newLineIfNotEmpty();
+    _builder_1.newLine();
+    fsa.generateFile(_builder.toString(), _builder_1);
+  }
+  
+  public CharSequence generateHeader(final String clazzName) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("package game;");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("public class ");
+    _builder.append(clazzName);
+    _builder.append(" {");
+    _builder.newLineIfNotEmpty();
+    _builder.newLine();
+    return _builder;
   }
 }

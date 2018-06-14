@@ -18,6 +18,7 @@ import org.xtext.industryempire.myDsl.Vehicles
  */
 class MyDslValidator extends AbstractMyDslValidator {
 	
+
 	public static val INVALID_NAME = 'invalidName'
 
 	@Check
@@ -39,6 +40,5 @@ class MyDslValidator extends AbstractMyDslValidator {
 		}
 		
 	}
-
 	
 }

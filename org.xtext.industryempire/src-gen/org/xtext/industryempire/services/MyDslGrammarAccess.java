@@ -41,14 +41,14 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//// Vehicle Attributes: Wie attrib -> value :, sodass jedes nur einmal vorkommt?
 		//// Wie double richtig schreiben?
 		//ClazzModel:
-		//	"project" name=ID
+		//	'project' name=ID
 		//	element+=Element*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"project" name=ID element+=Element*
+		//'project' name=ID element+=Element*
 		public Group getGroup() { return cGroup; }
 		
-		//"project"
+		//'project'
 		public Keyword getProjectKeyword_0() { return cProjectKeyword_0; }
 		
 		//name=ID
@@ -587,7 +587,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	//// Vehicle Attributes: Wie attrib -> value :, sodass jedes nur einmal vorkommt?
 	//// Wie double richtig schreiben?
 	//ClazzModel:
-	//	"project" name=ID
+	//	'project' name=ID
 	//	element+=Element*;
 	public ClazzModelElements getClazzModelAccess() {
 		return pClazzModel;
