@@ -32,6 +32,8 @@ public class MyDslParsingTest {
   public void resourceTest() {
     try {
       StringConcatenation _builder = new StringConcatenation();
+      _builder.append("project X");
+      _builder.newLine();
       _builder.append("Resources:");
       _builder.newLine();
       _builder.append("\t");
@@ -50,6 +52,7 @@ public class MyDslParsingTest {
   public void factoryTest() {
     try {
       StringConcatenation _builder = new StringConcatenation();
+      _builder.append("project X");
       _builder.newLine();
       _builder.append("Resources:");
       _builder.newLine();
@@ -87,6 +90,8 @@ public class MyDslParsingTest {
   public void vehicleTest() {
     try {
       StringConcatenation _builder = new StringConcatenation();
+      _builder.append("project X");
+      _builder.newLine();
       _builder.append("Vehicles:");
       _builder.newLine();
       _builder.append("\t");
@@ -102,6 +107,9 @@ public class MyDslParsingTest {
   public void unresolvedProblems() {
     try {
       StringConcatenation _builder = new StringConcatenation();
+      _builder.append("\t\t");
+      _builder.append("project X");
+      _builder.newLine();
       _builder.append("Resources:");
       _builder.newLine();
       _builder.append("\t");
@@ -140,6 +148,8 @@ public class MyDslParsingTest {
   public void doubleResourceTest() {
     try {
       StringConcatenation _builder = new StringConcatenation();
+      _builder.append("project X");
+      _builder.newLine();
       _builder.append("Cities:");
       _builder.newLine();
       _builder.append("\t");

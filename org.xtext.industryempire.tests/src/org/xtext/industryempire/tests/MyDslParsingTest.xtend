@@ -22,6 +22,7 @@ class MyDslParsingTest {
 	@Test
 	def void resourceTest(){
 		'''
+		project X
 		Resources:
 			FirstResource [cost -> 50]
 			SecondResource [cost -> 100]
@@ -31,7 +32,7 @@ class MyDslParsingTest {
 	@Test
 	def void factoryTest(){
 		'''
-		
+		project X
 		Resources:
 			FirstResource [cost -> 15]
 			SecondResource [cost -> 15]
@@ -49,6 +50,7 @@ class MyDslParsingTest {
 	@Test
 	def void vehicleTest(){
 		'''
+		project X
 		Vehicles:
 			PowerLoader [speed->40:load->110:tankSize->42:fuelConsumption->2.3]
 ллл		PowerSaver [speed->40:load->110:tankSize->42:fuelConsumption->0.6]
@@ -60,6 +62,7 @@ class MyDslParsingTest {
 	@Test
 	def void unresolvedProblems(){
 				'''
+				project X
 		Resources:
 			FirstResource [cost:50]
 			SecondResource [cost:100]
@@ -77,6 +80,7 @@ class MyDslParsingTest {
 	@Test
 	def void doubleResourceTest(){
 		'''
+		project X
 		Cities:
 			Berlin [x->50:y->20:]
 			
