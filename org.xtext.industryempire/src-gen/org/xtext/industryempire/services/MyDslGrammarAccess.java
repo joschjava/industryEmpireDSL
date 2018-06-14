@@ -100,9 +100,9 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightSquareBracketKeyword_12 = (Keyword)cGroup.eContents().get(12);
 		
 		////Gruppe | Validator ClazzModel, Filter resourcen, length max 1
-		// Cities:
-		//	'Cities:' name+=ID '[' 'x' '->' x=INT ':' 'y->' y=INT ':' factory+=[SingleFactory]* (',' factory+=[SingleFactory])*
-		//	']';
+		//Cities:
+		//	'Cities:'
+		//	name+=ID '[' 'x' '->' x=INT ':' 'y->' y=INT ':' factory+=[SingleFactory]* (',' factory+=[SingleFactory])* ']';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'Cities:' name+=ID '[' 'x' '->' x=INT ':' 'y->' y=INT ':' factory+=[SingleFactory]* (',' factory+=[SingleFactory])* ']'
@@ -326,9 +326,9 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		
 		////Vehicles:
 		////	'Vehicles:'
-		// //	name = STRING '[' attrib += VehicleAttributes '->' value = INT ']'
-		// //;
-		// //
+		////	name = STRING '[' attrib += VehicleAttributes '->' value = INT ']'
+		////;
+		////
 		////VehicleAttributes:
 		////	'speed' & 'load' & 'tankSize' & 'fuelConsumption'
 		////;
@@ -614,9 +614,9 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	////Gruppe | Validator ClazzModel, Filter resourcen, length max 1
-	// Cities:
-	//	'Cities:' name+=ID '[' 'x' '->' x=INT ':' 'y->' y=INT ':' factory+=[SingleFactory]* (',' factory+=[SingleFactory])*
-	//	']';
+	//Cities:
+	//	'Cities:'
+	//	name+=ID '[' 'x' '->' x=INT ':' 'y->' y=INT ':' factory+=[SingleFactory]* (',' factory+=[SingleFactory])* ']';
 	public CitiesElements getCitiesAccess() {
 		return pCities;
 	}
@@ -658,9 +658,9 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	////Vehicles:
 	////	'Vehicles:'
-	// //	name = STRING '[' attrib += VehicleAttributes '->' value = INT ']'
-	// //;
-	// //
+	////	name = STRING '[' attrib += VehicleAttributes '->' value = INT ']'
+	////;
+	////
 	////VehicleAttributes:
 	////	'speed' & 'load' & 'tankSize' & 'fuelConsumption'
 	////;
